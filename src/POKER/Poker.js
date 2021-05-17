@@ -16,8 +16,9 @@ function Poker({ game }) {
   return (
     <PokerContext.Provider value={{ state, dispatch }}>
       <PokerContainer>
-        <GameHeader game={game} />
-        <PayTable />
+        {/* <GameHeader game={game} /> */}
+        <GameHeader />
+        {/* <PayTable /> */}
         <CardsDisplay />
         <CreditControls />
         <DealButton />

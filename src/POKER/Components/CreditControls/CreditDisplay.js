@@ -11,12 +11,12 @@ const CreditDisplay = () => {
   let credits = `Credits: ${creditState.credit / creditState.denom.multiplier}`;
 
   return (
-    <h1
+    <h2
       onClick={() => {
         dispatch({ type: "SHOW_CASH" });
       }}>
       {state.showCash ? cash : credits}
-    </h1>
+    </h2>
   );
 };
 

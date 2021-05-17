@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { PokerContext } from "../../Poker";
+import { CreditContext } from "../../../App";
 import { toCash } from "../../Utility/PokerConstants";
 
 const CreditResult = () => {
   const { state } = useContext(PokerContext);
+  const { creditState } = useContext(CreditContext);
 
   return (
     <CreditResultDisplay>
@@ -15,13 +17,15 @@ const CreditResult = () => {
         <AnnounceHandHeader
           className={state.finalHand[1] === 0 ? "scram" : ""}>{`
           ${state.finalHand[0]} Pays ${toCash(
-          state.finalHand[1]
+          state.finalHand[1] * state.wager * creditState.denom.value
         )}`}</AnnounceHandHeader>
       ) : (
         <AnnounceHandHeader className={state.finalHand[1] === 0 ? "scram" : ""}>
           {`
-            ${state.finalHand[0]} Pays ${state.finalHand[1]} ${
-            state.finalHand[1] === 1 ? " Credit" : " Credits"
+            ${state.finalHand[0]} Pays ${state.finalHand[1] * state.wager} ${
+            state.finalHand[1] === 1 && state.wager === 1
+              ? " Credit"
+              : " Credits"
           }
             `}
         </AnnounceHandHeader>

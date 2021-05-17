@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { PokerContext } from "../../Poker";
 import { CreditContext } from "../../../App";
-import { toCash, jbPays } from "../../Utility/PokerConstants";
+import { toCash, jbPays, noPennies } from "../../Utility/PokerConstants";
 
 const PayTable = () => {
   const { state } = useContext(PokerContext);
@@ -20,31 +20,46 @@ const PayTable = () => {
       {payArray.map((hand, idx) => (
         <>
           <h3 className="handName">{hand[0]}</h3>
-          <h3 className={coinCount === 1 ? "highlight" : ""}>
+          <h4 className={coinCount === 1 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * creditState.denom.multiplier) / 100)
+              ? idx === 0
+                ? "$" +
+                  noPennies((hand[1] * creditState.denom.multiplier) / 100)
+                : toCash((hand[1] * creditState.denom.multiplier) / 100)
               : hand[1]}
-          </h3>
-          <h3 className={coinCount === 2 ? "highlight" : ""}>
+          </h4>
+          <h4 className={coinCount === 2 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * creditState.denom.multiplier * 2) / 100)
+              ? idx === 0
+                ? "$" +
+                  noPennies((hand[1] * creditState.denom.multiplier * 2) / 100)
+                : toCash((hand[1] * creditState.denom.multiplier * 2) / 100)
               : hand[1] * 2}
-          </h3>
-          <h3 className={coinCount === 3 ? "highlight" : ""}>
+          </h4>
+          <h4 className={coinCount === 3 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * creditState.denom.multiplier * 3) / 100)
+              ? idx === 0
+                ? "$" +
+                  noPennies((hand[1] * creditState.denom.multiplier * 3) / 100)
+                : toCash((hand[1] * creditState.denom.multiplier * 3) / 100)
               : hand[1] * 3}
-          </h3>
-          <h3 className={coinCount === 4 ? "highlight" : ""}>
+          </h4>
+          <h4 className={coinCount === 4 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * creditState.denom.multiplier * 4) / 100)
+              ? idx === 0
+                ? "$" +
+                  noPennies((hand[1] * creditState.denom.multiplier * 4) / 100)
+                : toCash((hand[1] * creditState.denom.multiplier * 4) / 100)
               : hand[1] * 4}
-          </h3>
-          <h3 className={coinCount === 5 ? "highlight" : ""}>
+          </h4>
+          <h4 className={coinCount === 5 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * creditState.denom.multiplier * 5) / 100)
+              ? idx === 0
+                ? "$" +
+                  noPennies((hand[1] * creditState.denom.multiplier * 5) / 100)
+                : toCash((hand[1] * creditState.denom.multiplier * 5) / 100)
               : hand[1] * 5}
-          </h3>
+          </h4>
         </>
       ))}
     </PayChart>
@@ -55,25 +70,25 @@ export default PayTable;
 
 const PayChart = styled.div`
   display: grid;
-  justify-items: center;
-  grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr;
+  // justify-items: center;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: repeat(9, 24px);
   grid-auto-flow: row;
-  gap: 0 20px;
-  margin-bottom: 15px;
+  gap: 4px 5px;
+  margin-bottom: 5px;
 
   .highlight {
-    background-color: yellow;
+    background-color: rgba(0, 200, 0, 0.3);
   }
 
   .handName {
     justify-self: start;
   }
 
-  h3 {
+  h2,
+  h4 {
     display: flex;
     align-items: center;
-    width: 100%;
     padding: 3px;
   }
 `;

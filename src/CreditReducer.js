@@ -2,16 +2,19 @@ const denoms = {
   dime: {
     name: "dime",
     multiplier: 10,
+    value: .1,
     display: "10¢",
   },
   quarter: {
     name: "quarter",
     multiplier: 25,
+    value: .25,
     display: "25¢",
   },
   dollar: {
     name: "dollar",
     multiplier: 100,
+    value: 1,
     display: "$1",
   },
 };

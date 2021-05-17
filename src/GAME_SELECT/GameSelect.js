@@ -10,6 +10,8 @@ const GameSelect = () => {
       <Link to="/keno">
         <h2>Keno</h2>
       </Link>
+
+      <h1>CHANGING BET CHANGES WINNER AMOUNT POPUP</h1>
     </div>
   );
 };
