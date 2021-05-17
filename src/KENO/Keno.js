@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
+import KenoReducer, { init } from "./Utilities/KenoReducer";
 import styled from "styled-components";
 import PayTable from "./Components/PayTable";
 import PlayerCredits from "./Components/PlayerCredits";
@@ -7,23 +8,27 @@ import BoardControl from "./Components/BoardControl";
 import Wager from "./Components/Wager";
 import CashSlot from "./Components/CashSlot";
 
-function Keno({ state, dispatch }) {
+export const KenoContext = React.createContext(null);
 
+function Keno() {
+  const [state, dispatch] = useReducer(KenoReducer, init);
   return (
-    <KenoDiv>
-      <div>
-        <Display>
-          <BoardControl state={state} dispatch={dispatch} />
-          <section>
-            <PayTable state={state} />
-            <PlayerCredits className="credit" state={state} />
-            <CashSlot className="credit" dispatch={dispatch} />
-            <Link to="/">Game Selection Screen</Link>
-          </section>
-        </Display>
-        <Wager state={state} dispatch={dispatch} />
-      </div>
-    </KenoDiv>
+    <KenoContext.Provider value={{ state, dispatch }}>
+      <KenoDiv>
+        <div>
+          <Display>
+            <BoardControl />
+            <section>
+              <PayTable />
+              <PlayerCredits className="credit" />
+              <CashSlot className="credit" />
+              <Link to="/">Game Selection Screen</Link>
+            </section>
+          </Display>
+          <Wager />
+        </div>
+      </KenoDiv>
+    </KenoContext.Provider>
   );
 }
 
@@ -36,13 +41,6 @@ const KenoDiv = styled.div`
 `;
 
 const Display = styled.div`
-    display: flex;
-    flex-direction: row;
-    // section {
-    //     display: flex;
-    //     flex-direction: column;
-    //     .credit {
-    //         margin-left: 50px;
-    //     }
-    }
+  display: flex;
+  flex-direction: row;
 `;

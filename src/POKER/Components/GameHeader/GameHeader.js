@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const GameHeader = ({ state }) => {
-  return <GameHeaderDiv>Jacks or Better</GameHeaderDiv>;
+const GameHeader = ({ game }) => {
+  return <GameHeaderDiv>{game}</GameHeaderDiv>;
 };
 
 export default GameHeader;

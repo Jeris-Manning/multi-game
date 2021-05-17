@@ -26,6 +26,5 @@ const CardSlot = styled.div`
   background-image: url(${Cards["back"]});
   img {
     width: 100%;
-    // max-width: 206px;
   }
 `;

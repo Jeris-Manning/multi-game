@@ -1,12 +1,7 @@
 const HandEvaluation = (hand) => {
   let ranks = [];
   let suits = [];
-  var cardList = {
-    11: "Jacks",
-    12: "Queens",
-    13: "Kings",
-    14: "Aces",
-  };
+
   hand.forEach((card) => {
     ranks.push(Number(card.rank));
     suits.push(card.suit);
@@ -20,29 +15,25 @@ const HandEvaluation = (hand) => {
 
   if (new Set(suits).size === 1) {
     if (sortedRanks[0] === 10) {
-      return ["a Royal Flush", 800];
+      return ["Royal Flush", 800];
     }
     if (
       sortedRanks[4] - sortedRanks[0] === 4 ||
       (sortedRanks[3] === 4 && sortedRanks[4] === 14)
     ) {
-      return ["a Straight Flush", 50];
+      return ["Straight Flush", 50];
     } else {
-      return ["a Flush", 5];
+      return ["Flush", 5];
     }
   } else {
     if (new Set(sortedRanks).size === 2) {
-      if (sortedRanks[0] !== sortedRanks[1]) {
-        return sortedRanks[1] > 10
-          ? [`Four of a Kind - ${cardList[sortedRanks[1]]}`, 25]
-          : [`Four of a Kind - ${[sortedRanks[1]]}s`, 25];
-      }
-      if (sortedRanks[3] !== sortedRanks[4]) {
-        return sortedRanks[3] > 10
-          ? [`Four of a Kind - ${cardList[sortedRanks[3]]}`, 25]
-          : [`Four of a Kind - ${[sortedRanks[3]]}s`, 25];
+      if (
+        sortedRanks[0] === sortedRanks[3] ||
+        sortedRanks[1] === sortedRanks[4]
+      ) {
+        return ["Four of a Kind", 25];
       } else {
-        return ["a Full House", 9];
+        return ["Full House", 9];
       }
     }
   }
@@ -52,7 +43,7 @@ const HandEvaluation = (hand) => {
       sortedRanks[4] - sortedRanks[0] === 4 ||
       (sortedRanks[3] === 4 && sortedRanks[4] === 14)
     ) {
-      return ["a Straight", 4];
+      return ["Straight", 4];
     }
   }
 
@@ -70,11 +61,11 @@ const HandEvaluation = (hand) => {
       sortedRanks[i] === sortedRanks[i + 1] &&
       sortedRanks[i] + sortedRanks[i + 1] >= 22
     ) {
-      return [`a Pair of ${cardList[sortedRanks[i]]}`, 1];
+      return ["Jacks or Better", 1];
     }
   }
 
-  return ["a losing hand", 0];
+  return ["", 0];
 };
 
 export default HandEvaluation;

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { toCash, kenoPays } from "../../Constants";
+import { toCash, kenoPays } from "../Utilities/KenoConstants";
+import { KenoContext } from "../Keno";
+import { CreditContext } from "../../App";
 
-const PayTable = ({ state }) => {
+const PayTable = () => {
+  const { state } = useContext(KenoContext);
+  const { creditState } = useContext(CreditContext);
   return (
     <Table>
       <h1>Numbers Picked: {state.picks}</h1>
@@ -15,7 +19,7 @@ const PayTable = ({ state }) => {
                   {`${hit}: ${toCash(
                     (kenoPays[state.picks][hit] *
                       state.wager *
-                      state.denom.multiplier) /
+                      creditState.denom.multiplier) /
                       100
                   )}`}
                 </h2>

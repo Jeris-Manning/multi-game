@@ -1,29 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-const CoinSelector = ({ state, dispatch }) => {
+import { CreditContext } from "../App";
+
+const CoinSelect = () => {
+  const { creditState, creditDispatch } = useContext(CreditContext);
   return (
     <ChooseCoinDiv>
       <h1>Coin:</h1>
       <CoinCircle
-        onClick={() => dispatch({ type: "CHOOSE_DENOM", payload: "dime" })}
-        fill={state.denom.name === "dime" ? true : false}>
+        onClick={() =>
+          creditDispatch({ type: "CHOOSE_DENOM", payload: "dime" })
+        }
+        fill={creditState.denom.name === "dime" ? true : false}>
         10¢
       </CoinCircle>
       <CoinCircle
-        onClick={() => dispatch({ type: "CHOOSE_DENOM", payload: "quarter" })}
-        fill={state.denom.name === "quarter" ? true : false}>
+        onClick={() =>
+          creditDispatch({ type: "CHOOSE_DENOM", payload: "quarter" })
+        }
+        fill={creditState.denom.name === "quarter" ? true : false}>
         25¢
       </CoinCircle>
       <CoinCircle
-        onClick={() => dispatch({ type: "CHOOSE_DENOM", payload: "dollar" })}
-        fill={state.denom.name === "dollar" ? true : false}>
+        onClick={() =>
+          creditDispatch({ type: "CHOOSE_DENOM", payload: "dollar" })
+        }
+        fill={creditState.denom.name === "dollar" ? true : false}>
         $1
       </CoinCircle>
     </ChooseCoinDiv>
   );
 };
 
-export default CoinSelector;
+export default CoinSelect;
 
 const ChooseCoinDiv = styled.div`
   display: flex;

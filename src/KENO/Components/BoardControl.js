@@ -1,40 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Board from "./Board";
 import DrawEngine from "./DrawEngine";
-import { toCash, kenoPays } from "../../Constants";
+import { toCash, kenoPays } from "../Utilities/KenoConstants";
+import { KenoContext } from "../Keno";
+import { CreditContext } from "../../App";
 
-const BoardControl = ({ state, dispatch }) => {
+const BoardControl = () => {
+  const { state, dispatch } = useContext(KenoContext);
+  const { creditState, creditDispatch } = useContext(CreditContext);
+
   let draws = [];
   let hits = 0;
   let payChart = {};
-
-  function resetPicks() {
-    dispatch({ type: "RESET_PICK_COUNT" });
-    dispatch({ type: "RESET_PICKS" });
-  }
-
-  function resetDraws() {
-    Object.keys(state.board).forEach((num) => {
-      dispatch({ type: "RESET_DRAWS", num });
-    });
-    hits = 0;
-  }
 
   function handleDrawButtonClick() {
     if (state.picks < 2) {
       return;
     }
-    if (state.wager * state.denom.multiplier > state.credit) {
+    if (state.wager * creditState.denom.multiplier > creditState.credit) {
       window.alert("Please Insert Cash to Play");
-    } else if (state.wager > state.credit) {
+    } else if (state.wager > creditState.credit) {
       window.alert("Please Lower Wager or Insert Cash to Play");
-      dispatch({ type: "BET_THE_REST" });
     } else {
       payChart = kenoPays[state.picks];
+      creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
       dispatch({ type: "START_DRAWING" });
       dispatch({ type: "RESET_WIN" });
-      resetDraws();
+      dispatch({ type: "RESET_DRAWS" });
 
       draws = DrawEngine();
 
@@ -58,15 +51,13 @@ const BoardControl = ({ state, dispatch }) => {
   }
 
   function settleDraw() {
-    console.log(hits, "NUMBER OF HITS?");
-    let win = payChart[hits] * state.wager;
-    if (win > 0) {
-      dispatch({ type: "SET_WIN", win });
-
+    let creditsWon = payChart[hits] * state.wager;
+    if (creditsWon > 0) {
+      const credits = creditsWon * creditState.denom.multiplier;
+      creditDispatch({ type: "ADD_CREDIT", credits });
+      dispatch({ type: "SET_WIN", creditsWon });
       dispatch({ type: "FINISH_DRAWING" });
     } else {
-      dispatch({ type: "SET_WIN", win });
-      console.log(`We only hit ${hits}. Maybe next time!`);
       dispatch({ type: "FINISH_DRAWING" });
     }
   }
@@ -75,9 +66,8 @@ const BoardControl = ({ state, dispatch }) => {
     if (state.drawing) {
       return;
     }
-    console.log(draws, "DRAWS");
     if (draws !== []) {
-      resetDraws();
+      dispatch({ type: "RESET_DRAWS" });
     }
 
     if (state.board[num].clicked) {
@@ -95,13 +85,15 @@ const BoardControl = ({ state, dispatch }) => {
     <BoardDiv>
       <WinPopper className={state.win > 0 ? "coolGuyClass" : "secret"}>
         <h1>YOU WIN!</h1>
-        <h2>{toCash((state.win * state.denom.multiplier) / 100)}</h2>
+        <h2>{toCash((state.win * creditState.denom.multiplier) / 100)}</h2>
       </WinPopper>
-      <Board state={state} handleClick={handleClick} />
+      <Board handleClick={handleClick} />
       <ButtonBox>
         <DrawBtn
           disabled={
-            state.wager * state.denom.multiplier > state.credit ? true : false
+            state.wager * creditState.denom.multiplier > creditState.credit
+              ? true
+              : false
           }
           onClick={() => {
             if (!state.drawing) {
@@ -110,10 +102,19 @@ const BoardControl = ({ state, dispatch }) => {
           }}>
           DRAW
         </DrawBtn>
-        <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
+        <ResetBtn
+          onClick={
+            state.drawing
+              ? null
+              : () => {
+                  dispatch({ type: "RESET_PICK_COUNT" });
+                  dispatch({ type: "RESET_PICKS" });
+                  dispatch({ type: "RESET_WIN" });
+                }
+          }>
           Clear Picks
         </ResetBtn>
-        {state.wager * state.denom.multiplier > state.credit ? (
+        {state.wager * creditState.denom.multiplier > creditState.credit ? (
           <h3>Not enough credits for selected wager</h3>
         ) : null}
       </ButtonBox>

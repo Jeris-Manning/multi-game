@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import CoinSelector from "./CoinSelector";
 import CreditDisplay from "./CreditDisplay";
 import CashSlot from "./CashSlot";
 import BetSize from "./BetSize";
+import CreditResult from "./CreditResult";
 
-const CreditControls = ({ state, dispatch }) => {
+const CreditControls = () => {
   return (
     <CreditControlDiv>
-      <BetSize state={state} dispatch={dispatch} />
-      <CoinSelector state={state} dispatch={dispatch} />
-
-      <CreditDisplay state={state} dispatch={dispatch} />
-      {/* <CashSlot state={state} dispatch={dispatch} /> */}
+      <BetSize />
+      <CreditResult />
+      <CreditDisplay />
+      {/* <CashSlot /> */}
     </CreditControlDiv>
   );
 };
@@ -24,5 +23,5 @@ const CreditControlDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // width: 60%;
+  width: 50%;
 `;

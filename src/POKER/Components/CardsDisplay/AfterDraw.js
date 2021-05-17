@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import HandDisplay from "./HandDisplay";
 import HandEvaluation from "./HandEvaluation";
+import { PokerContext } from "../../Poker";
+import { CreditContext } from "../../../App";
 
-const AfterDraw = ({ state, dispatch }) => {
-  const [finalHand, setFinalHand] = useState("");
+const AfterDraw = () => {
+  const { state, dispatch } = useContext(PokerContext);
+  const { creditState, creditDispatch } = useContext(CreditContext);
+
   let currentDeck = [...state.deck];
   let currentHand = [...state.hand];
 
@@ -44,21 +48,14 @@ const AfterDraw = ({ state, dispatch }) => {
       }
 
       let processedHand = HandEvaluation(currentHand);
-      let credits = processedHand[1] * state.wager * state.denom.multiplier;
-      setFinalHand("You have " + processedHand[0]);
-
-      dispatch({ type: "ADD_CREDIT", credits });
+      let credits =
+        processedHand[1] * state.wager * creditState.denom.multiplier;
+      dispatch({ type: "SET_FINAL_HAND_RANK", payload: [...processedHand] });
+      creditDispatch({ type: "ADD_CREDIT", credits });
     }
   }, [state.phase]);
 
-  return (
-    <HandDisplay
-      afterDeal={false}
-      state={state}
-      dispatch={dispatch}
-      finalHand={finalHand}
-    />
-  );
+  return <HandDisplay afterDeal={false} />;
 };
 
 export default AfterDraw;

@@ -1,25 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const GameSelect = ({ state, dispatch }) => {
+const GameSelect = () => {
   return (
     <div>
-      <Link
-        to="/poker"
-        onClick={() => {
-          dispatch({ type: "POKER_RESET" });
-        }}>
+      <Link to="/poker">
         <h2>Poker</h2>
       </Link>
-      <Link
-        to="/keno"
-        onClick={() => {
-          Object.keys(state.board).forEach((num) => {
-            dispatch({ type: "RESET_DRAWS", num });
-          });
-          dispatch({ type: "RESET_HITS" });
-          dispatch({ type: "RESET_WIN" });
-        }}>
+      <Link to="/keno">
         <h2>Keno</h2>
       </Link>
     </div>

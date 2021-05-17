@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CardsDisplay from "./Components/CardsDisplay/CardsDisplay";
 import DealButton from "./Components/DealButton";
 import PayTable from "./Components/PayTable/PayTable";
 import CreditControls from "./Components/CreditControls/CreditControls";
+import PokerReducer, { init } from "./Utility/PokerReducer";
 import GameHeader from "./Components/GameHeader/GameHeader.js";
 import "./Poker.css";
 
-function Poker({ state, dispatch }) {
+export const PokerContext = React.createContext(null);
 
+function Poker({ game }) {
+  const [state, dispatch] = useReducer(PokerReducer, init);
   return (
-    <PokerContainer>
-      <GameHeader state={state} />
-      <PayTable state={state} />
-      <CardsDisplay state={state} dispatch={dispatch} />
-      <CreditControls state={state} dispatch={dispatch} />
-      <DealButton state={state} dispatch={dispatch} />
-      <Link to= '/'>Game Selection Screen</Link>
-    </PokerContainer>
+    <PokerContext.Provider value={{ state, dispatch }}>
+      <PokerContainer>
+        <GameHeader game={game} />
+        <PayTable />
+        <CardsDisplay />
+        <CreditControls />
+        <DealButton />
+        <Link to="/">Game Selection Screen</Link>
+      </PokerContainer>
+    </PokerContext.Provider>
   );
 }
 

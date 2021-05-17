@@ -7,7 +7,7 @@ import Hill from "../assets/antHillTile.png";
 import Grass from "../assets/grassTile2.jpg";
 import Worm from "../assets/wormhole3.jpg";
 
-const Square = ({ drawn, clicked, num, state, handleClick }) => {
+const Square = ({ drawn, clicked, num, handleClick }) => {
   let art;
 
   if (clicked) {

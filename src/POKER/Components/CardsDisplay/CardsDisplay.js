@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import AfterDeal from "./AfterDeal";
 import AfterDraw from "./AfterDraw";
+import { PokerContext } from "../../Poker";
 
-const CardsDisplay = ({ state, dispatch }) => {
-
+const CardsDisplay = () => {
+  const { state } = useContext(PokerContext);
 
   return (
     <CardsDisplayDiv>
-      {state.phase !== 'afterDraw' ? (
-        <AfterDeal state={state} dispatch={dispatch} />
-      ) : (
-        <AfterDraw state={state} dispatch={dispatch} />
-      )}
+      {state.phase !== "afterDraw" ? <AfterDeal /> : <AfterDraw />}
     </CardsDisplayDiv>
   );
 };
@@ -22,6 +19,5 @@ export default CardsDisplay;
 const CardsDisplayDiv = styled.div`
   display: flex;
   justify-content: center;
-  // border: solid blue 3px;
   width: calc(100vw - 20px);
 `;

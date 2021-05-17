@@ -1,32 +1,49 @@
+import { initHand } from "./PokerConstants";
 
-import { jbPays } from "./Utility/payouts";
-import { coins } from "./Utility/constants";
-
-console.log(MasterReducer.masterState, "THE MASTER");
-
-const initHand = [
-  { idx: "blank", held: false, showBack: true },
-  { idx: "blank", held: false, showBack: true },
-  { idx: "blank", held: false, showBack: true },
-  { idx: "blank", held: false, showBack: true },
-  { idx: "blank", held: false, showBack: true },
-];
-
-export const initReducer = {
-  loadedGame: "Jacks or Better",
-  pays: jbPays,
+export const init = {
   wager: 1,
-  credit: 2000,
-  coin: coins["quarter"],
+  credit: 1000,
   showCash: false,
   phase: "begin",
   deck: [],
   hand: [...initHand],
-
+  finalHand: ["", 0],
 };
 
 const Reducer = function (state, action) {
   switch (action.type) {
+
+    case "BET_UP": {
+      if (state.wager === 5) {
+        return {
+          ...state,
+        };
+      }
+      return {
+        ...state,
+        wager: state.wager + 1,
+      };
+    }
+
+    case "BET_DOWN": {
+      if (state.wager === 1) {
+        return state;
+      }
+      return {
+        ...state,
+        wager: state.wager - 1,
+      };
+    }
+
+    case "POKER_RESET": {
+      return {
+        ...state,
+        phase: "begin",
+        deck: [],
+        hand: [...initHand],
+      };
+    }
+
     case "DEAL_HAND": {
       return {
         ...state,
@@ -47,7 +64,6 @@ const Reducer = function (state, action) {
       for (const card of currentCards) {
         card.showBack = false;
       }
-      console.log(currentCards, "THE DISPATCHED");
       return {
         ...state,
         hand: [...currentCards],
@@ -59,12 +75,14 @@ const Reducer = function (state, action) {
       let currentCard = action.payload.currentCard;
       currentCard.showBack = false;
       currentHand[action.payload.cardIdx] = { ...currentCard };
-
-      // console.log(currentCards, "THE DISPATCHED");
       return {
         ...state,
         hand: [...currentHand],
       };
+    }
+
+    case "SET_FINAL_HAND_RANK": {
+      return { ...state, finalHand: [...action.payload] };
     }
 
     case "TOGGLE_HOLD": {
@@ -89,45 +107,6 @@ const Reducer = function (state, action) {
         showCash: !state.showCash,
       };
     }
-
-    case "CHOOSE_DENOM": {
-      return {
-        ...state,
-        coin: coins[action.payload],
-      };
-    }
-
-    case "BET_UP": {
-      if (state.wager === 5) {
-        return state;
-      }
-      return {
-        ...state,
-        wager: state.wager + 1,
-      };
-    }
-
-    case "BET_DOWN": {
-      if (state.wager === 1) {
-        return state;
-      }
-      return {
-        ...state,
-        wager: state.wager - 1,
-      };
-    }
-
-    case "ADD_CREDIT":
-      return {
-        ...state,
-        credit: state.credit + action.credits,
-      };
-
-    case "SUB_CREDIT":
-      return {
-        ...state,
-        credit: state.credit - state.coin.multiplier * state.wager,
-      };
 
     default:
       return state;

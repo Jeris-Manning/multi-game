@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { PokerContext } from "../Poker";
+import { CreditContext } from "../../App";
 
-const DealButton = ({ state, dispatch }) => {
+const DealButton = () => {
+  const { state, dispatch } = useContext(PokerContext);
+  const { creditState, creditDispatch } = useContext(CreditContext);
+
   const handleDealButtonClick = () => {
-    dispatch({ type: "SUB_CREDIT" });
+    creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
     dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
   };
   const handleDrawButtonClick = () => {
@@ -11,12 +16,12 @@ const DealButton = ({ state, dispatch }) => {
   };
 
   const handleFirstClick = () => {
-    dispatch({ type: "SUB_CREDIT" });
+    creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
     dispatch({ type: "PHASE_CHANGE", payload: "firstDeal" });
   };
 
   if (
-    state.denom.multiplier * state.wager > state.credit &&
+    creditState.denom.multiplier * state.wager > creditState.credit &&
     state.phase !== "afterDeal"
   ) {
     return (

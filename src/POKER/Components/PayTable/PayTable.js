@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { toCash, jbPays } from "../../../Constants";
+import { PokerContext } from "../../Poker";
+import { CreditContext } from "../../../App";
+import { toCash, jbPays } from "../../Utility/PokerConstants";
 
-const PayTable = ({ state }) => {
+const PayTable = () => {
+  const { state } = useContext(PokerContext);
+  const { creditState } = useContext(CreditContext);
   let payArray = [];
   let pay = { ...jbPays };
   let replacer = /_/g;
@@ -18,27 +22,27 @@ const PayTable = ({ state }) => {
           <h3 className="handName">{hand[0]}</h3>
           <h3 className={coinCount === 1 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * state.denom.multiplier) / 100)
+              ? toCash((hand[1] * creditState.denom.multiplier) / 100)
               : hand[1]}
           </h3>
           <h3 className={coinCount === 2 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * state.denom.multiplier * 2) / 100)
+              ? toCash((hand[1] * creditState.denom.multiplier * 2) / 100)
               : hand[1] * 2}
           </h3>
           <h3 className={coinCount === 3 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * state.denom.multiplier * 3) / 100)
+              ? toCash((hand[1] * creditState.denom.multiplier * 3) / 100)
               : hand[1] * 3}
           </h3>
           <h3 className={coinCount === 4 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * state.denom.multiplier * 4) / 100)
+              ? toCash((hand[1] * creditState.denom.multiplier * 4) / 100)
               : hand[1] * 4}
           </h3>
           <h3 className={coinCount === 5 ? "highlight" : ""}>
             {state.showCash
-              ? toCash((hand[1] * state.denom.multiplier * 5) / 100)
+              ? toCash((hand[1] * creditState.denom.multiplier * 5) / 100)
               : hand[1] * 5}
           </h3>
         </>
@@ -56,13 +60,16 @@ const PayChart = styled.div`
   grid-template-rows: repeat(9, 24px);
   grid-auto-flow: row;
   gap: 0 20px;
+  margin-bottom: 15px;
+
   .highlight {
     background-color: yellow;
   }
+
   .handName {
     justify-self: start;
   }
-  margin-bottom: 15px;
+
   h3 {
     display: flex;
     align-items: center;

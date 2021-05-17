@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { toCash } from "../../Utility/constants";
+import React, { useContext } from "react";
+import { toCash } from "../../Utility/PokerConstants";
+import { CreditContext } from "../../../App";
+import { PokerContext } from "../../Poker";
 
-const CreditDisplay = ({ state, dispatch }) => {
-  const [credNum, setCredNum] = useState(0);
+const CreditDisplay = () => {
+  const { creditState } = useContext(CreditContext);
+  const { state, dispatch } = useContext(PokerContext);
 
-  useEffect(() => {
-    setCredNum(state.credit);
-  }, [state.credit]);
-
-  let cash = `Credit: ${toCash(credNum / 100)}`;
-  let credits = `Credits: ${credNum / state.denom.multiplier}`;
+  let cash = `Credit: ${toCash(creditState.credit / 100)}`;
+  let credits = `Credits: ${creditState.credit / creditState.denom.multiplier}`;
 
   return (
     <h1

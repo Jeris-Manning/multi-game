@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Card from "./Card";
+import { PokerContext } from "../../Poker";
 
-const HandDisplay = ({ state, dispatch, afterDeal, finalHand }) => {
+const HandDisplay = ({ afterDeal }) => {
+  const { state, dispatch } = useContext(PokerContext);
+
   return afterDeal === true ? (
     <PokerHandDiv>
       {state.hand.map((card, id) => {
@@ -23,19 +26,19 @@ const HandDisplay = ({ state, dispatch, afterDeal, finalHand }) => {
                 HELD
               </Held>
             </HeldDisplay>
-            <Card card={card} id={id} state={state} />
+            <Card card={card} id={id} />
           </CardDiv>
         );
       })}
     </PokerHandDiv>
   ) : (
     <HandDisplayDiv>
-      <AnnounceHandHeader>{finalHand}</AnnounceHandHeader>
       <PokerHandDiv>
         {state.hand.map((card, id) => {
           return (
             <CardDiv key={id}>
-              <Card card={card} id={id} state={state} />
+              <HeldDisplay />
+              <Card card={card} id={id} />
             </CardDiv>
           );
         })}
@@ -49,6 +52,9 @@ export default HandDisplay;
 const HandDisplayDiv = styled.div`
   display: flex;
   flex-direction: column;
+  .scram {
+    display: none;
+  }
 `;
 
 const PokerHandDiv = styled.div`
@@ -63,14 +69,6 @@ const PokerHandDiv = styled.div`
     width: 95%;
   }
 }
-`;
-
-const AnnounceHandHeader = styled.h1`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
 `;
 
 const CardDiv = styled.div`

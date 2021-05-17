@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import HandDisplay from "./HandDisplay";
+import { PokerContext } from "../../Poker";
 
-const AfterDeal = ({ state, dispatch }) => {
+const AfterDeal = () => {
+  const { state, dispatch } = useContext(PokerContext);
   const freshDeck = () => {
     const freshDeck = [];
     const suits = ["c", "d", "h", "s"];
@@ -60,6 +62,7 @@ const AfterDeal = ({ state, dispatch }) => {
       dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
     }
     if (state.phase === "afterDeal") {
+      dispatch({ type: "SET_FINAL_HAND_RANK", payload: ["", 0] });
       let mixedDeck = shuffleDeck(freshDeck());
       let postDeal = dealHand(mixedDeck);
       let afterDeal = { hand: postDeal[0], deck: postDeal[1] };
@@ -77,7 +80,7 @@ const AfterDeal = ({ state, dispatch }) => {
     }
   }, [state.phase, dispatch]);
 
-  return <HandDisplay afterDeal={true} state={state} dispatch={dispatch} />;
+  return <HandDisplay afterDeal={true} />;
 };
 
 export default AfterDeal;
