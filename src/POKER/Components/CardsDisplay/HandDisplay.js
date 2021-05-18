@@ -59,7 +59,7 @@ const HandDisplayDiv = styled.div`
 
 const PokerHandDiv = styled.div`
   width: calc(100vw - 20px);
-  max-width: 1100px;
+  max-width: 1150px;
   display: flex;
   justify-content: space-between;
   div {

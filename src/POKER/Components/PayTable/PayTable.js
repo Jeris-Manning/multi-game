@@ -69,13 +69,16 @@ const PayTable = () => {
 export default PayTable;
 
 const PayChart = styled.div`
+background: rgba(255,255,255,.7);
   display: grid;
   // justify-items: center;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: repeat(9, 24px);
   grid-auto-flow: row;
   gap: 4px 5px;
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
+  padding: 10px 0 10px 20px;
+  border-radius: 8px;
 
   .highlight {
     background-color: rgba(0, 200, 0, 0.3);

@@ -76,6 +76,7 @@ const CoinCountDiv = styled.div`
   .arrowColumn {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     h2 {
       margin: 10px 0;
