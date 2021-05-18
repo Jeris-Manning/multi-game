@@ -79,7 +79,7 @@ const CoinCountDiv = styled.div`
     justify-content: center;
     align-items: center;
     h2 {
-      margin: 10px 0;
+      margin: 2px 0;
     }
     button {
       display: flex;

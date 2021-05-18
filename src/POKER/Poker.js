@@ -22,8 +22,8 @@ function Poker({ game }) {
         {/* <PayTable /> */}
         <CardsDisplay />
         <CreditControls />
-        <DealButton />
-        <Link to="/">Game Selection Screen</Link>
+        {/* <DealButton /> */}
+        {/* <Link to="/">Game Selection Screen</Link> */}
       </PokerContainer>
     </PokerContext.Provider>
   );

@@ -62,6 +62,7 @@ const PokerHandDiv = styled.div`
   max-width: 1150px;
   display: flex;
   justify-content: space-between;
+  z-index: 24;
   div {
     width: 100%;
   }

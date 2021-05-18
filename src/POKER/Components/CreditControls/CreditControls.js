@@ -4,12 +4,16 @@ import CreditDisplay from "./CreditDisplay";
 import CashSlot from "./CashSlot";
 import BetSize from "./BetSize";
 import CreditResult from "./CreditResult";
+import DealButton from "../DealButton";
+import FrogButton from "./FrogButton";
 
 const CreditControls = () => {
   return (
     <CreditControlDiv>
       <BetSize />
-      <CreditResult />
+      {/* <CreditResult /> */}
+      {/* <DealButton /> */}
+      <FrogButton />
       <CreditDisplay />
       {/* <CashSlot /> */}
     </CreditControlDiv>
