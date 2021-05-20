@@ -32,6 +32,7 @@ const AfterDraw = () => {
   }
 
   useEffect(() => {
+    console.log(state.phase);
     if (state.phase === "afterDraw") {
       dispatch({
         type: "DRAW_HAND",

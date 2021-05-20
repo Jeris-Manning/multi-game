@@ -30,6 +30,7 @@ const BetSize = () => {
         </UpArrow>
         {state.showCash ? (
           <h2
+            className="wagerCount"
             onClick={() => {
               dispatch({ type: "SHOW_CASH" });
             }}>
@@ -37,6 +38,7 @@ const BetSize = () => {
           </h2>
         ) : (
           <h2
+            className="wagerCount"
             onClick={() => {
               dispatch({ type: "SHOW_CASH" });
             }}>
@@ -60,21 +62,27 @@ export default BetSize;
 const CoinCountDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
+  width: 250px;
+  user-select: none;
 
-  h2 {
+
+  .wagerCount {
+    cursor: pointer;
     width: 85px;
     text-align: center;
-        color: #272b23;
+    color: #272b23;
   }
 
   .betLabel {
-    width: 60px;
+    cursor: pointer;
+    color: #272b23;
   }
 
   .arrowColumn {
     display: flex;
+    margin-left: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -108,5 +116,3 @@ const DownArrow = styled.button`
   border-width: 35px 22.5px 0 22.5px;
   border-color: #bd1515 transparent transparent transparent;
 `;
-
-// 197 x 159

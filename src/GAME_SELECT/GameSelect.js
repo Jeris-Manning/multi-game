@@ -11,7 +11,7 @@ const GameSelect = () => {
         <h2>Keno</h2>
       </Link>
 
-      <h1>CHANGING BET CHANGES WINNER AMOUNT POPUP</h1>
+      <h2>MAKE FROG SIGN ABSOLUTE AND FLEXY FOR NICE TEXT</h2>
     </div>
   );
 };

@@ -1,21 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import CreditDisplay from "./CreditDisplay";
-import CashSlot from "./CashSlot";
 import BetSize from "./BetSize";
-import CreditResult from "./CreditResult";
-import DealButton from "../DealButton";
-import FrogButton from "./FrogButton";
+import DealButton from "./DealButton";
+
 
 const CreditControls = () => {
   return (
     <CreditControlDiv>
       <BetSize />
-      {/* <CreditResult /> */}
-      {/* <DealButton /> */}
-      <FrogButton />
+      <DealButton />
       <CreditDisplay />
-      {/* <CashSlot /> */}
     </CreditControlDiv>
   );
 };
@@ -27,5 +22,5 @@ const CreditControlDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 70%;
 `;

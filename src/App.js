@@ -16,16 +16,19 @@ function App() {
     <CreditContext.Provider value={{ creditState, creditDispatch }}>
       <Switch>
         <Route exact path="/">
-          <>
-            <GameSelect />
-            <CoinSelect />
-          </>
+          <Poker />
         </Route>
         <Route path="/poker">
           <Poker game="Jacks or Better" />
         </Route>
         <Route path="/keno">
           <Keno />
+        </Route>
+        <Route path="/addcredit">
+          <>
+            <GameSelect />
+            <CoinSelect />
+          </>
         </Route>
       </Switch>
     </CreditContext.Provider>

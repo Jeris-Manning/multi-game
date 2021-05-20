@@ -21,7 +21,7 @@ const denoms = {
 
 export const init = {
   denom: { ...denoms.quarter },
-  credit: 1000,
+  credit: 2000,
 };
 
 const CreditReducer = function (state, action) {

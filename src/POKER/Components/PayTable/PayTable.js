@@ -69,15 +69,13 @@ const PayTable = () => {
 export default PayTable;
 
 const PayChart = styled.div`
-background: rgba(255,255,255,.7);
+  background: rgba(255, 255, 255, 0.7);
   display: grid;
-  // justify-items: center;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 18fr 7fr 7fr 7fr 7fr 7fr;
   grid-template-rows: repeat(9, 24px);
   grid-auto-flow: row;
   gap: 4px 5px;
-  // margin-bottom: 5px;
-  padding: 10px 0 10px 20px;
+  padding: 10px 20px 10px 20px;
   border-radius: 8px;
 
   .highlight {
@@ -85,7 +83,8 @@ background: rgba(255,255,255,.7);
   }
 
   .handName {
-    justify-self: start;
+    justify-self: flex-start;
+    margin-right: 10px;
   }
 
   h2,

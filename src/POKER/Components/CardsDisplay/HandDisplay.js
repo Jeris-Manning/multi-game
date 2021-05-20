@@ -20,13 +20,13 @@ const HandDisplay = ({ afterDeal }) => {
                 payload: { holdState: holdState, id: id },
               });
             }}>
+            <Card card={card} id={id} />
             <HeldDisplay>
               <Held
                 className={card.held && state.phase !== "begin" ? "" : "scram"}>
                 HELD
               </Held>
             </HeldDisplay>
-            <Card card={card} id={id} />
           </CardDiv>
         );
       })}
@@ -37,8 +37,8 @@ const HandDisplay = ({ afterDeal }) => {
         {state.hand.map((card, id) => {
           return (
             <CardDiv key={id}>
-              <HeldDisplay />
               <Card card={card} id={id} />
+              <HeldDisplay />
             </CardDiv>
           );
         })}
@@ -63,9 +63,7 @@ const PokerHandDiv = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 24;
-  div {
-    width: 100%;
-  }
+
   @media (max-width: 550px) {
     width: 95%;
   }
@@ -73,10 +71,12 @@ const PokerHandDiv = styled.div`
 `;
 
 const CardDiv = styled.div`
+  position: relative;
   margin: 0 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   @media (max-width: 550px) {
     margin: 0 1px;
@@ -84,17 +84,27 @@ const CardDiv = styled.div`
 `;
 
 const HeldDisplay = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  text-align: center;
+  margin-top: 10px;
   height: 50px;
+  user-select: none;
+
 `;
 
 const Held = styled.div`
-  color: green;
-  font-weight: 700;
+  color: #00fa70;
+  text-shadow: 0px 1px 3px black;
+  font-family: bree, sans-serif;
+  font-weight: 600;
+  font-style: normal;
   font-size: 2.1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  border: solid 2px black;
   margin: 0;
-  padding: 0;
+  padding: 1px 15px 6px;
 `;

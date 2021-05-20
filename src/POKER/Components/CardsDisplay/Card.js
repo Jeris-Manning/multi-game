@@ -4,7 +4,7 @@ import { Cards } from "../../Assets/Cards";
 
 const Card = ({ card }) => {
   return (
-    <CardSlot>
+    <CardSlot held={card.held}>
       <img
         className={card.showBack ? "scram" : ""}
         src={Cards[card?.idx]}
@@ -24,7 +24,11 @@ const CardSlot = styled.div`
   height: 288px;
   width: 100%;
   background-image: url(${Cards["back"]});
+
+
   img {
     width: 100%;
+    filter: ${(props) =>
+      props.held ? "drop-shadow(4px 4px 2px #bd1515) drop-shadow(-4px -4px 4px #bd1515)" : "none"};
   }
 `;
