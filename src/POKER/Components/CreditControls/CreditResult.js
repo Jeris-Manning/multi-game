@@ -14,7 +14,7 @@ const CreditResult = () => {
         {state.showCash
           ? toCash(state.finalHand[1] * state.wager * creditState.denom.value)
           : `${state.finalHand[1] * state.wager} ${
-              state.finalHand[1] === 1 && state.wager == 1
+              state.finalHand[1] === 1 && state.wager === 1
                 ? " Credit"
                 : " Credits"
             }
