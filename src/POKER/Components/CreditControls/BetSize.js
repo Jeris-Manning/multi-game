@@ -64,7 +64,8 @@ const CoinCountDiv = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  width: 250px;
+  // width: 250px;
+  width: 30%;
   user-select: none;
 
 

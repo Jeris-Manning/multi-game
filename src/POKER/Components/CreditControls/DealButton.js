@@ -57,16 +57,18 @@ const DealButton = () => {
 export default DealButton;
 
 const FrogButtonWrap = styled.div`
-  align-self: flex-end;
+  // align-self: flex-end;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 30%;
+  border: solid yellow 2px;
 
   h3 {
     text-align: center;
     position: absolute;
     top: 90px;
-    width: 400px;
+    // width: 400px;
   }
 `;

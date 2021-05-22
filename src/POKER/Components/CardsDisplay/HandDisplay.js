@@ -58,14 +58,18 @@ const HandDisplayDiv = styled.div`
 `;
 
 const PokerHandDiv = styled.div`
-  width: calc(100vw - 20px);
+  // width: calc(100vw - 20px);
+  width: 100%;
+  height: 100%;
+  // width: auto;
+  border: blue 2px solid;
   max-width: 1150px;
   display: flex;
   justify-content: space-between;
   z-index: 24;
 
   @media (max-width: 550px) {
-    width: 95%;
+    // width: 95%;
   }
 }
 `;
@@ -77,6 +81,8 @@ const CardDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 100%;
+  border: red solid 2px;
 
   @media (max-width: 550px) {
     margin: 0 1px;
@@ -90,21 +96,31 @@ const HeldDisplay = styled.div`
   align-items: center;
   text-align: center;
   margin-top: 10px;
-  height: 50px;
+  // height: 50px;
   user-select: none;
-
 `;
 
-const Held = styled.div`
+const Held = styled.h2`
   color: #00fa70;
-  text-shadow: 0px 1px 3px black;
-  font-family: bree, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 2.1rem;
+  // text-shadow: 0px 1px 3px black;
+  // font-family: bree, sans-serif;
+  // font-weight: 600;
+  // font-style: normal;
+  font-family: 'Open Sans', sans-serif;
+  // font-size: 2rem;
+  font-size: clamp(1.4rem, 1rem + 1.25vw, 2.5rem);
+  // font-size: 1.4rem;
+  // font-size: 2.5rem;
+  font-weight: 700;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   border: solid 2px black;
   margin: 0;
-  padding: 1px 15px 6px;
+  // vertical-align: middle;
+  // line-height: .8;
+  // padding: 1px 15px 6px;
+  @media (max-width: 1200px) {
+  //   font-size: 1.5rem;
+  //   padding: 2px 2px;
+  // }
 `;

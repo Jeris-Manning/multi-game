@@ -26,6 +26,6 @@ export default CreditDisplay;
 const CreditDisplayHeader = styled.h2`
 user-select: none;
 cursor: pointer;
-width: 250px;
+width: 30%;
 
 `

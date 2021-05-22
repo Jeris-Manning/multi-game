@@ -29,16 +29,31 @@ const StyledHeader = styled.div`
   align-items: center;
   margin: 20px 0;
   width: 100%;
+  @media (max-width: 1200px) {
+    justify-content: space-evenly;
+  }
+  @media (max-width: 760px) {
+    width: auto;
+  }
   .jack {
     margin-left: 20px;
     height: 325px;
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
   .picket {
-    margin-right: 20px;
     height: 325px;
+    @media (max-width: 760px) {
+      display: none;
+    }
   }
   .picketDiv {
     position: relative;
+    margin-right: 20px;
+    @media (max-width: 1200px) {
+      margin: 0;
+    }
   }
   .signSurface {
     height: 85px;
@@ -50,17 +65,15 @@ const StyledHeader = styled.div`
     align-items: center;
     top: 13px;
     left: 55px;
+    @media (max-width: 760px) {
+      display: none;
+    }
     h1 {
-      font-family: bree, sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     h2 {
-      font-family: bree, sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 1.9rem;
+      font-size: 2.3rem;
+      font-weight: 400;
     }
   }
 `;

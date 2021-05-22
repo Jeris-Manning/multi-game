@@ -20,46 +20,46 @@ const PayTable = () => {
       {payArray.map((hand, idx) => (
         <>
           <h3 className="handName">{hand[0]}</h3>
-          <h4 className={coinCount === 1 ? "highlight" : ""}>
+          <h3 className={coinCount === 1 ? "highlight" : ""}>
             {state.showCash
               ? idx === 0
                 ? "$" +
                   noPennies((hand[1] * creditState.denom.multiplier) / 100)
                 : toCash((hand[1] * creditState.denom.multiplier) / 100)
               : hand[1]}
-          </h4>
-          <h4 className={coinCount === 2 ? "highlight" : ""}>
+          </h3>
+          <h3 className={coinCount === 2 ? "highlight" : ""}>
             {state.showCash
               ? idx === 0
                 ? "$" +
                   noPennies((hand[1] * creditState.denom.multiplier * 2) / 100)
                 : toCash((hand[1] * creditState.denom.multiplier * 2) / 100)
               : hand[1] * 2}
-          </h4>
-          <h4 className={coinCount === 3 ? "highlight" : ""}>
+          </h3>
+          <h3 className={coinCount === 3 ? "highlight" : ""}>
             {state.showCash
               ? idx === 0
                 ? "$" +
                   noPennies((hand[1] * creditState.denom.multiplier * 3) / 100)
                 : toCash((hand[1] * creditState.denom.multiplier * 3) / 100)
               : hand[1] * 3}
-          </h4>
-          <h4 className={coinCount === 4 ? "highlight" : ""}>
+          </h3>
+          <h3 className={coinCount === 4 ? "highlight" : ""}>
             {state.showCash
               ? idx === 0
                 ? "$" +
                   noPennies((hand[1] * creditState.denom.multiplier * 4) / 100)
                 : toCash((hand[1] * creditState.denom.multiplier * 4) / 100)
               : hand[1] * 4}
-          </h4>
-          <h4 className={coinCount === 5 ? "highlight" : ""}>
+          </h3>
+          <h3 className={coinCount === 5 ? "highlight" : ""}>
             {state.showCash
               ? idx === 0
                 ? "$" +
                   noPennies((hand[1] * creditState.denom.multiplier * 5) / 100)
                 : toCash((hand[1] * creditState.denom.multiplier * 5) / 100)
               : hand[1] * 5}
-          </h4>
+          </h3>
         </>
       ))}
     </PayChart>
@@ -75,8 +75,15 @@ const PayChart = styled.div`
   grid-template-rows: repeat(9, 24px);
   grid-auto-flow: row;
   gap: 4px 5px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
+  // font-family: newbery-sans-pro, sans-serif;
+
+
+
+  @media (max-width: 1200px) {
+    // margin-left: 20px;
+  }
 
   .highlight {
     background-color: rgba(0, 200, 0, 0.3);
@@ -84,13 +91,15 @@ const PayChart = styled.div`
 
   .handName {
     justify-self: flex-start;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   h2,
-  h4 {
+  h3 {
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
     padding: 3px;
+    font-weight: 700;
   }
 `;

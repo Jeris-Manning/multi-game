@@ -19,5 +19,9 @@ export default CardsDisplay;
 const CardsDisplayDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: calc(100vw - 20px);
+  width: 100%;
+  height: 100%;
+  min-width: 50px;
+  min-height: 100px;
+  // border: yellow solid 2px;
 `;
