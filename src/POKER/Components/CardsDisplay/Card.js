@@ -23,7 +23,6 @@ const Card = ({ card }) => {
 export default Card;
 
 const CardSlot = styled.div`
-  border: black solid 5px;
   max-width: 206px;
   max-height: 288px;
   height: 100%;

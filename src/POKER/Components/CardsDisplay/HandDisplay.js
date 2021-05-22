@@ -62,7 +62,6 @@ const PokerHandDiv = styled.div`
   width: 100%;
   height: 100%;
   // width: auto;
-  border: blue 2px solid;
   max-width: 1150px;
   display: flex;
   justify-content: space-between;
@@ -82,7 +81,7 @@ const CardDiv = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  border: red solid 2px;
+
 
   @media (max-width: 550px) {
     margin: 0 1px;

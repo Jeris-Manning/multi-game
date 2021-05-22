@@ -63,7 +63,6 @@ const FrogButtonWrap = styled.div`
   flex-direction: column;
   align-items: center;
   width: 30%;
-  border: solid yellow 2px;
 
   h3 {
     text-align: center;

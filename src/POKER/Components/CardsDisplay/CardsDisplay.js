@@ -23,5 +23,4 @@ const CardsDisplayDiv = styled.div`
   height: 100%;
   min-width: 50px;
   min-height: 100px;
-  // border: yellow solid 2px;
 `;
