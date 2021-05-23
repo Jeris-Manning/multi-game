@@ -20,10 +20,10 @@ export default CreditControls;
 const CreditControlDiv = styled.div`
   margin-top: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 900px;
   @media (max-width: 800px) {
-    width: 90%;
+    width: 98%;
   }
 `;

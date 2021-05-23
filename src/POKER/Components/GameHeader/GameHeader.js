@@ -25,6 +25,7 @@ export default GameHeader;
 const StyledHeader = styled.div`
   user-select: none;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
@@ -34,6 +35,7 @@ const StyledHeader = styled.div`
   }
   @media (max-width: 760px) {
     width: auto;
+    flex-direction: row-reverse;
   }
   .jack {
     margin-left: 20px;
@@ -45,7 +47,7 @@ const StyledHeader = styled.div`
   .picket {
     height: 325px;
     @media (max-width: 760px) {
-      display: none;
+      // display: none;
     }
   }
   .picketDiv {
@@ -66,7 +68,7 @@ const StyledHeader = styled.div`
     top: 13px;
     left: 55px;
     @media (max-width: 760px) {
-      display: none;
+      // display: none;
     }
     h1 {
       font-size: 3rem;

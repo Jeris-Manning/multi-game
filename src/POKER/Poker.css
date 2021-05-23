@@ -1,55 +1,18 @@
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
 h1,
-h2,
-h3,
-h4 {
-  /* font-family: hobeaux, sans-serif;
-  font-weight: 500;
-  font-style: normal; */
-
-  /* font-family: bree, sans-serif;
-
-  font-style: normal; */
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-
+h2 {
+  font-family: "Boogaloo", cursive;
+  font-weight: 400;
   color: #272b23;
 }
-h1 {
-  font-family: 'Boogaloo', cursive;
-  font-weight: 400;
-  font-size: 4rem;
-}
-h2 {
-  font-family: 'Boogaloo', cursive;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.1rem;
-}
-h4 {
-  font-size: 1.25rem;
-}
-
-/* html {
-  background-color: #d8f0c1;
-  background-image: url('./Assets/miscImages/invertFlyTile.png');
-} */
-
 .scram {
   display: none;
 }
-
-/* font-family: hobeaux, sans-serif;
-font-weight: 700;
-font-style: normal;
-
-
-font-family: bree, sans-serif;
-font-weight: 600;
-font-style: normal;
-
-font-family: newbery-sans-pro, sans-serif;
-font-weight: 700;
-font-style: normal; */
