@@ -24,8 +24,14 @@ const CreditDisplay = () => {
 export default CreditDisplay;
 
 const CreditDisplayHeader = styled.h2`
-user-select: none;
-cursor: pointer;
-// width: 30%;
-
-`
+  user-select: none;
+  cursor: pointer;
+  // width: 30%;
+  font-size: 4rem;
+  @media (max-width: 1000px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+`;

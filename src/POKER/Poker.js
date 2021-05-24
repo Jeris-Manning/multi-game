@@ -4,6 +4,7 @@ import CardsDisplay from "./Components/CardsDisplay/CardsDisplay";
 import CreditControls from "./Components/CreditControls/CreditControls";
 import PokerReducer, { init } from "./Utility/PokerReducer";
 import GameHeader from "./Components/GameHeader/GameHeader.js";
+import GameBanner from "./Components/GameHeader/GameBanner.js";
 import wallFlies from "./Assets/miscImages/fliesTile.png";
 import invertFlies from "./Assets/miscImages/invertFlyTile.png";
 import "./Poker.css";
@@ -16,6 +17,7 @@ function Poker() {
     <PokerContext.Provider value={{ state, dispatch }}>
       <AppWrap>
         <PokerContainer>
+          <GameBanner />
           <GameHeader />
           <CardsDisplay />
           <CreditControls />
@@ -38,6 +40,7 @@ const PokerContainer = styled.div`
   background-image: url(${wallFlies});
   min-height: 100vh;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   width: 1200px;
@@ -45,7 +48,7 @@ const PokerContainer = styled.div`
   border-right: black 5px solid;
   margin: 0 auto;
   @media (max-width: 1210px) {
-    width: 100vw;
+    width: 98vw;
     margin: 0;
     padding: 0;
     border: none;

@@ -8,6 +8,7 @@ const PayTable = () => {
   const { state } = useContext(PokerContext);
   const { creditState } = useContext(CreditContext);
   let payArray = [];
+  let handTypes = [];
   let pay = { ...jbPays };
   let replacer = /_/g;
   for (let [rawHand, value] of Object.entries(pay)) {
@@ -15,52 +16,37 @@ const PayTable = () => {
     payArray.push([replacedHand, value]);
   }
   let coinCount = state.wager;
+
+  const divMaker = (handValue) => {
+    let coinVals = [];
+    for (let c = 1; c < 6; c++) {
+      coinVals.push(
+        <h3 className={coinCount === c ? "highlight" : "notBet"}>
+          {state.showCash
+            ? c === 1
+              ? "$" +
+                noPennies((handValue * creditState.denom.multiplier * c) / 100)
+              : toCash((handValue * creditState.denom.multiplier * c) / 100)
+            : handValue * c}
+        </h3>
+      );
+    }
+    return coinVals;
+  };
+
+  for (let i = 0; i < payArray.length; i++) {
+    handTypes.push(
+      <>
+        <h3 className="handName">{payArray[i][0]}</h3>
+        {divMaker(payArray[i][1])}
+      </>
+    );
+  }
+
   return (
     <PayChart>
-      {payArray.map((hand, idx) => (
-        <>
-          <h3 className="handName">{hand[0]}</h3>
-          <h3 className={coinCount === 1 ? "highlight" : "notBet"}>
-            {state.showCash
-              ? idx === 0
-                ? "$" +
-                  noPennies((hand[1] * creditState.denom.multiplier) / 100)
-                : toCash((hand[1] * creditState.denom.multiplier) / 100)
-              : hand[1]}
-          </h3>
-          <h3 className={coinCount === 2 ? "highlight" : "notBet"}>
-            {state.showCash
-              ? idx === 0
-                ? "$" +
-                  noPennies((hand[1] * creditState.denom.multiplier * 2) / 100)
-                : toCash((hand[1] * creditState.denom.multiplier * 2) / 100)
-              : hand[1] * 2}
-          </h3>
-          <h3 className={coinCount === 3 ? "highlight" : "notBet"}>
-            {state.showCash
-              ? idx === 0
-                ? "$" +
-                  noPennies((hand[1] * creditState.denom.multiplier * 3) / 100)
-                : toCash((hand[1] * creditState.denom.multiplier * 3) / 100)
-              : hand[1] * 3}
-          </h3>
-          <h3 className={coinCount === 4 ? "highlight" : "notBet"}>
-            {state.showCash
-              ? idx === 0
-                ? "$" +
-                  noPennies((hand[1] * creditState.denom.multiplier * 4) / 100)
-                : toCash((hand[1] * creditState.denom.multiplier * 4) / 100)
-              : hand[1] * 4}
-          </h3>
-          <h3 className={coinCount === 5 ? "highlight" : "notBet"}>
-            {state.showCash
-              ? idx === 0
-                ? "$" +
-                  noPennies((hand[1] * creditState.denom.multiplier * 5) / 100)
-                : toCash((hand[1] * creditState.denom.multiplier * 5) / 100)
-              : hand[1] * 5}
-          </h3>
-        </>
+      {handTypes.map((hand, idx) => (
+        <>{hand}</>
       ))}
     </PayChart>
   );
@@ -72,7 +58,7 @@ const PayChart = styled.div`
   background: rgba(255, 255, 255, 0.7);
   display: grid;
   grid-template-columns: 18fr 7fr 7fr 7fr 7fr 7fr;
-  grid-template-rows: repeat(9, 24px);
+  grid-template-rows: repeat(9, 20px);
   grid-auto-flow: row;
   gap: 4px 5px;
   padding: 10px 15px;
@@ -88,9 +74,13 @@ const PayChart = styled.div`
     margin-right: 5px;
   }
 
-  h2,
+  h3:nth-child(2) {
+    background: yellow;
+  }
+
   h3 {
-    font-size: 1.15rem;
+    font-size: 1.8rem;
+    // font-size: 1rem;
     display: flex;
     align-items: center;
     padding: 3px;
