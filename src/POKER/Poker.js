@@ -30,7 +30,7 @@ function Poker() {
 export default Poker;
 
 const AppWrap = styled.div`
-  width: 100vw;
+  // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
 `;
@@ -43,12 +43,12 @@ const PokerContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
+  max-width: 1200px;
   border-left: black 5px solid;
   border-right: black 5px solid;
   margin: 0 auto;
   @media (max-width: 1210px) {
-    width: 98vw;
+    // width: 98vw;
     margin: 0;
     padding: 0;
     border: none;

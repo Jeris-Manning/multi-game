@@ -27,7 +27,6 @@ const CreditControlDiv = styled.div`
   align-items: center;
   position: relative;
   bottom: 0px;
-  // width: 900px;
   width: 100%;
   padding: 20px;
   border-top: black 5px solid;

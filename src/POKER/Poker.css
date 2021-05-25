@@ -1,13 +1,15 @@
 html {
   font-size: 62.5%;
-  min-height: 100vh;
-  /* min-width: 100vw; */
+
 
 }
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
+  width: 100vw;
   max-width: 100%;
+  min-height: 100vh;
+  /* min-width: 100vw; */
 }
 h1,
 h2 {

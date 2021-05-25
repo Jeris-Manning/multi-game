@@ -50,8 +50,10 @@ const HandDisplay = ({ afterDeal }) => {
 export default HandDisplay;
 
 const HandDisplayDiv = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   .scram {
     display: none;
   }
@@ -82,7 +84,6 @@ const CardDiv = styled.div`
   width: 100%;
   height: 100%;
 
-
   @media (max-width: 550px) {
     margin: 0 1px;
   }
@@ -95,7 +96,7 @@ const HeldDisplay = styled.div`
   align-items: center;
   text-align: center;
   margin-top: 10px;
-  // height: 50px;
+  height: clamp(1.4rem, 1rem + 1.25vw, 2.5rem);
   user-select: none;
 `;
 

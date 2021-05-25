@@ -20,16 +20,34 @@ const PayTable = () => {
   const divMaker = (handValue) => {
     let coinVals = [];
     for (let c = 1; c < 6; c++) {
-      coinVals.push(
-        <h3 className={coinCount === c ? "highlight" : "notBet"}>
-          {state.showCash
-            ? c === 1
-              ? "$" +
-                noPennies((handValue * creditState.denom.multiplier * c) / 100)
-              : toCash((handValue * creditState.denom.multiplier * c) / 100)
-            : handValue * c}
-        </h3>
-      );
+      c < 5
+        ? coinVals.push(
+            <h3 className={coinCount === c ? "highlight" : "notBet"}>
+              {state.showCash
+                ? c === 1
+                  ? "$" +
+                    noPennies(
+                      (handValue * creditState.denom.multiplier * c) / 100
+                    )
+                  : toCash((handValue * creditState.denom.multiplier * c) / 100)
+                : handValue * c}
+            </h3>
+          )
+        : coinVals.push(
+            <h3
+              className={
+                coinCount === c ? "highlight lastCol" : "notBet lastCol"
+              }>
+              {state.showCash
+                ? c === 1
+                  ? "$" +
+                    noPennies(
+                      (handValue * creditState.denom.multiplier * c) / 100
+                    )
+                  : toCash((handValue * creditState.denom.multiplier * c) / 100)
+                : handValue * c}
+            </h3>
+          );
     }
     return coinVals;
   };
@@ -42,11 +60,11 @@ const PayTable = () => {
       </>
     );
   }
-
+  console.log(handTypes[2], "HAND TYPES");
   return (
     <PayChart>
       {handTypes.map((hand, idx) => (
-        <>{hand}</>
+        <PayRow striped={idx % 2 === 0 ? false : true}>{hand}</PayRow>
       ))}
     </PayChart>
   );
@@ -54,43 +72,57 @@ const PayTable = () => {
 
 export default PayTable;
 
+const PayRow = styled.div`
+  display: contents;
+
+  h3 {
+    margin-left: -5px;
+    background: ${(props) => (props.striped ? "#ffe4b9" : "none")};
+  }
+`;
+
 const PayChart = styled.div`
-  background: rgba(255, 255, 255, 0.7);
+  background-color: #ffc669;
   display: grid;
   grid-template-columns: 18fr 7fr 7fr 7fr 7fr 7fr;
   grid-template-rows: repeat(9, 20px);
   grid-auto-flow: row;
   gap: 4px 5px;
-  padding: 10px 15px;
+  padding: 5px 2px 7px 5px;
   border-radius: 8px;
-  // font-family: newbery-sans-pro, sans-serif;
-
+  min-width: 250px;
+  color: #423829;
   .highlight {
-    background-color: rgba(0, 200, 0, 0.3);
-  }
-
-  .handName {
-    justify-self: flex-start;
-    margin-right: 5px;
-  }
-
-  h3:nth-child(2) {
-    background: yellow;
+    color: rgba(25, 66, 211, 0.9);
+    text-shadow: 1px 1px #888;
+    font-weight: 700;
   }
 
   h3 {
     font-size: 1.8rem;
-    // font-size: 1rem;
     display: flex;
     align-items: center;
-    padding: 3px;
+    padding: 2px 0 2px 5px;
     font-weight: 700;
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       padding: 0;
     }
   }
 
-  @media (max-width: 800px) {
+  .handName {
+    justify-self: flex-start;
+    // padding-right: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  .lastCol {
+    padding-right: 20px;
+    margin-right: -2px;
+  }
+
+  @media (max-width: 850px) {
     grid-template-columns: 18fr 7fr;
     gap: 1px 1px;
     .notBet {
