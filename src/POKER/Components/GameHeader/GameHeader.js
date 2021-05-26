@@ -8,16 +8,13 @@ import CreditResult from "../CreditControls/CreditResult";
 const GameHeader = () => {
   return (
     <StyledHeader>
-      {/* <div className="jack">
-        <img src={jackFrog} alt="" />
-      </div> */}
       <div className="picketDiv">
         <div className="signSurface">
           <CreditResult />
         </div>
         <img className="picket" src={signFrog} alt="" />
       </div>
-      <PayTable className="tabler" />
+      <PayTable />
     </StyledHeader>
   );
 };
@@ -25,6 +22,7 @@ const GameHeader = () => {
 export default GameHeader;
 
 const StyledHeader = styled.div`
+  overflow-x: hidden;
   user-select: none;
   display: flex;
   flex-direction: row;
@@ -39,48 +37,33 @@ const StyledHeader = styled.div`
   background-size: cover;
   background-position: bottom;
 
-  @media (max-width: 1000px) {
-    width: 98%;
-  }
-
   .picketDiv {
     position: relative;
     align-self: flex-end;
-    // @media (max-width: 1200px) {
-    //   margin: 0;
-    // }
   }
 
   .picket {
     width: 300px;
-    // height: 250px;
-    @media (max-width: 620px) {
-      width: 225px;
-    }
   }
 
   .signSurface {
-    height: 100px;
-    width: 230px;
-    background-color: rgba(255, 255, 255, .3);
-    border-radius: 12px;
+    height: 125px;
+    width: 253px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: solid 2px #423829;
+    border-radius: 8px;
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    top: 13px;
-    left: 55px;
+    top: 3px;
+    left: 45px;
 
     h1 {
       font-size: 6rem;
       font-weight: 400;
-      // color: #2b8c21;
-      // color: rgba(20, 60, 60, .8);
-      color: #151;
-      // color: #335a2f;
-      // text-shadow: 1px 1px 8px #3D3;
-      // text-shadow: -2px 0 #222, 0 2px #222, 2px 0 #222, 0 -2px #222;
+      color: rgba(10, 20, 10, 0.8);
     }
 
     h2 {
@@ -89,8 +72,32 @@ const StyledHeader = styled.div`
       color: #151;
     }
   }
-  .tabler {
-    min-width: 250px;
-    border: solid yellow 5px;
+
+  @media (max-width: 1000px) {
+    width: 98%;
+  }
+  @media (max-width: 620px) {
+    justify-content: space-between;
+    .picket {
+      width: 225px;
+    }
+    .signSurface {
+      width: 192px;
+      height: 95px;
+      left: 33px;
+      top: 2px;
+      h1 {
+        font-size: 4.5rem;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    .picketDiv {
+      margin-left: -50px;
+      overflow-x: hidden;
+    }
   }
 `;

@@ -28,7 +28,8 @@ export default CreditDisplay;
 
 const CreditDisplayer = styled.div`
   display: flex;
-  width: 400px;
+  // width: 400px;
+  width: 30%;
   justify-content: center;
   align-items: center;
   border: solid #555 8px;
@@ -37,7 +38,7 @@ const CreditDisplayer = styled.div`
   box-shadow: 2px 2px 1px black;
   div {
     width: 100%;
-    background: #02ff3d;
+    background: linear-gradient(45deg, #019724, #02ff3d);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,12 +49,28 @@ const CreditDisplayer = styled.div`
       font-size: 3rem;
       font-family: "LCD", sans-serif;
       font-weight: 700;
-      @media (max-width: 1000px) {
-        font-size: 3.2rem;
-      }
-      @media (max-width: 600px) {
+    }
+  }
+  @media (max-width: 1000px) {
+    // width: 300px;
+    div {
+      h2 {
         font-size: 2.5rem;
       }
     }
+  }
+  @media (max-width: 800px) {
+    border-width: 3px;
+    div {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    width: 40%;
+  }
+  @media (max-width: 490px) {
+    width: 60%;
   }
 `;

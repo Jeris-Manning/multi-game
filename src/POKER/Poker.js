@@ -48,7 +48,6 @@ const PokerContainer = styled.div`
   border-right: black 5px solid;
   margin: 0 auto;
   @media (max-width: 1210px) {
-    // width: 98vw;
     margin: 0;
     padding: 0;
     border: none;

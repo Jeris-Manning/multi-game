@@ -15,4 +15,7 @@ export default Lock;
 const LockPic = styled.img`
   height: 70px;
   width: 70px;
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
