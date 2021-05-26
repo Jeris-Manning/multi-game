@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { toCash } from "../../Utility/PokerConstants";
 import { PokerContext } from "../../Poker";
 import { CreditContext } from "../../../App";
-import plasticTile from "../../Assets/miscImages/plasticTile.png";
 
 const BetSize = () => {
   const { state, dispatch } = useContext(PokerContext);
@@ -27,9 +26,9 @@ const BetSize = () => {
           onClick={() => {
             dispatch({ type: "SHOW_CASH" });
           }}>
-          WAGER
+          Bet:
         </h2>
-        {/* {state.showCash ? (
+        {state.showCash ? (
           <h2
             className="wagerCount"
             onClick={() => {
@@ -45,7 +44,7 @@ const BetSize = () => {
             }}>
             {state.wager}
           </h2>
-        )} */}
+        )}
         <DownArrow
           disabled={state.phase === "afterDeal" ? true : false}
           onClick={() => {
@@ -66,17 +65,13 @@ const CoinCountDiv = styled.div`
   justify-content: flex-end;
   align-items: center;
   user-select: none;
-  background-image: url(${plasticTile});
-  padding: 8px;
-  border-radius: 5px;
-  border: solid 3px black;
 
   .betLabel {
     font-size: 4rem;
     cursor: pointer;
     color: #ffe4b9;
     text-shadow: 3px 3px 2px #111;
-    margin: 0 10px;
+    margin-right: 10px;
     @media (max-width: 1000px) {
       font-size: 3rem;
     }

@@ -10,13 +10,11 @@ import plasticTile from "../../Assets/miscImages/orangePlastic.png";
 const CreditControls = () => {
   return (
     <CreditControlDiv>
-      <CreditDisplay />
+      {/* <Lock /> */}
+      <CoinSlot />
+      <BetSize />
       <DealButton />
-      <CreditDeal>
-        <BetSize />
-        <CoinSlot />
-        <Lock />
-      </CreditDeal>
+      <CreditDisplay />
     </CreditControlDiv>
   );
 };
@@ -27,22 +25,16 @@ const CreditControlDiv = styled.div`
   background-image: url(${plasticTile});
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   position: relative;
   bottom: 0px;
+  height: 100%;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0px;
   border-top: black 3px solid;
   @media (max-width: 800px) {
-    width: 98%;
+    padding: 10px 5px;
   }
-`;
-
-const CreditDeal = styled.div`
-  display: flex;
-  // flex-direction: column;
-  align-items: center;
-  width: 35%;
-  justify-content: space-between;
 `;

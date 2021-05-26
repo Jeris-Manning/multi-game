@@ -20,7 +20,7 @@ const CardsDisplayDiv = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   min-width: 50px;
   min-height: 100px;
 `;

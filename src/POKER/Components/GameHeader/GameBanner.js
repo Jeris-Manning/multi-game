@@ -29,7 +29,7 @@ const BannerDiv = styled.div`
   background-image: url(${flies});
   background-color: #ff9e00;
 
-   h1 {
+  h1 {
     color: #19ee40;
     font-size: 10rem;
     text-shadow: 3px 3px 3px #333;
@@ -57,6 +57,11 @@ const BannerDiv = styled.div`
     }
     img {
       display: none;
+    }
+  }
+  @media (max-width: 520px) {
+    h1 {
+      font-size: 5rem;
     }
   }
 `;

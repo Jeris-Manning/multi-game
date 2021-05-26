@@ -31,6 +31,7 @@ const CardSlot = styled.div`
 
 
   img {
+    user-select: none;
     min-width: 20px;
     width: 100%;
     filter: ${(props) =>
