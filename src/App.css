@@ -82,11 +82,20 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 62.5%;
   font: inherit;
   vertical-align: middle;
   box-sizing: border-box;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  box-sizing: content-box;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -122,12 +131,4 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-.bree {
-  font-family: bree, sans-serif;
-
-  font-weight: 600;
-
-  font-style: normal;
 }

@@ -64,31 +64,38 @@ const CoinCountDiv = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  // width: 250px;
-  width: 30%;
   user-select: none;
 
-
-  .wagerCount {
-    cursor: pointer;
-    width: 85px;
-    text-align: center;
-    color: #272b23;
-  }
-
   .betLabel {
+    font-size: 4rem;
     cursor: pointer;
-    color: #272b23;
+    color: #ffe4b9;
+    text-shadow: 3px 3px 2px #111;
+    margin-right: 10px;
+    @media (max-width: 1000px) {
+      font-size: 3.5rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 2.5rem;
+    }
   }
 
   .arrowColumn {
     display: flex;
-    margin-left: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h2 {
-      margin: 2px 0;
+    .wagerCount {
+      cursor: pointer;
+      color: #ffe4b9;
+      text-shadow: 3px 3px 2px #111;
+      font-size: 4rem;
+      @media (max-width: 1000px) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 2.5rem;
+      }
     }
     button {
       display: flex;
@@ -109,11 +116,17 @@ const CoinCountDiv = styled.div`
 `;
 
 const UpArrow = styled.button`
-  border-width: 0 22.5px 35px 22.5px;
+  border-top-width: 0;
+  border-right-width: clamp(12px, 10px + 0.9vw, 22.5px);
+  border-left-width: clamp(12px, 10px + 0.9vw, 22.5px);
+  border-bottom-width: clamp(19px, 17px + 1.5vw, 35px);
   border-color: transparent transparent #bd1515 transparent;
 `;
 
 const DownArrow = styled.button`
-  border-width: 35px 22.5px 0 22.5px;
+  border-bottom-width: 0;
+  border-right-width: clamp(12px, 10px + 0.9vw, 22.5px);
+  border-left-width: clamp(12px, 10px + 0.9vw, 22.5px);
+  border-top-width: clamp(19px, 17px + 1.5vw, 35px);
   border-color: #bd1515 transparent transparent transparent;
 `;

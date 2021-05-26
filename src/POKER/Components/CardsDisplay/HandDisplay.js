@@ -50,8 +50,10 @@ const HandDisplay = ({ afterDeal }) => {
 export default HandDisplay;
 
 const HandDisplayDiv = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   .scram {
     display: none;
   }
@@ -82,7 +84,6 @@ const CardDiv = styled.div`
   width: 100%;
   height: 100%;
 
-
   @media (max-width: 550px) {
     margin: 0 1px;
   }
@@ -95,29 +96,21 @@ const HeldDisplay = styled.div`
   align-items: center;
   text-align: center;
   margin-top: 10px;
-  // height: 50px;
+  height: clamp(1.4rem, 1rem + 1.25vw, 2.5rem);
   user-select: none;
 `;
 
 const Held = styled.h2`
   color: #00fa70;
-  // text-shadow: 0px 1px 3px black;
-  // font-family: bree, sans-serif;
-  // font-weight: 600;
-  // font-style: normal;
   font-family: 'Open Sans', sans-serif;
-  // font-size: 2rem;
   font-size: clamp(1.4rem, 1rem + 1.25vw, 2.5rem);
-  // font-size: 1.4rem;
   // font-size: 2.5rem;
   font-weight: 700;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   border: solid 2px black;
   margin: 0;
-  // vertical-align: middle;
-  // line-height: .8;
-  // padding: 1px 15px 6px;
+
   @media (max-width: 1200px) {
   //   font-size: 1.5rem;
   //   padding: 2px 2px;
