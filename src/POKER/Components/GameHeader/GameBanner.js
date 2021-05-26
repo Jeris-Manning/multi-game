@@ -24,6 +24,7 @@ const BannerDiv = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: black solid 1px;
+  border-top: black solid 1px;
   box-shadow: 0 1px 2px #444;
   background-image: url(${flies});
   background-color: #ff9e00;

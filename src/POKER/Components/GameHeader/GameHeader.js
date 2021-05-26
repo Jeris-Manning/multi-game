@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import pond from "../../Assets/miscImages/pond.png";
-import signFrog from "../../Assets/miscImages/signFrogLegless.png";
+import signFrog from "../../Assets/miscImages/rainBo.png";
 import PayTable from "../PayTable/PayTable";
 import CreditResult from "../CreditControls/CreditResult";
 
@@ -61,7 +61,9 @@ const StyledHeader = styled.div`
 
   .signSurface {
     height: 100px;
-    width: 245px;
+    width: 230px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 12px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -71,13 +73,20 @@ const StyledHeader = styled.div`
     left: 55px;
 
     h1 {
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: 400;
+      // color: #2b8c21;
+      // color: rgba(20, 60, 60, .8);
+      color: #151;
+      // color: #335a2f;
+      // text-shadow: 1px 1px 8px #3D3;
+      // text-shadow: -2px 0 #222, 0 2px #222, 2px 0 #222, 0 -2px #222;
     }
 
     h2 {
       font-size: 4.2rem;
       font-weight: 400;
+      color: #151;
     }
   }
   .tabler {

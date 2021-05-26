@@ -4,15 +4,19 @@ import CreditDisplay from "./CreditDisplay";
 import BetSize from "./BetSize";
 import DealButton from "./DealButton";
 import CoinSlot from "./CoinSlot";
-import plasticTile from "../../Assets/miscImages/plastic.png";
+import Lock from "./Lock";
+import plasticTile from "../../Assets/miscImages/orangePlastic.png";
 
 const CreditControls = () => {
   return (
     <CreditControlDiv>
-      <BetSize />
+      <CreditDisplay />
       <DealButton />
-      {/* <CreditDisplay /> */}
-      <CoinSlot />
+      <CreditDeal>
+        <BetSize />
+        <CoinSlot />
+        <Lock />
+      </CreditDeal>
     </CreditControlDiv>
   );
 };
@@ -28,9 +32,17 @@ const CreditControlDiv = styled.div`
   position: relative;
   bottom: 0px;
   width: 100%;
-  padding: 20px;
-  border-top: black 5px solid;
+  padding: 10px;
+  border-top: black 3px solid;
   @media (max-width: 800px) {
     width: 98%;
   }
+`;
+
+const CreditDeal = styled.div`
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  width: 35%;
+  justify-content: space-between;
 `;

@@ -39,7 +39,8 @@ const FrogStyledButton = styled.div`
   }
 
   h1 {
-    color: rgba(255, 255, 255, 0.9);
+    color: #FFE4B9;
+    text-shadow: 2px 2px 2px #333;
     font-size: clamp(2.6rem, 4.2vw, 5rem);
     // font-size: 2rem;
     // @media (max-width: 600px) {

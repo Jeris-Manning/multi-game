@@ -84,11 +84,12 @@ const PayRow = styled.div`
 const PayChart = styled.div`
   background-color: #ffc669;
   display: grid;
-  grid-template-columns: 18fr 7fr 7fr 7fr 7fr 7fr;
+  grid-template-columns: 15fr 7fr 7fr 7fr 7fr 7fr;
   grid-template-rows: repeat(9, 20px);
   grid-auto-flow: row;
   gap: 4px 5px;
   padding: 5px 2px 7px 5px;
+  border: solid 2px #423829;
   border-radius: 8px;
   min-width: 250px;
   color: #423829;

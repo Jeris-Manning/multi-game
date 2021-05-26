@@ -1,7 +1,5 @@
 html {
   font-size: 62.5%;
-
-
 }
 body {
   font-size: 1.6rem;
@@ -19,4 +17,9 @@ h2 {
 }
 .scram {
   display: none;
+}
+
+@font-face {
+  font-family: "LCD";
+  src: local("LCD"), url(./Assets/LCD.otf) format("opentype");
 }

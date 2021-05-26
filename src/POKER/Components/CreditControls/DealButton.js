@@ -68,6 +68,7 @@ const FrogButtonWrap = styled.div`
     text-align: center;
     position: absolute;
     top: 90px;
+
     // width: 400px;
   }
 `;

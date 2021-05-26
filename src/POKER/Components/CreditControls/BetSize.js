@@ -69,8 +69,8 @@ const CoinCountDiv = styled.div`
   .betLabel {
     font-size: 4rem;
     cursor: pointer;
-    // color: #272b23;
-    color: white;
+    color: #ffe4b9;
+    text-shadow: 3px 3px 2px #111;
     margin-right: 10px;
     @media (max-width: 1000px) {
       font-size: 3.5rem;
@@ -87,8 +87,8 @@ const CoinCountDiv = styled.div`
     align-items: center;
     .wagerCount {
       cursor: pointer;
-      // color: #272b23;
-      color: white;
+      color: #ffe4b9;
+      text-shadow: 3px 3px 2px #111;
       font-size: 4rem;
       @media (max-width: 1000px) {
         font-size: 3.5rem;
