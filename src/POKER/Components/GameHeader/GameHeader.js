@@ -48,8 +48,9 @@ const StyledHeader = styled.div`
   }
 
   .signSurface {
-    height: 125px;
-    width: 253px;
+    /* height: 125px; */
+    height: 45%;
+    width: 85%;
     background-color: rgba(255, 255, 255, 0.3);
     border: solid 2px #423829;
     border-radius: 8px;
@@ -58,8 +59,8 @@ const StyledHeader = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    top: 3px;
-    left: 45px;
+    top: 1%;
+    left: 15%;
 
     h1 {
       font-size: 6rem;
@@ -78,27 +79,63 @@ const StyledHeader = styled.div`
     width: 98%;
   }
   @media (max-width: 620px) {
-    justify-content: space-between;
-    .picket {
-      width: 225px;
+    .picketDiv {
+      margin-left: 0;
+      width: 180px;
+      overflow-x: hidden;
     }
+    .picket {
+      width: 95%;
+      /* display: none; */
+    }
+    justify-content: space-between;
+    /*.picket {
+      width: 225px;
+    } */
     .signSurface {
-      width: 192px;
+      /*  width: 192px;
       height: 95px;
       left: 33px;
-      top: 2px;
+      top: 2px; */
+      height: 47%;
+      width: 81%;
+      top: 0%;
+      left: 13%;
       h1 {
-        font-size: 4.5rem;
+        font-size: 3.5rem;
       }
       h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
     }
   }
-  @media (max-width: 440px) {
+  /* @media (max-width: 440px) {
     .picketDiv {
       margin-left: -50px;
       overflow-x: hidden;
+    }
+  } */
+  @media (max-width: 400px) {
+    .picketDiv {
+      margin-left: 0;
+      width: 180px;
+      overflow-x: hidden;
+    }
+    .picket {
+      width: 95%;
+      /* display: none; */
+    }
+    .signSurface {
+      top: 2px;
+      left: 23px;
+      height: 46%;
+      width: 82%;
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
     }
   }
 `;
