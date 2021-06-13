@@ -33,12 +33,13 @@ const AppWrap = styled.div`
   // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
+  min-height: 100vh;
 `;
 
 const PokerContainer = styled.div`
   background-color: #d8f0c1;
   background-image: url(${wallFlies});
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
