@@ -16,7 +16,7 @@ function Poker() {
   const [state, dispatch] = useReducer(PokerReducer, init);
   return (
     <PokerContext.Provider value={{ state, dispatch }}>
-      <TestDove>
+      {/* <TestDove> */}
         <AppWrap>
           <PokerContainer>
             <GameBanner />
@@ -25,7 +25,7 @@ function Poker() {
             <CreditControls />
           </PokerContainer>
         </AppWrap>
-      </TestDove>
+      {/* </TestDove> */}
     </PokerContext.Provider>
   );
 }
@@ -36,7 +36,7 @@ const AppWrap = styled.div`
   // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
-  height: inherit;
+  height: 100vh;
   /* border: solid pink 5px; */
 `;
 const TestDove = styled(Div100vh)`
