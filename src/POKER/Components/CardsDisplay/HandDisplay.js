@@ -73,11 +73,6 @@ const PokerHandDiv = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 24;
-
-  @media (max-width: 550px) {
-    // width: 95%;
-  }
-}
 `;
 
 const CardDiv = styled.div`
@@ -101,15 +96,15 @@ const HeldDisplay = styled.div`
   align-items: center;
   text-align: center;
   width: 50%;
-  top: 75%;
-  height: clamp(1.4rem, 1rem + 1.25vw, 3rem);
+  top: 50%;
+  /* height: clamp(1.4rem, 1rem + 1.25vw, 3rem); */
   user-select: none;
 `;
 
 const Held = styled.h2`
   // color: #00fa70;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: clamp(1.4rem, 1rem + 1.25vw, 3rem);
   // font-size: 2.5rem;
   font-weight: 700;
@@ -120,9 +115,4 @@ const Held = styled.h2`
   margin: 0;
   padding: 2px 5px;
   filter: drop-shadow(4px 4px 2px #ffc669) drop-shadow(-4px -4px 4px #ffc669);
-
-  @media (max-width: 1200px) {
-  //   font-size: 1.5rem;
-  //   padding: 2px 2px;
-  // }
 `;

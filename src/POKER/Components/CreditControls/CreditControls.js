@@ -31,6 +31,7 @@ const CreditControlDiv = styled.div`
   position: relative;
   bottom: 0px;
   height: 100%;
+  max-height: 108px;
   width: 100%;
   padding: 10px 0px;
   border-top: black 3px solid;

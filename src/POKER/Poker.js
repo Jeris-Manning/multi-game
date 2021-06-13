@@ -16,7 +16,7 @@ function Poker() {
   const [state, dispatch] = useReducer(PokerReducer, init);
   return (
     <PokerContext.Provider value={{ state, dispatch }}>
-      <Div100vh>
+      <TestDove>
         <AppWrap>
           <PokerContainer>
             <GameBanner />
@@ -25,7 +25,7 @@ function Poker() {
             <CreditControls />
           </PokerContainer>
         </AppWrap>
-      </Div100vh>
+      </TestDove>
     </PokerContext.Provider>
   );
 }
@@ -36,15 +36,19 @@ const AppWrap = styled.div`
   // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
-  height: 100%;
-  border: solid pink 5px;
+  height: inherit;
+  /* border: solid pink 5px; */
 `;
+const TestDove = styled(Div100vh)`
 
+/* border: solid purple 4px; */
+
+`
 const PokerContainer = styled.div`
   background-color: #d8f0c1;
   background-image: url(${wallFlies});
   /* min-height: 100vh; */
-  min-height: 100%;
+  height: inherit;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -52,7 +56,7 @@ const PokerContainer = styled.div`
   max-width: 1200px;
   border-left: black 5px solid;
   border-right: black 5px solid;
-  border: solid yellow 7px;
+  /* border: solid yellow 7px; */
   margin: 0 auto;
   @media (max-width: 1210px) {
     margin: 0;

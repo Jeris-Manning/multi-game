@@ -22,7 +22,7 @@ const GameHeader = () => {
 export default GameHeader;
 
 const StyledHeader = styled.div`
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   user-select: none;
   display: flex;
   flex-direction: row;
