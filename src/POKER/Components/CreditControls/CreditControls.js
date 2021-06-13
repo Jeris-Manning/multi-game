@@ -4,13 +4,11 @@ import CreditDisplay from "./CreditDisplay";
 import BetSize from "./BetSize";
 import DealButton from "./DealButton";
 import CoinSlot from "./CoinSlot";
-import Lock from "./Lock";
 import plasticTile from "../../Assets/miscImages/orangePlastic.png";
 
 const CreditControls = () => {
   return (
     <CreditControlDiv>
-      {/* <Lock /> */}
       <CoinSlot />
       <BetSize />
       <DealButton />
@@ -30,8 +28,7 @@ const CreditControlDiv = styled.div`
   align-items: center;
   position: relative;
   bottom: 0px;
-  /* height: 15%; */
-  max-height: 108px;
+  max-height: 115px;
   width: 100%;
   padding: 10px 0px;
   border-top: black 3px solid;

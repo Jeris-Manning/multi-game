@@ -94,7 +94,6 @@ const PayChart = styled.div`
   padding: 5px 2px 7px 5px;
   border: solid 2px #423829;
   border-radius: 8px;
-  // min-width: 250px;
   color: #423829;
   .highlight {
     color: rgba(25, 66, 211, 0.9);

@@ -6,7 +6,6 @@ import GameSelect from "./GAME_SELECT/GameSelect";
 import CoinSelect from "./GAME_SELECT/CoinSelect";
 import Poker from "./POKER/Poker";
 import Keno from "./KENO/Keno";
-// import SavageBox from "./SavageBox";
 import HandFrog from "./POKER/Components/GameHeader/HandFrog";
 
 export const CreditContext = React.createContext(null);

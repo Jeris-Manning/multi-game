@@ -4,7 +4,7 @@ import { Cards } from "../../Assets/Cards";
 import { PokerContext } from "../../Poker";
 
 const Card = ({ card }) => {
-  const { state, dispatch } = useContext(PokerContext);
+  const { state } = useContext(PokerContext);
   return (
     <CardSlot held={card.held}>
       <img
@@ -28,7 +28,6 @@ const CardSlot = styled.div`
   height: 100%;
   width: 100%;
   min-width: 10px;
-
 
   img {
     user-select: none;

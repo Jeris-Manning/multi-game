@@ -30,7 +30,6 @@ const StyledHeader = styled.div`
   align-items: center;
   margin: 20px 0;
   width: 90%;
-  /* height: 30%; */
   border-radius: 10px;
   border: solid 2px #423829;
   padding: 5px 5px 0 5px;
@@ -48,7 +47,6 @@ const StyledHeader = styled.div`
   }
 
   .signSurface {
-    /* height: 125px; */
     height: 45%;
     width: 85%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -79,6 +77,8 @@ const StyledHeader = styled.div`
     width: 98%;
   }
   @media (max-width: 620px) {
+    justify-content: space-between;
+
     .picketDiv {
       margin-left: 0;
       width: 180px;
@@ -86,17 +86,9 @@ const StyledHeader = styled.div`
     }
     .picket {
       width: 95%;
-      /* display: none; */
     }
-    justify-content: space-between;
-    /*.picket {
-      width: 225px;
-    } */
+
     .signSurface {
-      /*  width: 192px;
-      height: 95px;
-      left: 33px;
-      top: 2px; */
       height: 47%;
       width: 81%;
       top: 0%;
@@ -109,12 +101,7 @@ const StyledHeader = styled.div`
       }
     }
   }
-  /* @media (max-width: 440px) {
-    .picketDiv {
-      margin-left: -50px;
-      overflow-x: hidden;
-    }
-  } */
+
   @media (max-width: 400px) {
     .picketDiv {
       margin-left: 0;
@@ -123,16 +110,17 @@ const StyledHeader = styled.div`
     }
     .picket {
       width: 95%;
-      /* display: none; */
     }
     .signSurface {
       top: 2px;
       left: 23px;
       height: 46%;
       width: 82%;
+
       h1 {
         font-size: 2.5rem;
       }
+
       h2 {
         font-size: 2rem;
       }

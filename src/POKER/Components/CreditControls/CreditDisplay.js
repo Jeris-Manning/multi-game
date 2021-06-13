@@ -28,7 +28,6 @@ export default CreditDisplay;
 
 const CreditDisplayer = styled.div`
   display: flex;
-  // width: 400px;
   width: 30%;
   justify-content: center;
   align-items: center;
@@ -52,7 +51,6 @@ const CreditDisplayer = styled.div`
     }
   }
   @media (max-width: 1000px) {
-    // width: 300px;
     div {
       h2 {
         font-size: 2.5rem;
