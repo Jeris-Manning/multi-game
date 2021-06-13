@@ -30,7 +30,7 @@ const StyledHeader = styled.div`
   align-items: center;
   margin: 20px 0;
   width: 90%;
-  height: 30%;
+  /* height: 30%; */
   border-radius: 10px;
   border: solid 2px #423829;
   padding: 5px 5px 0 5px;
