@@ -28,6 +28,7 @@ const BannerDiv = styled.div`
   box-shadow: 0 1px 2px #444;
   background-image: url(${flies});
   background-color: #ff9e00;
+  height: 12%;
 
   h1 {
     color: #19ee40;
