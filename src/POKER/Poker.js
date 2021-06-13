@@ -36,7 +36,7 @@ const AppWrap = styled.div`
   // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
-  height: 100vh;
+  height: calc(100vh - calc(100vh - 100%));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +52,7 @@ const PokerContainer = styled.div`
   background-image: url(${wallFlies});
   /* min-height: 100vh; */
   /* height: inherit; */
-  height: 95%;
+  height: inherit;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

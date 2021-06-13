@@ -7,7 +7,7 @@ import CoinSelect from "./GAME_SELECT/CoinSelect";
 import Poker from "./POKER/Poker";
 import Keno from "./KENO/Keno";
 // import SavageBox from "./SavageBox";
-import HandFrog from './POKER/Components/GameHeader/HandFrog'
+import HandFrog from "./POKER/Components/GameHeader/HandFrog";
 
 export const CreditContext = React.createContext(null);
 
@@ -16,26 +16,28 @@ function App() {
 
   return (
     <CreditContext.Provider value={{ creditState, creditDispatch }}>
-      <Switch>
-        <Route exact path="/">
-          <Poker />
-        </Route>
-        <Route path="/poker">
-          <Poker game="Jacks or Better" />
-        </Route>
-        <Route path="/keno">
-          <Keno />
-        </Route>
-        <Route path="/addcredit">
-          <>
-            <GameSelect />
-            <CoinSelect />
-          </>
-        </Route>
-        <Route path="/magicfrog">
-          <HandFrog />
-        </Route>
-      </Switch>
+      <div className="enrober">
+        <Switch>
+          <Route exact path="/">
+            <Poker />
+          </Route>
+          <Route path="/poker">
+            <Poker game="Jacks or Better" />
+          </Route>
+          <Route path="/keno">
+            <Keno />
+          </Route>
+          <Route path="/addcredit">
+            <>
+              <GameSelect />
+              <CoinSelect />
+            </>
+          </Route>
+          <Route path="/magicfrog">
+            <HandFrog />
+          </Route>
+        </Switch>
+      </div>
     </CreditContext.Provider>
   );
 }
