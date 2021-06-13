@@ -37,6 +37,7 @@ const AppWrap = styled.div`
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
   height: 100%;
+  border: solid pink 5px;
 `;
 
 const PokerContainer = styled.div`
@@ -51,6 +52,7 @@ const PokerContainer = styled.div`
   max-width: 1200px;
   border-left: black 5px solid;
   border-right: black 5px solid;
+  border: solid yellow 7px;
   margin: 0 auto;
   @media (max-width: 1210px) {
     margin: 0;
