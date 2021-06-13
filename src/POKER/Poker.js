@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
+import Div100vh from "react-div-100vh";
 import CardsDisplay from "./Components/CardsDisplay/CardsDisplay";
 import CreditControls from "./Components/CreditControls/CreditControls";
 import PokerReducer, { init } from "./Utility/PokerReducer";
@@ -15,14 +16,16 @@ function Poker() {
   const [state, dispatch] = useReducer(PokerReducer, init);
   return (
     <PokerContext.Provider value={{ state, dispatch }}>
-      <AppWrap>
-        <PokerContainer>
-          <GameBanner />
-          <GameHeader />
-          <CardsDisplay />
-          <CreditControls />
-        </PokerContainer>
-      </AppWrap>
+      <Div100vh>
+        <AppWrap>
+          <PokerContainer>
+            <GameBanner />
+            <GameHeader />
+            <CardsDisplay />
+            <CreditControls />
+          </PokerContainer>
+        </AppWrap>
+      </Div100vh>
     </PokerContext.Provider>
   );
 }
@@ -33,12 +36,13 @@ const AppWrap = styled.div`
   // width: 100vw;
   background-color: #d8f0c1;
   background-image: url(${invertFlies});
-  min-height: 100vh;
+  height: 100%;
 `;
 
 const PokerContainer = styled.div`
   background-color: #d8f0c1;
   background-image: url(${wallFlies});
+  /* min-height: 100vh; */
   min-height: 100%;
   display: flex;
   justify-content: space-between;
