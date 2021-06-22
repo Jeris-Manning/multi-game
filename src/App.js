@@ -7,7 +7,6 @@ import CoinSelect from "./GAME_SELECT/CoinSelect";
 import Poker from "./POKER/Poker";
 import Keno from "./KENO/Keno";
 import HandFrog from "./POKER/Components/GameHeader/HandFrog";
-import Docs from "./Docs";
 
 export const CreditContext = React.createContext(null);
 
@@ -27,9 +26,7 @@ function App() {
           <Route path="/keno">
             <Keno />
           </Route>
-          <Route path="/docs">
-            <Docs />
-          </Route>
+
           <Route path="/addcredit">
             <>
               <GameSelect />
