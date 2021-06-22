@@ -1,1340 +1,1354 @@
-
 <!-- saved from url=(0235)https://15468.portal.athenahealth.com/?section=health&sub=lab_results&testid=&ptdocumentid=&athenalabdocumentid=1357404&webretrievalcount=1&&DONOTLOADCSRFJS=1&CSRFPROTECT=382035caed65e069723e7c90ba44595834c748f18dc039aa046d1d2ececbaa93 -->
-<html><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><link href="./lab_files/css.php" rel="stylesheet" type="text/css">
-  <link href="./lab_files/clinicals.css" rel="stylesheet" type="text/css">
-  <link href="./lab_files/sprites.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-    .body_style {
-      background: none;
-      overflow: initial;
-      padding:10px;
-      height : auto;
-    }
-    .grid, table.grid td, table.grid th {
-    border-collapse:collapse;
-    border-spacing:0;
-    border-style:solid;
-    border-color: #CCCCCC;
-    border-width: 1px;
-  }
-
-  table.grid td, table.grid th {
-    padding-top:3px;
-    padding-bottom:2px;
-    padding-right:4px;
-    padding-left: 4px;
-  }
-
-  table.grid td {
-    font-size: 95%;
-  }
-
-  table.grid th {
-    font-size: 90%;
-    color: #666644;
-    background-color: #EEEECC;
-    font-weight: bold;
-    text-align: center;
-  }
-  .normaltext {
-    color:#000000;
-    font-size:12px;
-    font-weight:normal;
-    font-family:Arial;
-  }
-  .printonly {
-    display: block;
-  }
-  #lab-image-display {
-    border:1px solid #bdbdbd;
-    padding:5px;
-  }
-  .results-info {
-    margin-bottom:5px;
-    display: none;
-  }
-  .lab-result-error {
-    margin:100px auto;
-    border:1px solid black;
-    padding:20px;
-    width:480px;
-    text-align:center;
-  }
-
-  @media print {
-    img {
-      max-width:100%;
-    }
-  }
-  .bold {
-    font-weight : bold;
-  }
-  .normal {
-    font-weight : normal;
-  }
-  .block_display {
-    display : block;
-  }
-  .none-display {
-    display : none;
-  }
-  .inline_display {
-    display : inline;
-  }
-  .italic {
-    font-style : italic;
-  }
-  .clear_both {
-    clear : both;
-  }
-  .status-red {
-    color : #900;
-  }
-  .align_left {
-    float : left;
-  }
-  .align_right {
-    float : right;
-  }
-  .align_none {
-    float : none;
-  }
-  .align_text_center {
-    text-align : center;
-  }
-  .align_text_left {
-    text-align : left;
-  }
-  .align_text_right {
-    text-align : right;
-  }
-  .cursor_pointer {
-    cursor : pointer;
-  }
-  .visibility_hidden {
-    visibility : hidden;
-  }
-  .auto_right_margin {
-    margin-right: auto;
-  }
-  .full_width {
-    width : 100%;
-  }
-  .position_relative {
-    position : relative;
-  }
-  .overflow_auto {
-    overflow : auto;
-  }
-  .background_image_none {
-    background-image: none;
-  }
-  .background_none {
-    background : none;
-  }
-  .color_red {
-    color : red;
-  }
-  .color_green {
-    color : green;
-  }
-  .color_blue {
-    color : blue;
-  }
-  .table_display {
-    display : table;
-  }
-  .clear_left {
-    clear : left;
-  }
-  .cursor_default {
-    cursor : default;
-  }
-  .cursor_auto {
-    cursor: auto;
-  }
-  .padding_none {
-    padding : 0;
-  }
-  .padding_howToRegisterFamily {
-    padding-left : 5px;
-  }
-  .span_enrollmentConfirmCode {
-    vertical-align : top;
-    width : 100%;
-  }
-  .cancelCall_enrollmentConfirmCode {
-    margin-left : 150px;
-  }
-  .margin_none {
-    margin : 0;
-  }
-  .border_none {
-    border : none;
-  }
-  label.sameLine {
-    float:none; margin:0 5px 0 10px;
-  }
-  label.sameLine em {
-    position: relative;
-    left: 0.2em;
-    top: -6px;
-  }
-  .height_auto {
-    height : auto;
-  }
-  .white_space_nowrap {
-    white-space: nowrap;
-  }
-  .vertical_align_top {
-    vertical-align : top;
-  }
-  .margin_auto {
-    margin : auto;
-  }
-  .paddingeComm {
-    padding-left : 20px;
-  }
-  .table_padding_spacing_none { /*to achieve zero cellspacing and cellpadding in HTML5 table*/
-    padding : 0px;
-    border-collapse : collapse;
-    border-spacing : 0;
-  }
-  #skip-links {
-    position: absolute;
-    top: -1000px;
-    left: -1000px;
-    height: 1px;
-    width: 1px;
-    text-align: left;
-    overflow: hidden;
-  }
-  .med_fullsig_info {
-    padding: 10px;
-  }
-  .med_external_note {
-    padding : 10px;
-    background-color : #EAEAEA;
-  }
-  .margin_10px {
-    margin : 10px;
-  }
-  .width_740px {
-    width : 740px;
-  }
-  .margin_bottom20px {
-    margin-bottom : 20px;
-  }
-  .vitals_values {
-    font-size : 11px;
-    font-weight : normal;
-  }
-  .width_490px {
-    width : 490px;
-  }
-  .chol_div {
-    padding : 15px;
-    width : 450px;
-  }
-  .chol_graph_div {
-    width : 450px;
-    height : 320px;
-  }
-  .vitaldetailcol_div {
-    vertical-align : top;
-    padding-left : 10px;
-  }
-  .color_666 {
-    color : #666;
-  }
-  .height_350px {
-    height : 350px;
-  }
-  .grapha1c_div {
-    width : 475px;
-    height : 340px;
-  }
-  .cca1c_graph_div{
-    width : 450px;
-    height : 320px;
-  }
-  .padding_15px {
-    padding : 15px;
-  }
-  .charta1c_div {
-    width : 475px;
-  }
-  .margin_right_5px {
-    margin-right : 5px;
-  }
-  .width_95px {
-    width : 95px;
-  }
-  /* for health_reminders */
-  .width_20px {
-    width : 20px;
-  }
-  .width_100px {
-    width : 100px;
-  }
-  .width_250px {
-    width : 250px;
-  }
-  .updatedetail_div {
-    color : #333;
-    font-size : 91%;
-    position : relative;
-    margin-top : 5px;
-    z-index : 1000;
-    display : none;
-  }
-  .otherdetail_div {
-    color : #333;
-    position : relative;
-    margin-top : 5px;
-    display : none;
-  }
-  .font_size_92 {
-    font-size : 92%;
-  }
-  .color_666 {
-    color : #666;
-  }
-  .uploadedbluebuttondata_div {
-    position : relative;
-    overflow : auto;
-    height : 600px;
-    width : 740px;
-  }
-  .blue_button_span {
-    float : left;
-    margin: 0px 10px 0px 0px;
-  }
-  .result_button {
-    margin : 10px 0 10px 24px;
-  }
-  .mobile_button_style {
-    margin-left : auto;
-    margin-right : auto;
-    width: 50%;
-  }
-  .health_popup_print_padding {
-    padding-left : 5px;
-  }
-  .health_popup_contents_iframe {
-    width : 580px;
-    height : 390px;
-    border : none;
-  }
-  .health_popup_close {
-    float : none;
-    width : 70px;
-  }
-  .overflow_hidden {
-    overflow : hidden;
-  }
-  #informationHandout {
-    overflow : hidden;
-  }
-  .all_orders_list {
-    display : inline-block;
-    width : 350px;
-  }
-  .limited_orders_align {
-    text-align : center;
-    margin-bottom : 20px;
-  }
-  .order_count_total {
-    text-align : center;
-    font-size : 83%;
-    color : rgb(85,85,85);
-    padding : 1px;
-  }
-  .order_details_border {
-    border-bottom : 1px dotted #ccc;
-  }
-  .order_radio_btn {
-    color : #111;
-    font-weight : normal;
-  }
-  .order_appt_details {
-    margin : 6px 0 0 21px;
-    font-size : 83%;
-  }
-  .order_appt_date {
-    position : relative;
-    top : -5px;
-  }
-  .order_appt_date_picker {
-    width : 75px;
-    vertical-align : auto;
-  }
-  .order_not_saved {
-    font-size : 108%;
-    font-weight : bold;
-  }
-  .order_popmap_div {
-    float : right;
-    width : 500px;
-    height : 300px;
-  }
-  .order_bottom_btns {
-    bottom : 10px;
-  }
-  .results_popup_ios {
-    overflow : auto;
-    -webkit-overflow-scrolling : touch;
-    height : 90% ;
-  }
-  .results_popup_iframe {
-    width : 100%;
-    height : 100%;
-    border : none;
-  }
-  .results_popup_alldevices {
-    height : 90% ;
-  }
-  .healthdata-edit-field {
-    border : none;
-    background : none;
-    margin : 0;
-  }
-  .yearsofuse {
-    width : 125px;
-  }
-  .dropdown_width {
-    width : 125px;
-  }
-  .tobacco_form {
-    margin-top : 10px;
-    padding-top : 10px;
-  }
-  .submit_fields {
-    margin-top : 10px;
-  }
-  .errormessage {
-    margin-top : 20px;
-  }
-  .smoking_quantity_abbreviation {
-    padding-left: 10px;
-    vertical-align: bottom;
-  }
-  .hidetext {
-    visibility: hidden;
-  }
-
-  .font_10px {
-    font-size : 10px;
-  }
-
-  .left_170px {
-    left : 170px;;
-  }
-
-  .timeout_ok {
-    text-align : center;
-    margin-top : 20px;
-  }
-
-  .timeout_ok_btn {
-    float : none;
-    width : 70px;
-  }
-
-  .width_940px {
-    width : 940px
-  }
-
-  .width_960px {
-    width : 960px;
-  }
-
-  .width_720px {
-    width : 720px;
-  }
-
-  .footer_border {
-    background-color : #f2f2f2;
-    border-radius : 0 0 10px 10px;
-    height : 55px;
-    margin : 0 auto 20px auto;
-    border-bottom : 1px solid #CCC;
-    border-left : 1px solid #CCC;
-    border-right : 1px solid #CCC;
-  }
-
-  .footer_location {
-    behavior : url({{PORTALSTATICHOST}}/portal/pie/PIE.php);
-  }
-
-  .mobile_footer_links {
-    padding : 3px;
-    margin : auto;
-    text-align : center;
-    font-size : 8pt;
-  }
-
-
-
-  .mobile_footer_feedback {
-    color : #333;
-  }
-
-  .width_50px {
-    width : 50px;
-  }
-
-  .mobile_powered_by_athena {
-    margin : auto;
-    text-align : center;
-    font-size : 8pt;
-    height : 100px;
-  }
-  @media print {
-    /* Prevents the printable content from getting clipped, while printing the page through proxy login*/
-    body {
-      font-size: 9pt !important;
-      -ms-zoom: 68% !important;
-    }
-  }
-  .mobile_header_title {
-    min-height : 20px;
-    height : 20px;
-  }
-  .mobile_buttons_margin {
-    margin-top : 3px;
-  }
-  .mobile_landing_buttons {
-    margin-top : 0px;
-  }
-  .mobile_911msg_messges {
-    padding-left : 17px;
-    font-weight : normal;
-    background-color : #fdf8cd;
-  }
-  .blue_exit_button {
-    color : #0000FF;
-  }
-  .signin_signout_button {
-    color : #333;
-  }
-  .patient_switch_toppadding {
-    padding-top : 8px;
-  }
-  #header.landing_header_width {
-    width : 705px;
-  }
-  #header.selfcheckin_header_width {
-    width: 945px;
-  }
-  #header.landing_selfcheckin_header {
-    height : 45px;
-    background-color : #f2f2f2;
-    border-radius : 10px 10px 0 0;
-    margin : 0 auto;
-    line-height : 45px;
-    text-align : right;
-    padding-right : 15px;
-    border-top : 1px solid #CCC;
-    border-left : 1px solid #CCC;
-    border-right : 1px solid #CCC;
-
-  }
-  #header.landing_selfcheckin_header.overwrite_landing_selfcheckin_header {
-    height : 50px;
-    line-height : 16px;
-  }
-  .reg_header_background {
-    background-color : #fff;
-    margin : 0 auto;
-  }
-  .reg_emaillogin_border {
-    border : 1px solid #ccc;
-    -moz-box-sizing : border-box;
-    box-sizing : border-box;
-  }
-  .reg_landingmsg_border {
-    border-bottom : none;
-  }
-  .selfcheckin_general_header {
-    width : 960px;
-  }
-  .reg_header_width {
-    width : 722px;
-  }
-  #patient-picker-menu.none-display {
-    display : none;
-  }
-
-
-  </style>
-  <script>
-    // Create a handler for when the page is done loading.
-  function onpageload() {
-    var popup = false;
-    var displayTestImage = true;
-    // Set the URL for the "View larger" link
-    if (popup) {
-      var largerLink = document.getElementById('view-larger-link');
-      if (largerLink) {
-        largerLink.href = window.location.href.replace('popup=t', '');
+<html>
+  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link" /><link
+    type="text/css"
+    rel="stylesheet"
+    id="dark-mode-general-link"
+  /><style lang="en" type="text/css" id="dark-mode-custom-style"></style
+  ><style lang="en" type="text/css" id="dark-mode-native-style"></style
+  ><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <link href="./lab_files/css.php" rel="stylesheet" type="text/css" />
+    <link href="./lab_files/clinicals.css" rel="stylesheet" type="text/css" />
+    <link href="./lab_files/sprites.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .body_style {
+        background: none;
+        overflow: initial;
+        padding: 10px;
+        height: auto;
       }
-    }
-
-    // Let's set up a function that will trigger an event
-    // to the parent that loading is complete.
-    var dispatchLoadComplete = function() {
-      var parentDocumentElement = window.parent.document.documentElement;
-      // If the standard DOM createEvent function exists, use it.
-      if (document.createEvent) {
-        var loadEvent = document.createEvent('Event');
-        loadEvent.initEvent('ajaxLoad', false, true);
-        parentDocumentElement.dispatchEvent(loadEvent);
+      .grid,
+      table.grid td,
+      table.grid th {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-style: solid;
+        border-color: #cccccc;
+        border-width: 1px;
       }
-      // It doesn't exist, so we're using an older version
-      // of IE. This is a workaround that will trigger
-      // a propertychange event on the parent.
-      else {
-        parentDocumentElement.ajaxLoadEvent++;
+
+      table.grid td,
+      table.grid th {
+        padding-top: 3px;
+        padding-bottom: 2px;
+        padding-right: 4px;
+        padding-left: 4px;
       }
-    };
 
-    // If we have a test image to display, we need to make an ajax call
-    // to get the dynamic HTML to insert into our document.
-    if (displayTestImage) {
-      // Let's set up the function that inserts the HTML
-      // returned by the server.
-      var onAjaxLoad = function(responseText) {
-        // Let's append the response to the document
-        var displayElement = document.getElementById('lab-image-display');
-        displayElement.innerHTML = responseText;
+      table.grid td {
+        font-size: 95%;
+      }
 
-        // If this is a popup window, we want to do a little extra
-        // work. Namely, we want to determine when the images
-        // have loaded to inform the parent that it's time to
-        // actually show the dialog.
+      table.grid th {
+        font-size: 90%;
+        color: #666644;
+        background-color: #eeeecc;
+        font-weight: bold;
+        text-align: center;
+      }
+      .normaltext {
+        color: #000000;
+        font-size: 12px;
+        font-weight: normal;
+        font-family: Arial;
+      }
+      .printonly {
+        display: block;
+      }
+      #lab-image-display {
+        border: 1px solid #bdbdbd;
+        padding: 5px;
+      }
+      .results-info {
+        margin-bottom: 5px;
+        display: none;
+      }
+      .lab-result-error {
+        margin: 100px auto;
+        border: 1px solid black;
+        padding: 20px;
+        width: 480px;
+        text-align: center;
+      }
+
+      @media print {
+        img {
+          max-width: 100%;
+        }
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .normal {
+        font-weight: normal;
+      }
+      .block_display {
+        display: block;
+      }
+      .none-display {
+        display: none;
+      }
+      .inline_display {
+        display: inline;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .clear_both {
+        clear: both;
+      }
+      .status-red {
+        color: #900;
+      }
+      .align_left {
+        float: left;
+      }
+      .align_right {
+        float: right;
+      }
+      .align_none {
+        float: none;
+      }
+      .align_text_center {
+        text-align: center;
+      }
+      .align_text_left {
+        text-align: left;
+      }
+      .align_text_right {
+        text-align: right;
+      }
+      .cursor_pointer {
+        cursor: pointer;
+      }
+      .visibility_hidden {
+        visibility: hidden;
+      }
+      .auto_right_margin {
+        margin-right: auto;
+      }
+      .full_width {
+        width: 100%;
+      }
+      .position_relative {
+        position: relative;
+      }
+      .overflow_auto {
+        overflow: auto;
+      }
+      .background_image_none {
+        background-image: none;
+      }
+      .background_none {
+        background: none;
+      }
+      .color_red {
+        color: red;
+      }
+      .color_green {
+        color: green;
+      }
+      .color_blue {
+        color: blue;
+      }
+      .table_display {
+        display: table;
+      }
+      .clear_left {
+        clear: left;
+      }
+      .cursor_default {
+        cursor: default;
+      }
+      .cursor_auto {
+        cursor: auto;
+      }
+      .padding_none {
+        padding: 0;
+      }
+      .padding_howToRegisterFamily {
+        padding-left: 5px;
+      }
+      .span_enrollmentConfirmCode {
+        vertical-align: top;
+        width: 100%;
+      }
+      .cancelCall_enrollmentConfirmCode {
+        margin-left: 150px;
+      }
+      .margin_none {
+        margin: 0;
+      }
+      .border_none {
+        border: none;
+      }
+      label.sameLine {
+        float: none;
+        margin: 0 5px 0 10px;
+      }
+      label.sameLine em {
+        position: relative;
+        left: 0.2em;
+        top: -6px;
+      }
+      .height_auto {
+        height: auto;
+      }
+      .white_space_nowrap {
+        white-space: nowrap;
+      }
+      .vertical_align_top {
+        vertical-align: top;
+      }
+      .margin_auto {
+        margin: auto;
+      }
+      .paddingeComm {
+        padding-left: 20px;
+      }
+      .table_padding_spacing_none {
+        /*to achieve zero cellspacing and cellpadding in HTML5 table*/
+        padding: 0px;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      #skip-links {
+        position: absolute;
+        top: -1000px;
+        left: -1000px;
+        height: 1px;
+        width: 1px;
+        text-align: left;
+        overflow: hidden;
+      }
+      .med_fullsig_info {
+        padding: 10px;
+      }
+      .med_external_note {
+        padding: 10px;
+        background-color: #eaeaea;
+      }
+      .margin_10px {
+        margin: 10px;
+      }
+      .width_740px {
+        width: 740px;
+      }
+      .margin_bottom20px {
+        margin-bottom: 20px;
+      }
+      .vitals_values {
+        font-size: 11px;
+        font-weight: normal;
+      }
+      .width_490px {
+        width: 490px;
+      }
+      .chol_div {
+        padding: 15px;
+        width: 450px;
+      }
+      .chol_graph_div {
+        width: 450px;
+        height: 320px;
+      }
+      .vitaldetailcol_div {
+        vertical-align: top;
+        padding-left: 10px;
+      }
+      .color_666 {
+        color: #666;
+      }
+      .height_350px {
+        height: 350px;
+      }
+      .grapha1c_div {
+        width: 475px;
+        height: 340px;
+      }
+      .cca1c_graph_div {
+        width: 450px;
+        height: 320px;
+      }
+      .padding_15px {
+        padding: 15px;
+      }
+      .charta1c_div {
+        width: 475px;
+      }
+      .margin_right_5px {
+        margin-right: 5px;
+      }
+      .width_95px {
+        width: 95px;
+      }
+      /* for health_reminders */
+      .width_20px {
+        width: 20px;
+      }
+      .width_100px {
+        width: 100px;
+      }
+      .width_250px {
+        width: 250px;
+      }
+      .updatedetail_div {
+        color: #333;
+        font-size: 91%;
+        position: relative;
+        margin-top: 5px;
+        z-index: 1000;
+        display: none;
+      }
+      .otherdetail_div {
+        color: #333;
+        position: relative;
+        margin-top: 5px;
+        display: none;
+      }
+      .font_size_92 {
+        font-size: 92%;
+      }
+      .color_666 {
+        color: #666;
+      }
+      .uploadedbluebuttondata_div {
+        position: relative;
+        overflow: auto;
+        height: 600px;
+        width: 740px;
+      }
+      .blue_button_span {
+        float: left;
+        margin: 0px 10px 0px 0px;
+      }
+      .result_button {
+        margin: 10px 0 10px 24px;
+      }
+      .mobile_button_style {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      .health_popup_print_padding {
+        padding-left: 5px;
+      }
+      .health_popup_contents_iframe {
+        width: 580px;
+        height: 390px;
+        border: none;
+      }
+      .health_popup_close {
+        float: none;
+        width: 70px;
+      }
+      .overflow_hidden {
+        overflow: hidden;
+      }
+      #informationHandout {
+        overflow: hidden;
+      }
+      .all_orders_list {
+        display: inline-block;
+        width: 350px;
+      }
+      .limited_orders_align {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .order_count_total {
+        text-align: center;
+        font-size: 83%;
+        color: rgb(85, 85, 85);
+        padding: 1px;
+      }
+      .order_details_border {
+        border-bottom: 1px dotted #ccc;
+      }
+      .order_radio_btn {
+        color: #111;
+        font-weight: normal;
+      }
+      .order_appt_details {
+        margin: 6px 0 0 21px;
+        font-size: 83%;
+      }
+      .order_appt_date {
+        position: relative;
+        top: -5px;
+      }
+      .order_appt_date_picker {
+        width: 75px;
+        vertical-align: auto;
+      }
+      .order_not_saved {
+        font-size: 108%;
+        font-weight: bold;
+      }
+      .order_popmap_div {
+        float: right;
+        width: 500px;
+        height: 300px;
+      }
+      .order_bottom_btns {
+        bottom: 10px;
+      }
+      .results_popup_ios {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 90%;
+      }
+      .results_popup_iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      .results_popup_alldevices {
+        height: 90%;
+      }
+      .healthdata-edit-field {
+        border: none;
+        background: none;
+        margin: 0;
+      }
+      .yearsofuse {
+        width: 125px;
+      }
+      .dropdown_width {
+        width: 125px;
+      }
+      .tobacco_form {
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+      .submit_fields {
+        margin-top: 10px;
+      }
+      .errormessage {
+        margin-top: 20px;
+      }
+      .smoking_quantity_abbreviation {
+        padding-left: 10px;
+        vertical-align: bottom;
+      }
+      .hidetext {
+        visibility: hidden;
+      }
+
+      .font_10px {
+        font-size: 10px;
+      }
+
+      .left_170px {
+        left: 170px;
+      }
+
+      .timeout_ok {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .timeout_ok_btn {
+        float: none;
+        width: 70px;
+      }
+
+      .width_940px {
+        width: 940px;
+      }
+
+      .width_960px {
+        width: 960px;
+      }
+
+      .width_720px {
+        width: 720px;
+      }
+
+      .footer_border {
+        background-color: #f2f2f2;
+        border-radius: 0 0 10px 10px;
+        height: 55px;
+        margin: 0 auto 20px auto;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+
+      .footer_location {
+        behavior: url({{PORTALSTATICHOST}}/portal/pie/PIE.php);
+      }
+
+      .mobile_footer_links {
+        padding: 3px;
+        margin: auto;
+        text-align: center;
+        font-size: 8pt;
+      }
+
+      .mobile_footer_feedback {
+        color: #333;
+      }
+
+      .width_50px {
+        width: 50px;
+      }
+
+      .mobile_powered_by_athena {
+        margin: auto;
+        text-align: center;
+        font-size: 8pt;
+        height: 100px;
+      }
+      @media print {
+        /* Prevents the printable content from getting clipped, while printing the page through proxy login*/
+        body {
+          font-size: 9pt !important;
+          -ms-zoom: 68% !important;
+        }
+      }
+      .mobile_header_title {
+        min-height: 20px;
+        height: 20px;
+      }
+      .mobile_buttons_margin {
+        margin-top: 3px;
+      }
+      .mobile_landing_buttons {
+        margin-top: 0px;
+      }
+      .mobile_911msg_messges {
+        padding-left: 17px;
+        font-weight: normal;
+        background-color: #fdf8cd;
+      }
+      .blue_exit_button {
+        color: #0000ff;
+      }
+      .signin_signout_button {
+        color: #333;
+      }
+      .patient_switch_toppadding {
+        padding-top: 8px;
+      }
+      #header.landing_header_width {
+        width: 705px;
+      }
+      #header.selfcheckin_header_width {
+        width: 945px;
+      }
+      #header.landing_selfcheckin_header {
+        height: 45px;
+        background-color: #f2f2f2;
+        border-radius: 10px 10px 0 0;
+        margin: 0 auto;
+        line-height: 45px;
+        text-align: right;
+        padding-right: 15px;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+      #header.landing_selfcheckin_header.overwrite_landing_selfcheckin_header {
+        height: 50px;
+        line-height: 16px;
+      }
+      .reg_header_background {
+        background-color: #fff;
+        margin: 0 auto;
+      }
+      .reg_emaillogin_border {
+        border: 1px solid #ccc;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .reg_landingmsg_border {
+        border-bottom: none;
+      }
+      .selfcheckin_general_header {
+        width: 960px;
+      }
+      .reg_header_width {
+        width: 722px;
+      }
+      #patient-picker-menu.none-display {
+        display: none;
+      }
+    </style>
+    <script>
+      // Create a handler for when the page is done loading.
+      function onpageload() {
+        var popup = false;
+        var displayTestImage = true;
+        // Set the URL for the "View larger" link
         if (popup) {
-          // Let's set up a variable to store all of the img tags.
-          var images;
+          var largerLink = document.getElementById("view-larger-link");
+          if (largerLink) {
+            largerLink.href = window.location.href.replace("popup=t", "");
+          }
+        }
 
-          // Let's set up a counter for the number of images loaded.
-          var numberImagesLoaded = 0;
+        // Let's set up a function that will trigger an event
+        // to the parent that loading is complete.
+        var dispatchLoadComplete = function () {
+          var parentDocumentElement = window.parent.document.documentElement;
+          // If the standard DOM createEvent function exists, use it.
+          if (document.createEvent) {
+            var loadEvent = document.createEvent("Event");
+            loadEvent.initEvent("ajaxLoad", false, true);
+            parentDocumentElement.dispatchEvent(loadEvent);
+          }
+          // It doesn't exist, so we're using an older version
+          // of IE. This is a workaround that will trigger
+          // a propertychange event on the parent.
+          else {
+            parentDocumentElement.ajaxLoadEvent++;
+          }
+        };
 
-          // Let's set up an onload handler for the images.
-          var onImageLoad = function() {
-            // We have another image that's loaded.
-            numberImagesLoaded++;
+        // If we have a test image to display, we need to make an ajax call
+        // to get the dynamic HTML to insert into our document.
+        if (displayTestImage) {
+          // Let's set up the function that inserts the HTML
+          // returned by the server.
+          var onAjaxLoad = function (responseText) {
+            // Let's append the response to the document
+            var displayElement = document.getElementById("lab-image-display");
+            displayElement.innerHTML = responseText;
 
-            // Let's check to see if all of the images have
-            // loaded. Once they have, it's time for
-            // a little bit more cleanup, and then we
-            // inform the parent that we're done.
-            if (numberImagesLoaded == images.length) {
-              var imageElement = document.querySelector('img.printpagemaxdimensions');
-              if (imageElement) {
-                imageElement.style.height = 'auto';
-                imageElement.style.width = 'auto';
+            // If this is a popup window, we want to do a little extra
+            // work. Namely, we want to determine when the images
+            // have loaded to inform the parent that it's time to
+            // actually show the dialog.
+            if (popup) {
+              // Let's set up a variable to store all of the img tags.
+              var images;
+
+              // Let's set up a counter for the number of images loaded.
+              var numberImagesLoaded = 0;
+
+              // Let's set up an onload handler for the images.
+              var onImageLoad = function () {
+                // We have another image that's loaded.
+                numberImagesLoaded++;
+
+                // Let's check to see if all of the images have
+                // loaded. Once they have, it's time for
+                // a little bit more cleanup, and then we
+                // inform the parent that we're done.
+                if (numberImagesLoaded == images.length) {
+                  var imageElement = document.querySelector(
+                    "img.printpagemaxdimensions"
+                  );
+                  if (imageElement) {
+                    imageElement.style.height = "auto";
+                    imageElement.style.width = "auto";
+                  }
+
+                  // All finished, tell the parent.
+                  dispatchLoadComplete();
+                }
+              };
+
+              // Now that we have defined handlers for image
+              // loads, let's actually go through each image
+              // and attach the handler.
+              images = displayElement.querySelectorAll("img");
+              if (images.length) {
+                for (var i = 0; i < images.length; i++) {
+                  // If the image is already loaded,
+                  // the handler will never be triggered,
+                  // so let's call it manually.
+                  if (images[i].completed) {
+                    onImageLoad();
+                  }
+                  // Attach the handler for both
+                  // success and error events.
+                  else {
+                    images[i].onload = onImageLoad;
+                    images[i].onerror = onImageLoad;
+                  }
+                }
+              } else {
+                // There were no images in the document,
+                // so go ahead and let the parent know
+                // that we're finished.
+                dispatchLoadComplete();
               }
-
-              // All finished, tell the parent.
-              dispatchLoadComplete();
             }
           };
 
-          // Now that we have defined handlers for image
-          // loads, let's actually go through each image
-          // and attach the handler.
-          images = displayElement.querySelectorAll('img');
-          if (images.length) {
-            for (var i = 0 ; i < images.length ; i++) {
-              // If the image is already loaded,
-              // the handler will never be triggered,
-              // so let's call it manually.
-              if (images[i].completed) {
-                onImageLoad();
-              }
-              // Attach the handler for both
-              // success and error events.
-              else {
-                images[i].onload = onImageLoad;
-                images[i].onerror = onImageLoad;
-              }
+          // Let's make an ajax call for the image
+          var url = document.getElementById("lab_image_url").value;
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              onAjaxLoad(xmlhttp.responseText);
             }
-          }
-          else {
-            // There were no images in the document,
-            // so go ahead and let the parent know
-            // that we're finished.
+          };
+          xmlhttp.open("get", url, true);
+          xmlhttp.send();
+        } else {
+          // There's nothing to load via AJAX. If this is a popup, let's
+          // let the parent know that we're done.
+          if (popup) {
             dispatchLoadComplete();
           }
         }
-      };
-
-      // Let's make an ajax call for the image
-      var url = document.getElementById('lab_image_url').value;
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          onAjaxLoad(xmlhttp.responseText);
-        }
-      };
-      xmlhttp.open('get', url, true);
-      xmlhttp.send();
-    }
-    else {
-      // There's nothing to load via AJAX. If this is a popup, let's
-      // let the parent know that we're done.
-      if (popup) {
-        dispatchLoadComplete();
       }
-    }
 
-  }
-
-  // Attach the event handler to the load event.
-  if (document.addEventListener) {
-    window.addEventListener('load', onpageload);
-  }
-  // We're using an older version of IE, use attachEvent.
-  else {
-    document.attachEvent('onreadystatechange', function() {
-      if (document.readyState === 'complete') {
-        document.detachEvent('onreadystatechange', arguments.callee);
-        onpageload();
+      // Attach the event handler to the load event.
+      if (document.addEventListener) {
+        window.addEventListener("load", onpageload);
       }
-    });
-  }
-  var DONOTRELOADONTIMEOUT = true;
-
-  </script>
-
-  </head><body class="body_style">
-    <input type="hidden" value="./?section=messages&amp;sub=labimg&amp;CSRFPROTECT=382035caed65e069723e7c90ba44595834c748f18dc039aa046d1d2ececbaa93&amp;documentid=1357404&amp;testid=" id="lab_image_url">
+      // We're using an older version of IE, use attachEvent.
+      else {
+        document.attachEvent("onreadystatechange", function () {
+          if (document.readyState === "complete") {
+            document.detachEvent("onreadystatechange", arguments.callee);
+            onpageload();
+          }
+        });
+      }
+      var DONOTRELOADONTIMEOUT = true;
+    </script>
+  </head>
+  <body class="body_style">
+    <input
+      type="hidden"
+      value="./?section=messages&amp;sub=labimg&amp;CSRFPROTECT=382035caed65e069723e7c90ba44595834c748f18dc039aa046d1d2ececbaa93&amp;documentid=1357404&amp;testid="
+      id="lab_image_url"
+    />
     <span class="dontprint align_right">
-      <a onclick="window.print();"><span class="sprite-print sprite_container"></span> Print</a>
+      <a onclick="window.print();"
+        ><span class="sprite-print sprite_container"></span> Print</a
+      >
     </span>
 
-    <h5>Your test result on 06/21/2021</h5>
     <div class="results-info">
-      <strong>Patient Name: </strong>Andrea Smith | <strong>Date of Birth: </strong>10/05/1976
+      <strong>Patient Name: </strong>Andrea Smith |
+      <strong>Date of Birth: </strong>10/05/1976
     </div>
 
+    <div id="lab-image-display">
+      <!--This was generated using Mustache.-->
+      <!--Rendered with new migrated layout-->
 
-      <div id="lab-image-display"><!--This was generated using Mustache.-->
-    <!--Rendered with new migrated layout-->
+      <link href="./lab_files/css.php" rel="stylesheet" type="text/css" />
+      <link href="./lab_files/clinicals.css" rel="stylesheet" type="text/css" />
+      <link href="./lab_files/sprites.css" rel="stylesheet" type="text/css" />
 
-
-
-  <link href="./lab_files/css.php" rel="stylesheet" type="text/css">
-  <link href="./lab_files/clinicals.css" rel="stylesheet" type="text/css">
-  <link href="./lab_files/sprites.css" rel="stylesheet" type="text/css">
-
-  <script language="javascript">
-    var imageElement = document.querySelector('img.printpagemaxdimensions');
-  if (imageElement) {
-    imageElement.style.height = 'auto';
-    imageElement.style.width = 'auto';
-  }
-  /**
-   * The OWASP CSRFGuard Project, BSD License
-   * Eric Sheridan (eric.sheridan@owasp.org), Copyright (c) 2011
-   * All rights reserved.
-   *
-   * Redistribution and use in source and binary forms, with or without
-   * modification, are permitted provided that the following conditions are met:
-   *
-   *    1. Redistributions of source code must retain the above copyright notice,
-   *       this list of conditions and the following disclaimer.
-   *    2. Redistributions in binary form must reproduce the above copyright
-   *       notice, this list of conditions and the following disclaimer in the
-   *       documentation and/or other materials provided with the distribution.
-   *    3. Neither the name of OWASP nor the names of its contributors may be used
-   *       to endorse or promote products derived from this software without specific
-   *       prior written permission.
-   *
-   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-   * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-   * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-   * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-   * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-   * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-   * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  */
-
-
-  // Public functions (bodies are declared inside the closure to have access to the
-  // private functions).
-
-  /** Globally exposing these three functions is a "necessary evil" for cases where
-   *  we can't implement CSRF protection in a more abstract way (e.g. CallRemote).
-   */
-  var GetCSRFValue;
-  var GetCSRFTokenName;
-  var AppendCSRFTokenToURL;
-  var PORTALCSRFPROTECTION = "ON";
-
-  (function () {
-    /** Private Property * */
-    var DOMAIN_STRICT = false;
-    var VALID_DOMAIN = (window.location.hostname === 'www.quickpayportal.com') ? 'www.quickpayportal.com' : 'portal.athenahealth.com';
-    var DOMAIN_ORIGIN = IsDevServer(window.location.hostname) ? 'athenahealth.com' : VALID_DOMAIN;
-    var TOKENNAME = 'CSRFPROTECT';
-    var COOKIENAME = '';
-
-    /** string utility functions * */
-    String.prototype.startsWith = function(prefix) {
-      return (this.indexOf(prefix) === 0);
-    }
-    String.prototype.endsWith = function(suffix) {
-      return (this.match(suffix + '$') == suffix);
-    };
-
-    /**
-     * Determine if the passed hostname is that of a dev server.
-     * The following command is used to generate the dev server list:
-     * openssl x509 -in /etc/pki/tls/certs/dev.athenahealth.com.crt -text
-     */
-    function IsDevServer(hostname) {
-      if (
-        hostname.match(/.*dev.*\d+[.]athenahealth[.]com/)
-        || hostname.match(/devcommweb.*\d+[.]athenahealth[.]com/)
-        || hostname.match(/reg.+\d+[.]athenahealth[.]com/)
-        || hostname.match(/.*stage\d*[.]athenahealth[.]com/)
-      ) {
-        return true;
-      }
-      else {
-        return false;
-      }
-    }
-
-    /** check if valid domain based on domainStrict * */
-    function IsValidDomain(current, target) {
-      var result = false;
-
-      current = current.toLowerCase();
-      /** check exact or subdomain match * */
-      if (current == target) {
-        result = true;
-      }
-      else if (DOMAIN_STRICT == false) {
-        if (target.charAt(0) == '.') {
-          result = current.endsWith(target);
+      <script language="javascript">
+        var imageElement = document.querySelector("img.printpagemaxdimensions");
+        if (imageElement) {
+          imageElement.style.height = "auto";
+          imageElement.style.width = "auto";
         }
-        else {
-          result = current.endsWith('.' + target);
-        }
-      }
+        /**
+         * The OWASP CSRFGuard Project, BSD License
+         * Eric Sheridan (eric.sheridan@owasp.org), Copyright (c) 2011
+         * All rights reserved.
+         *
+         * Redistribution and use in source and binary forms, with or without
+         * modification, are permitted provided that the following conditions are met:
+         *
+         *    1. Redistributions of source code must retain the above copyright notice,
+         *       this list of conditions and the following disclaimer.
+         *    2. Redistributions in binary form must reproduce the above copyright
+         *       notice, this list of conditions and the following disclaimer in the
+         *       documentation and/or other materials provided with the distribution.
+         *    3. Neither the name of OWASP nor the names of its contributors may be used
+         *       to endorse or promote products derived from this software without specific
+         *       prior written permission.
+         *
+         * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+         * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+         * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+         * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+         * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+         * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+         * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+         * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+         * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+         * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+         */
 
-      return result;
-    }
+        // Public functions (bodies are declared inside the closure to have access to the
+        // private functions).
 
-    /** check if the passed URL contains valid domain * */
-    function URLHasValidDomain(url) {
-      var matches = url.match(/^(%?[a-z0-9.+-]+:|)[/]{2,}([^/:#?]*)/i);
-      if (matches) {
-        // This URL is fully qualified. It either starts with a protocol
-        // (http, https, etc), or is protocol-relative, e.g. starts with //
-        return (
-          (matches[1].match(/^https:$/i) || matches[1] === '')
-          && IsValidDomain(matches[2], DOMAIN_ORIGIN)
-        )
-        ? true
-        : false;
-      }
-      else {
-        // This URL is relative and therefore doesn't point outside AthenaNet.
-        return true;
-      }
-    }
+        /** Globally exposing these three functions is a "necessary evil" for cases where
+         *  we can't implement CSRF protection in a more abstract way (e.g. CallRemote).
+         */
+        var GetCSRFValue;
+        var GetCSRFTokenName;
+        var AppendCSRFTokenToURL;
+        var PORTALCSRFPROTECTION = "ON";
 
-    /**
-     * Cookie name for most environments (such as production) is simply the name of
-     * the form token (CSRFPROTECT). However, if AthenaNet is being run on the dev server,
-     * append port number to it so we can run multiple instances of AthenaNet on the same
-     * server.
-     */
-    function GetCSRFCookieName() {
-      if (COOKIENAME == '') {
-        if (
-          window.location.port
-          && window.location.hostname
-          && IsDevServer(window.location.hostname)
-        ) {
-          COOKIENAME = window.location.port + '.' + TOKENNAME;
-        }
-        else {
-          COOKIENAME = TOKENNAME;
-        }
-      }
+        (function () {
+          /** Private Property * */
+          var DOMAIN_STRICT = false;
+          var VALID_DOMAIN =
+            window.location.hostname === "www.quickpayportal.com"
+              ? "www.quickpayportal.com"
+              : "portal.athenahealth.com";
+          var DOMAIN_ORIGIN = IsDevServer(window.location.hostname)
+            ? "athenahealth.com"
+            : VALID_DOMAIN;
+          var TOKENNAME = "CSRFPROTECT";
+          var COOKIENAME = "";
 
-      return COOKIENAME;
-    }
+          /** string utility functions * */
+          String.prototype.startsWith = function (prefix) {
+            return this.indexOf(prefix) === 0;
+          };
+          String.prototype.endsWith = function (suffix) {
+            return this.match(suffix + "$") == suffix;
+          };
 
-    /** Return the CSRF token name. * */
-    GetCSRFTokenName = function() {
-      return TOKENNAME;
-    }
-
-    /** Retrieve the csrf value from a cookie set during authentication * */
-    GetCSRFValue = function() {
-      var csrfvalue;
-
-      if (document.cookie) {
-        var cookiename = GetCSRFCookieName();
-
-        var match = document.cookie.match( new RegExp( '(?:^|;\\s*)' + cookiename + '=([^;]*)' ) );
-        if (match) {
-          csrfvalue = match[1] || 'EMPTY';
-        }
-      }
-
-      return csrfvalue || 'NONE';
-    }
-
-    var csrfobject = {};
-    // Get the portal csrf name value pair
-    csrfobject[GetCSRFTokenName()] = GetCSRFValue();
-    // To prevent loading csrf.js twice, we are adding a parameter in all ajax requests
-    csrfobject["DONOTLOADCSRFJS"] = 1;
-
-    // Append the csrftoken to all ajax requests
-    $.ajaxSetup({
-      data : csrfobject
-    });
-
-    /** Given a url, returns that url with the csrf token added to the query string * */
-    AppendCSRFTokenToURL = function(url) {
-      // If the url only contains the anchor (eg <a href="#inbox">) we don't want to add
-      // CSRFPROTECT token to it because it would force the page reload.
-      if (url.charAt(0) == '#') {
-        return url;
-      }
-
-      // Do not append CSRF tokens to external links.
-      if (!URLHasValidDomain(url)) {
-        return url;
-      }
-
-      // For certain URL types (javascript: mailto: tel: sms:), we don't want
-      // to add the token.
-      if (url.match(/^(?:javascript|mailto|tel|sms|data):/i)) {
-        return url;
-      }
-
-      var tokenname = GetCSRFTokenName();
-      var tokenvalue = GetCSRFValue();
-
-      // If CSRF token is already present in the URL, compare it with the correct one.
-      // If they don't match, replace with the correct one. Otherwise, we're done.
-      var csrftokenmatch = url.match(new RegExp('([?](?:.*?&)??' + tokenname + '=)([^&#]*)'));
-      if (csrftokenmatch) {
-        if (csrftokenmatch[2] != tokenvalue) {
-          // Token is outdated (likely due to user timing out and re-relogging)
-          // and needs to be replaced.
-          return url.replace(csrftokenmatch[0], csrftokenmatch[1] + tokenvalue);
-        }
-        else {
-          // Token is up-to-date, no need to do anything.
-          return url;
-        }
-      }
-
-      // URL anchor has to remain at the end.
-      var anchor = '';
-      var anchorindex = url.indexOf('#');
-      if (anchorindex != -1) {
-        anchor = url.substring(anchorindex);
-        url = url.substring(0, anchorindex);
-      }
-
-      // Determine the proper separator.
-      var sep = '';
-      if (url.indexOf('?') == -1) {
-        sep = '?';
-      }
-      else {
-        var lastchar = url.charAt(url.length - 1);
-        if (lastchar != '&' && lastchar != '?') {
-          sep = '&';
-        }
-      }
-
-      return url + sep + tokenname + '=' + tokenvalue + anchor;
-    }
-
-
-    // Takes a link DOM object and adds the CSRF token to the href.
-    function ProtectLink(link) {
-      if (!link || !link.href) {
-        return;
-      }
-
-      // Do not append token if mobile portal, ajaxEnabled is true and data-ajax is not set to false.
-      if ($.mobile !== undefined && $.mobile.ajaxEnabled) {
-        // Retrieve data-ajax value.
-        var isajaxenabled = jQuery(link).data('ajax');
-        // Default to true if data-ajax is undefined and ajaxEnabled is true.
-        if (typeof isajaxenabled === "undefined") {
-          isajaxenabled = true;
-        }
-        // If data-ajax is true, return without appending token.
-        if (isajaxenabled) {
-          return;
-        }
-      }
-
-      var linkanchorindex = link.href.indexOf('#');
-      // If the document.location.href and link.href have the same base url
-      // (disregarding the anchor), do not append token either.
-      if (document.location && linkanchorindex > 0) {
-        var linkwithoutanchor = link.href.substring(0, linkanchorindex);
-        if (document.location.href === linkwithoutanchor) {
-          return;
-        }
-        var locationanchorindex = document.location.href.indexOf('#');
-        if (
-          locationanchorindex != -1
-          && document.location.href.substring(0, locationanchorindex) === linkwithoutanchor
-        ) {
-          return;
-        }
-      }
-
-      // Do not update the href attribute unnecessarily. Also serves as a workaround
-      // for one very bizarre IE bug (h#315870).
-      var newhref = AppendCSRFTokenToURL(link.href);
-      if (newhref !== link.href) {
-        link.href = newhref;
-      }
-    }
-
-    /**
-     * Given a form, we first determine whether or not it contains a CSRF token.
-     * If it does, we'll update its value to the current token.  Otherwise, we
-     * will create a new CSRF token and insert it as the first child element of
-     * the form.
-     */
-    function InjectTokenIntoForm(form) {
-      var tokenname = GetCSRFTokenName();
-      var tokenvalue = GetCSRFValue();
-      if (tokenname && tokenvalue) {
-        var $form = jQuery(form);
-        var existingtokens = $form.children('[name="' + tokenname + '"]');
-        if (existingtokens.length) {
-          existingtokens
-            .val(tokenvalue);
-        }
-        else {
-          var token = jQuery("<input type='hidden' name='" + tokenname + "' />")
-            .val(tokenvalue);
-          $form
-            .prepend(token)
-        }
-      }
-    }
-
-    /**
-     * Finally, set up the handlers to call ProtectForms().
-     *
-     * Only set up these handlers if the JavaScript was referenced from HTML that
-     * was served by us.  Otherwise, the code was referenced from malicious HTML
-     * which may be trying to steal tokens using JavaScript hijacking techniques.
-     */
-    if (IsValidDomain(document.domain, DOMAIN_ORIGIN)) {
-      try {
-        jQuery(document).on('click mousedown', 'a', function(event) {
-          if(!$(event.target).hasClass('no-csrf')){
-            ProtectLink(this);
+          /**
+           * Determine if the passed hostname is that of a dev server.
+           * The following command is used to generate the dev server list:
+           * openssl x509 -in /etc/pki/tls/certs/dev.athenahealth.com.crt -text
+           */
+          function IsDevServer(hostname) {
+            if (
+              hostname.match(/.*dev.*\d+[.]athenahealth[.]com/) ||
+              hostname.match(/devcommweb.*\d+[.]athenahealth[.]com/) ||
+              hostname.match(/reg.+\d+[.]athenahealth[.]com/) ||
+              hostname.match(/.*stage\d*[.]athenahealth[.]com/)
+            ) {
+              return true;
+            } else {
+              return false;
+            }
           }
-        })
-        .on('click mousedown', '.mobile-button,.portal-button,a,button,input[type=submit],input[type=button]', function(event) {
-          jQuery('form').each(function() {
-            InjectTokenIntoForm(this);
+
+          /** check if valid domain based on domainStrict * */
+          function IsValidDomain(current, target) {
+            var result = false;
+
+            current = current.toLowerCase();
+            /** check exact or subdomain match * */
+            if (current == target) {
+              result = true;
+            } else if (DOMAIN_STRICT == false) {
+              if (target.charAt(0) == ".") {
+                result = current.endsWith(target);
+              } else {
+                result = current.endsWith("." + target);
+              }
+            }
+
+            return result;
+          }
+
+          /** check if the passed URL contains valid domain * */
+          function URLHasValidDomain(url) {
+            var matches = url.match(/^(%?[a-z0-9.+-]+:|)[/]{2,}([^/:#?]*)/i);
+            if (matches) {
+              // This URL is fully qualified. It either starts with a protocol
+              // (http, https, etc), or is protocol-relative, e.g. starts with //
+              return (matches[1].match(/^https:$/i) || matches[1] === "") &&
+                IsValidDomain(matches[2], DOMAIN_ORIGIN)
+                ? true
+                : false;
+            } else {
+              // This URL is relative and therefore doesn't point outside AthenaNet.
+              return true;
+            }
+          }
+
+          /**
+           * Cookie name for most environments (such as production) is simply the name of
+           * the form token (CSRFPROTECT). However, if AthenaNet is being run on the dev server,
+           * append port number to it so we can run multiple instances of AthenaNet on the same
+           * server.
+           */
+          function GetCSRFCookieName() {
+            if (COOKIENAME == "") {
+              if (
+                window.location.port &&
+                window.location.hostname &&
+                IsDevServer(window.location.hostname)
+              ) {
+                COOKIENAME = window.location.port + "." + TOKENNAME;
+              } else {
+                COOKIENAME = TOKENNAME;
+              }
+            }
+
+            return COOKIENAME;
+          }
+
+          /** Return the CSRF token name. * */
+          GetCSRFTokenName = function () {
+            return TOKENNAME;
+          };
+
+          /** Retrieve the csrf value from a cookie set during authentication * */
+          GetCSRFValue = function () {
+            var csrfvalue;
+
+            if (document.cookie) {
+              var cookiename = GetCSRFCookieName();
+
+              var match = document.cookie.match(
+                new RegExp("(?:^|;\\s*)" + cookiename + "=([^;]*)")
+              );
+              if (match) {
+                csrfvalue = match[1] || "EMPTY";
+              }
+            }
+
+            return csrfvalue || "NONE";
+          };
+
+          var csrfobject = {};
+          // Get the portal csrf name value pair
+          csrfobject[GetCSRFTokenName()] = GetCSRFValue();
+          // To prevent loading csrf.js twice, we are adding a parameter in all ajax requests
+          csrfobject["DONOTLOADCSRFJS"] = 1;
+
+          // Append the csrftoken to all ajax requests
+          $.ajaxSetup({
+            data: csrfobject,
           });
-        });
-      } catch(err) { }
-    }
 
-  })();
-  var DONOTRELOADONTIMEOUT = true;
+          /** Given a url, returns that url with the csrf token added to the query string * */
+          AppendCSRFTokenToURL = function (url) {
+            // If the url only contains the anchor (eg <a href="#inbox">) we don't want to add
+            // CSRFPROTECT token to it because it would force the page reload.
+            if (url.charAt(0) == "#") {
+              return url;
+            }
 
-  </script>
-  <style type="text/css">
-    body
-  {
-    background : none;
-    overflow : initial;
-    padding : 10px;
-  }
-  .grid, table.grid td, table.grid th {
-    border-collapse : collapse;
-    border-spacing : 0;
-    border-style : solid;
-    border-color : #CCCCCC;
-    border-width : 1px;
-  }
+            // Do not append CSRF tokens to external links.
+            if (!URLHasValidDomain(url)) {
+              return url;
+            }
 
-  table.grid td, table.grid th {
-    padding-top : 3px;
-    padding-bottom : 2px;
-    padding-right : 4px;
-    padding-left : 4px;
-  }
+            // For certain URL types (javascript: mailto: tel: sms:), we don't want
+            // to add the token.
+            if (url.match(/^(?:javascript|mailto|tel|sms|data):/i)) {
+              return url;
+            }
 
-  table.grid td {
-    font-size : 95%;
-  }
+            var tokenname = GetCSRFTokenName();
+            var tokenvalue = GetCSRFValue();
 
-  table.grid th {
-    font-size : 90%;
-    color : #666644;
-    background-color : #EEEECC;
-    font-weight : bold;
-    text-align : center;
-  }
-  .normaltext {
-    color : #000000;
-    font-size : 12px;
-    font-weight : normal;
-    font-family : Arial;
-  }
-  .printonly {
-    display : block;
-  }
-  #lab-image-display {
-    border : 1px solid #bdbdbd;
-    padding : 5px;
-  }
-  .results-info {
-    margin-bottom : 5px;
-    display: none;
-  }
-  .lab-result-error {
-    margin : 100px auto;
-    border : 1px solid black;
-    padding : 20px;
-    width : 480px;
-    text-align : center;
-  }
+            // If CSRF token is already present in the URL, compare it with the correct one.
+            // If they don't match, replace with the correct one. Otherwise, we're done.
+            var csrftokenmatch = url.match(
+              new RegExp("([?](?:.*?&)??" + tokenname + "=)([^&#]*)")
+            );
+            if (csrftokenmatch) {
+              if (csrftokenmatch[2] != tokenvalue) {
+                // Token is outdated (likely due to user timing out and re-relogging)
+                // and needs to be replaced.
+                return url.replace(
+                  csrftokenmatch[0],
+                  csrftokenmatch[1] + tokenvalue
+                );
+              } else {
+                // Token is up-to-date, no need to do anything.
+                return url;
+              }
+            }
 
-  @media print {
-    img {
-      max-width : 100%;
-    }
-  }
+            // URL anchor has to remain at the end.
+            var anchor = "";
+            var anchorindex = url.indexOf("#");
+            if (anchorindex != -1) {
+              anchor = url.substring(anchorindex);
+              url = url.substring(0, anchorindex);
+            }
 
-  .font_10px {
-    font-size : 10px;
-  }
+            // Determine the proper separator.
+            var sep = "";
+            if (url.indexOf("?") == -1) {
+              sep = "?";
+            } else {
+              var lastchar = url.charAt(url.length - 1);
+              if (lastchar != "&" && lastchar != "?") {
+                sep = "&";
+              }
+            }
 
-  .left_170px {
-    left : 170px;;
-  }
+            return url + sep + tokenname + "=" + tokenvalue + anchor;
+          };
 
-  .timeout_ok {
-    text-align : center;
-    margin-top : 20px;
-  }
+          // Takes a link DOM object and adds the CSRF token to the href.
+          function ProtectLink(link) {
+            if (!link || !link.href) {
+              return;
+            }
 
-  .timeout_ok_btn {
-    float : none;
-    width : 70px;
-  }
+            // Do not append token if mobile portal, ajaxEnabled is true and data-ajax is not set to false.
+            if ($.mobile !== undefined && $.mobile.ajaxEnabled) {
+              // Retrieve data-ajax value.
+              var isajaxenabled = jQuery(link).data("ajax");
+              // Default to true if data-ajax is undefined and ajaxEnabled is true.
+              if (typeof isajaxenabled === "undefined") {
+                isajaxenabled = true;
+              }
+              // If data-ajax is true, return without appending token.
+              if (isajaxenabled) {
+                return;
+              }
+            }
 
-  .width_940px {
-    width : 940px
-  }
+            var linkanchorindex = link.href.indexOf("#");
+            // If the document.location.href and link.href have the same base url
+            // (disregarding the anchor), do not append token either.
+            if (document.location && linkanchorindex > 0) {
+              var linkwithoutanchor = link.href.substring(0, linkanchorindex);
+              if (document.location.href === linkwithoutanchor) {
+                return;
+              }
+              var locationanchorindex = document.location.href.indexOf("#");
+              if (
+                locationanchorindex != -1 &&
+                document.location.href.substring(0, locationanchorindex) ===
+                  linkwithoutanchor
+              ) {
+                return;
+              }
+            }
 
-  .width_960px {
-    width : 960px;
-  }
+            // Do not update the href attribute unnecessarily. Also serves as a workaround
+            // for one very bizarre IE bug (h#315870).
+            var newhref = AppendCSRFTokenToURL(link.href);
+            if (newhref !== link.href) {
+              link.href = newhref;
+            }
+          }
 
-  .width_720px {
-    width : 720px;
-  }
+          /**
+           * Given a form, we first determine whether or not it contains a CSRF token.
+           * If it does, we'll update its value to the current token.  Otherwise, we
+           * will create a new CSRF token and insert it as the first child element of
+           * the form.
+           */
+          function InjectTokenIntoForm(form) {
+            var tokenname = GetCSRFTokenName();
+            var tokenvalue = GetCSRFValue();
+            if (tokenname && tokenvalue) {
+              var $form = jQuery(form);
+              var existingtokens = $form.children('[name="' + tokenname + '"]');
+              if (existingtokens.length) {
+                existingtokens.val(tokenvalue);
+              } else {
+                var token = jQuery(
+                  "<input type='hidden' name='" + tokenname + "' />"
+                ).val(tokenvalue);
+                $form.prepend(token);
+              }
+            }
+          }
 
-  .footer_border {
-    background-color : #f2f2f2;
-    border-radius : 0 0 10px 10px;
-    height : 55px;
-    margin : 0 auto 20px auto;
-    border-bottom : 1px solid #CCC;
-    border-left : 1px solid #CCC;
-    border-right : 1px solid #CCC;
-  }
+          /**
+           * Finally, set up the handlers to call ProtectForms().
+           *
+           * Only set up these handlers if the JavaScript was referenced from HTML that
+           * was served by us.  Otherwise, the code was referenced from malicious HTML
+           * which may be trying to steal tokens using JavaScript hijacking techniques.
+           */
+          if (IsValidDomain(document.domain, DOMAIN_ORIGIN)) {
+            try {
+              jQuery(document)
+                .on("click mousedown", "a", function (event) {
+                  if (!$(event.target).hasClass("no-csrf")) {
+                    ProtectLink(this);
+                  }
+                })
+                .on(
+                  "click mousedown",
+                  ".mobile-button,.portal-button,a,button,input[type=submit],input[type=button]",
+                  function (event) {
+                    jQuery("form").each(function () {
+                      InjectTokenIntoForm(this);
+                    });
+                  }
+                );
+            } catch (err) {}
+          }
+        })();
+        var DONOTRELOADONTIMEOUT = true;
+      </script>
+      <style type="text/css">
+        body {
+          background: none;
+          overflow: initial;
+          padding: 10px;
+        }
+        .grid,
+        table.grid td,
+        table.grid th {
+          border-collapse: collapse;
+          border-spacing: 0;
+          border-style: solid;
+          border-color: #cccccc;
+          border-width: 1px;
+        }
 
-  .footer_location {
-    behavior : url({{PORTALSTATICHOST}}/portal/pie/PIE.php);
-  }
+        table.grid td,
+        table.grid th {
+          padding-top: 3px;
+          padding-bottom: 2px;
+          padding-right: 4px;
+          padding-left: 4px;
+        }
 
-  .mobile_footer_links {
-    padding : 3px;
-    margin : auto;
-    text-align : center;
-    font-size : 8pt;
-  }
+        table.grid td {
+          font-size: 95%;
+        }
 
+        table.grid th {
+          font-size: 90%;
+          color: #666644;
+          background-color: #eeeecc;
+          font-weight: bold;
+          text-align: center;
+        }
+        .normaltext {
+          color: #000000;
+          font-size: 12px;
+          font-weight: normal;
+          font-family: Arial;
+        }
+        .printonly {
+          display: block;
+        }
+        #lab-image-display {
+          border: 1px solid #bdbdbd;
+          padding: 5px;
+        }
+        .results-info {
+          margin-bottom: 5px;
+          display: none;
+        }
+        .lab-result-error {
+          margin: 100px auto;
+          border: 1px solid black;
+          padding: 20px;
+          width: 480px;
+          text-align: center;
+        }
 
+        @media print {
+          img {
+            max-width: 100%;
+          }
+        }
 
-  .mobile_footer_feedback {
-    color : #333;
-  }
+        .font_10px {
+          font-size: 10px;
+        }
 
-  .width_50px {
-    width : 50px;
-  }
+        .left_170px {
+          left: 170px;
+        }
 
-  .mobile_powered_by_athena {
-    margin : auto;
-    text-align : center;
-    font-size : 8pt;
-    height : 100px;
-  }
-  @media print {
-    /* Prevents the printable content from getting clipped, while printing the page through proxy login*/
-    body {
-      font-size: 9pt !important;
-      -ms-zoom: 68% !important;
-    }
-  }
-  .mobile_header_title {
-    min-height : 20px;
-    height : 20px;
-  }
-  .mobile_buttons_margin {
-    margin-top : 3px;
-  }
-  .mobile_landing_buttons {
-    margin-top : 0px;
-  }
-  .mobile_911msg_messges {
-    padding-left : 17px;
-    font-weight : normal;
-    background-color : #fdf8cd;
-  }
-  .blue_exit_button {
-    color : #0000FF;
-  }
-  .signin_signout_button {
-    color : #333;
-  }
-  .patient_switch_toppadding {
-    padding-top : 8px;
-  }
-  #header.landing_header_width {
-    width : 705px;
-  }
-  #header.selfcheckin_header_width {
-    width: 945px;
-  }
-  #header.landing_selfcheckin_header {
-    height : 45px;
-    background-color : #f2f2f2;
-    border-radius : 10px 10px 0 0;
-    margin : 0 auto;
-    line-height : 45px;
-    text-align : right;
-    padding-right : 15px;
-    border-top : 1px solid #CCC;
-    border-left : 1px solid #CCC;
-    border-right : 1px solid #CCC;
+        .timeout_ok {
+          text-align: center;
+          margin-top: 20px;
+        }
 
-  }
-  #header.landing_selfcheckin_header.overwrite_landing_selfcheckin_header {
-    height : 50px;
-    line-height : 16px;
-  }
-  .reg_header_background {
-    background-color : #fff;
-    margin : 0 auto;
-  }
-  .reg_emaillogin_border {
-    border : 1px solid #ccc;
-    -moz-box-sizing : border-box;
-    box-sizing : border-box;
-  }
-  .reg_landingmsg_border {
-    border-bottom : none;
-  }
-  .selfcheckin_general_header {
-    width : 960px;
-  }
-  .reg_header_width {
-    width : 722px;
-  }
-  #patient-picker-menu.none-display {
-    display : none;
-  }
+        .timeout_ok_btn {
+          float: none;
+          width: 70px;
+        }
 
+        .width_940px {
+          width: 940px;
+        }
 
-  </style>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Lab Results</title>
+        .width_960px {
+          width: 960px;
+        }
 
+        .width_720px {
+          width: 720px;
+        }
 
+        .footer_border {
+          background-color: #f2f2f2;
+          border-radius: 0 0 10px 10px;
+          height: 55px;
+          margin: 0 auto 20px auto;
+          border-bottom: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+        }
 
+        .footer_location {
+          behavior: url({{PORTALSTATICHOST}}/portal/pie/PIE.php);
+        }
 
+        .mobile_footer_links {
+          padding: 3px;
+          margin: auto;
+          text-align: center;
+          font-size: 8pt;
+        }
+
+        .mobile_footer_feedback {
+          color: #333;
+        }
+
+        .width_50px {
+          width: 50px;
+        }
+
+        .mobile_powered_by_athena {
+          margin: auto;
+          text-align: center;
+          font-size: 8pt;
+          height: 100px;
+        }
+        @media print {
+          /* Prevents the printable content from getting clipped, while printing the page through proxy login*/
+          body {
+            font-size: 9pt !important;
+            -ms-zoom: 68% !important;
+          }
+        }
+        .mobile_header_title {
+          min-height: 20px;
+          height: 20px;
+        }
+        .mobile_buttons_margin {
+          margin-top: 3px;
+        }
+        .mobile_landing_buttons {
+          margin-top: 0px;
+        }
+        .mobile_911msg_messges {
+          padding-left: 17px;
+          font-weight: normal;
+          background-color: #fdf8cd;
+        }
+        .blue_exit_button {
+          color: #0000ff;
+        }
+        .signin_signout_button {
+          color: #333;
+        }
+        .patient_switch_toppadding {
+          padding-top: 8px;
+        }
+        #header.landing_header_width {
+          width: 705px;
+        }
+        #header.selfcheckin_header_width {
+          width: 945px;
+        }
+        #header.landing_selfcheckin_header {
+          height: 45px;
+          background-color: #f2f2f2;
+          border-radius: 10px 10px 0 0;
+          margin: 0 auto;
+          line-height: 45px;
+          text-align: right;
+          padding-right: 15px;
+          border-top: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+        }
+        #header.landing_selfcheckin_header.overwrite_landing_selfcheckin_header {
+          height: 50px;
+          line-height: 16px;
+        }
+        .reg_header_background {
+          background-color: #fff;
+          margin: 0 auto;
+        }
+        .reg_emaillogin_border {
+          border: 1px solid #ccc;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        .reg_landingmsg_border {
+          border-bottom: none;
+        }
+        .selfcheckin_general_header {
+          width: 960px;
+        }
+        .reg_header_width {
+          width: 722px;
+        }
+        #patient-picker-menu.none-display {
+          display: none;
+        }
+      </style>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Lab Results</title>
 
       <div class="document_class_labresult_pm_header_sub">
-
-      <div class="clinicalsubheading">
-        <div class="headertitle">
-          COVID-19/CORONAVIRUS ANTIGEN (IN-HOUSE) (87426) 06/21/2021
-          <span class="normaltext">
-             (#1388099, Final, 06/21/2021 1:38pm)
-          </span>
-        </div>
-        <div class="absolutepositionednavlinks">
-
-
+        <div class="clinicalsubheading">
+          <div class="headertitle">
+            COVID-19/CORONAVIRUS ANTIGEN (IN-HOUSE) (87426) 06/21/2021
+            <span class="normaltext">
+              (#1388099, Final, 06/21/2021 1:38pm)
+            </span>
+          </div>
+          <div class="absolutepositionednavlinks"></div>
         </div>
       </div>
 
+      <table
+        id="HEADER{1357404}"
+        class="grid printalways labresultsheader"
+        style="width: 98%; margin: 2px 0; display: none"
+      >
+        <tbody>
+          <tr>
+            <th>Ordering Provider</th>
+            <td bgcolor="white" nowrap="">NATHAN LEVANGER, DO</td>
+            <th>Performing Lab</th>
+            <td bgcolor="white" nowrap="">
+              TETON VALLEY HEALTH CARE (LAB)<br />120 E HOWARD<br />DRIGGS ID
+              83422
+            </td>
+          </tr>
+          <tr>
+            <th>Specimen/Accession ID</th>
+            <td bgcolor="white" nowrap="">21078026-76313</td>
+            <th>Specimen Source</th>
+            <td bgcolor="white"></td>
+          </tr>
+          <tr>
+            <th>Specimen Coll. Date</th>
+            <td bgcolor="white" nowrap="">03/19/2021 11:22</td>
+            <th>Result Status</th>
+            <td bgcolor="white">Final</td>
+          </tr>
+          <tr>
+            <th>Specimen Rec. Date</th>
+            <td bgcolor="white" nowrap="">03/19/2021 11:22</td>
+            <th>Report Status</th>
+            <td bgcolor="white"></td>
+          </tr>
+          <tr>
+            <th>Specimen Reported Date</th>
+            <td bgcolor="white" nowrap="">03/19/2021 12:04</td>
+            <th class="nonprinting">Patient</th>
+            <td bgcolor="white" class="nonprinting">
+              <a
+                href="https://15468.portal.athenahealth.com/?section=health&amp;sub=lab_results&amp;testid=&amp;ptdocumentid=&amp;athenalabdocumentid=1357404&amp;webretrievalcount=1&amp;&amp;DONOTLOADCSRFJS=1&amp;CSRFPROTECT=382035caed65e069723e7c90ba44595834c748f18dc039aa046d1d2ececbaa93#"
+                onclick='LabResultViewLabDemographics(this, { DOCUMENTID : "1357404", INTERFACEMESSAGEID : "10087951"})'
+                class="nonprinting"
+                >View Lab Demographics</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      </div>
-
-
-    <table id="HEADER{1357404}" class="grid printalways labresultsheader" style="width: 98%; margin: 2px 0; display: none">
-
-    <tbody><tr>
-      <th>Ordering Provider</th>
-      <td bgcolor="white" nowrap="">NATHAN LEVANGER, DO</td>
-      <th>Performing Lab</th>
-      <td bgcolor="white" nowrap="">TETON VALLEY HEALTH CARE (LAB)<br>120 E HOWARD<br>DRIGGS ID 83422</td>
-    </tr>
-    <tr>
-      <th>Specimen/Accession ID</th>
-      <td bgcolor="white" nowrap="">21078026-76313</td>
-      <th>Specimen Source</th>
-      <td bgcolor="white"></td>
-    </tr>
-    <tr>
-      <th>Specimen Coll. Date</th>
-      <td bgcolor="white" nowrap="">03/19/2021 11:22</td>
-      <th>Result Status</th>
-      <td bgcolor="white">Final</td>
-    </tr>
-    <tr>
-      <th>Specimen Rec. Date</th>
-      <td bgcolor="white" nowrap="">03/19/2021 11:22</td>
-      <th>Report Status</th>
-      <td bgcolor="white"></td>
-    </tr>
-    <tr>
-      <th>Specimen Reported Date</th>
-      <td bgcolor="white" nowrap="">03/19/2021 12:04</td>
-      <th class="nonprinting">Patient</th>
-      <td bgcolor="white" class="nonprinting"><a href="https://15468.portal.athenahealth.com/?section=health&amp;sub=lab_results&amp;testid=&amp;ptdocumentid=&amp;athenalabdocumentid=1357404&amp;webretrievalcount=1&amp;&amp;DONOTLOADCSRFJS=1&amp;CSRFPROTECT=382035caed65e069723e7c90ba44595834c748f18dc039aa046d1d2ececbaa93#" onclick="LabResultViewLabDemographics(this, { DOCUMENTID : &quot;1357404&quot;, INTERFACEMESSAGEID : &quot;10087951&quot;})" class="nonprinting">View Lab Demographics</a></td>
-    </tr>
-  </tbody></table>
-
-        <table class="grid reportheader " width="98%">
-
-          <tbody><tr>
+      <table class="grid reportheader" width="98%">
+        <tbody>
+          <tr>
             <th>Report</th>
             <th>Result</th>
             <th nowrap="">Ref. Range</th>
@@ -1344,42 +1358,34 @@
             <th>Lab</th>
           </tr>
 
-              <tr class=" transitionalbgcolorwhite">
+          <tr class="transitionalbgcolorwhite">
+            <td nowrap="" class="">CV19AG</td>
+            <td class="">NEGATIVE</td>
+            <td class="">NEGATIVE</td>
+            <td class=""></td>
+            <td class="">Normal</td>
+            <td class="">Final</td>
+            <td class="">TETON</td>
+          </tr>
 
-                <td nowrap="" class="">CV19AG</td>
-                <td class="">
-            NEGATIVE	</td>
-                <td class="">NEGATIVE</td>
-                <td class="">
-              </td>
-                <td class="">
-            Normal	</td>
-                <td class="">
-            Final	</td>
-                <td class="">TETON</td>
-              </tr>
+          <tr class="transitionalbgcolorwhite">
+            <td width="100px">RESULT NOTE</td>
+            <td colspan="6" style="word-wrap: break-word">
+              Specimen: LAB<br />
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <tr class="transitionalbgcolorwhite">
-
-          <td width="100px">RESULT NOTE</td>
-          <td colspan="6" style="word-wrap: break-word;">
-            Specimen: LAB<br>
-          </td>
-        </tr>
-      </tbody></table>
-
-  <div class="printonly">
-    <br><br><br><p></p><hr class="printhr">Note: Patients are solely responsible for maintaining the privacy and security of all information printed from the Patient Portal.<hr class="printhr"><p></p>
-  </div>
-
-
-
-
-
-  </div>
-
-
-
-
-
-  </body></html>
+      <div class="printonly">
+        <br /><br /><br />
+        <p></p>
+        <hr class="printhr" />
+        Note: Patients are solely responsible for maintaining the privacy and
+        security of all information printed from the Patient Portal.
+        <hr class="printhr" />
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>
