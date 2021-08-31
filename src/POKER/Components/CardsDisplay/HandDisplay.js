@@ -36,7 +36,7 @@ const HandDisplay = ({ afterDeal }) => {
       })}
     </PokerHandDiv>
   ) : (
-    <HandDisplayDiv>
+    // <HandDisplayDiv>
       <PokerHandDiv>
         {state.hand.map((card, id) => {
           return (
@@ -47,7 +47,7 @@ const HandDisplay = ({ afterDeal }) => {
           );
         })}
       </PokerHandDiv>
-    </HandDisplayDiv>
+    // </HandDisplayDiv>
   );
 };
 

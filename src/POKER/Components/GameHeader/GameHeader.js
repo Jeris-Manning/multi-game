@@ -57,8 +57,10 @@ const StyledHeader = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    top: 1%;
-    left: 15%;
+    /* top: 1%;
+    left: 15%; */
+    top: 3px;
+    left: 45px;
 
     h1 {
       font-size: 6rem;
