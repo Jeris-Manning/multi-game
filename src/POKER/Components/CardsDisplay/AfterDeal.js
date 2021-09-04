@@ -1,5 +1,4 @@
-import React, { useEffect, useContext } from "react";
-import HandDisplay from "./HandDisplay";
+import { useEffect, useContext } from "react";
 import { PokerContext } from "../../Poker";
 
 const AfterDeal = () => {
@@ -79,8 +78,6 @@ const AfterDeal = () => {
       }
     }
   }, [state.phase, dispatch]);
-
-  return <HandDisplay afterDeal={true} />;
 };
 
 export default AfterDeal;

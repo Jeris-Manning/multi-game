@@ -12,7 +12,6 @@ export const init = {
 
 const Reducer = function (state, action) {
   switch (action.type) {
-
     case "BET_UP": {
       if (state.wager === 5) {
         return {

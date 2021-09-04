@@ -23,8 +23,8 @@ const Card = ({ card }) => {
 export default Card;
 
 const CardSlot = styled.div`
-  max-width: 206px;
-  max-height: 288px;
+  width: 206px;
+  height: 288px;
   height: 100%;
   width: 100%;
   min-width: 10px;
@@ -32,7 +32,10 @@ const CardSlot = styled.div`
   img {
     user-select: none;
     min-width: 20px;
-    width: 100%;
+    // width: 100%;
+    // height: 100%;
+    width: inherit;
+    height: inherit;
     filter: ${(props) =>
       props.held
         ? "drop-shadow(4px 4px 2px #bd1515) drop-shadow(-4px -4px 4px #bd1515)"

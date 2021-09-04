@@ -41,7 +41,7 @@ const HandEvaluation = (hand) => {
   if (new Set(sortedRanks).size === 5) {
     if (
       sortedRanks[4] - sortedRanks[0] === 4 ||
-      (sortedRanks[3] === 4 && sortedRanks[4] === 14)
+      (sortedRanks[3] === 5 && sortedRanks[4] === 14)
     ) {
       return ["Straight", 4];
     }

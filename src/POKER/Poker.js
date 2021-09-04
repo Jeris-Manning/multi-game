@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
-import CardsDisplay from "./Components/CardsDisplay/CardsDisplay";
+import HandDisplay from "./Components/CardsDisplay/HandDisplay";
 import CreditControls from "./Components/CreditControls/CreditControls";
 import PokerReducer, { init } from "./Utility/PokerReducer";
 import GameHeader from "./Components/GameHeader/GameHeader.js";
@@ -19,7 +19,7 @@ function Poker() {
           <PokerContainer>
             <GameBanner />
             <GameHeader />
-            <CardsDisplay />
+            <HandDisplay />
             <CreditControls />
           </PokerContainer>
         </AppWrap>
@@ -46,12 +46,14 @@ const PokerContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  width: 1200px;
   max-width: 1200px;
   border: black 3px solid;
   margin: 0 auto;
-  @media (max-width: 1210px) {
+  @media (max-width: 1200px) {
     margin: 0;
     padding: 0;
     border: none;
+    width: 100%;
   }
 `;

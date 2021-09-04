@@ -1,67 +1,80 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import AfterDeal from "./AfterDeal";
+import AfterDraw from "./AfterDraw";
 import Card from "./Card";
 import { PokerContext } from "../../Poker";
 
-const HandDisplay = ({ afterDeal }) => {
+const HandDisplay = () => {
   const { state, dispatch } = useContext(PokerContext);
 
-  return afterDeal === true ? (
-    <PokerHandDiv>
-      {state.hand.map((card, id) => {
-        return (
-          <CardDiv
-            key={id}
-            onClick={
-              state.phase !== "begin"
-                ? () => {
-                    let holdState = state.hand[id].held;
-                    holdState = !holdState;
-                    dispatch({
-                      type: "TOGGLE_HOLD",
-                      payload: { holdState: holdState, id: id },
-                    });
-                  }
-                : null
-            }>
-            <Card card={card} id={id} />
-            <HeldDisplay>
-              <Held
-                className={card.held && state.phase !== "begin" ? "" : "scram"}>
-                HELD
-              </Held>
-            </HeldDisplay>
-          </CardDiv>
-        );
-      })}
-    </PokerHandDiv>
-  ) : (
-    // <HandDisplayDiv>
-      <PokerHandDiv>
-        {state.hand.map((card, id) => {
-          return (
-            <CardDiv key={id}>
-              <Card card={card} id={id} />
-              <HeldDisplay />
-            </CardDiv>
-          );
-        })}
-      </PokerHandDiv>
-    // </HandDisplayDiv>
+  return (
+    <HandDisplayDiv>
+      {state.phase !== "afterDraw" ? (
+        <PokerHandDiv>
+          {AfterDeal()}
+          {state.hand.map((card, id) => {
+            return (
+              <CardDiv
+                key={id}
+                onClick={
+                  state.phase !== "begin"
+                    ? () => {
+                        let holdState = state.hand[id].held;
+                        holdState = !holdState;
+                        dispatch({
+                          type: "TOGGLE_HOLD",
+                          payload: { holdState: holdState, id: id },
+                        });
+                      }
+                    : null
+                }>
+                <Card card={card} id={id} />
+                <HeldDisplay>
+                  <Held
+                    className={
+                      card.held && state.phase !== "begin" ? "" : "scram"
+                    }>
+                    HELD
+                  </Held>
+                </HeldDisplay>
+              </CardDiv>
+            );
+          })}
+        </PokerHandDiv>
+      ) : (
+        <PokerHandDiv>
+          {AfterDraw()}
+          {state.hand.map((card, id) => {
+            return (
+              <CardDiv key={id}>
+                <Card card={card} id={id} />
+                <HeldDisplay>
+                  <Held
+                    className={
+                      card.held && state.phase !== "begin" ? "" : "scram"
+                    }>
+                    HELD
+                  </Held>
+                </HeldDisplay>
+              </CardDiv>
+            );
+          })}
+        </PokerHandDiv>
+      )}
+    </HandDisplayDiv>
   );
 };
 
 export default HandDisplay;
 
 const HandDisplayDiv = styled.div`
-  user-select: none;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  .scram {
-    display: none;
-  }
+  justify-content: center;
+  width: 100%;
+  min-width: 50px;
+  margin: 0 50px;
+  max-height: 300px;
 `;
 
 const PokerHandDiv = styled.div`

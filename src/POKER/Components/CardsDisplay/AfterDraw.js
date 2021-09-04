@@ -1,5 +1,4 @@
-import React, { useEffect, useContext } from "react";
-import HandDisplay from "./HandDisplay";
+import { useEffect, useContext } from "react";
 import HandEvaluation from "./HandEvaluation";
 import { PokerContext } from "../../Poker";
 import { CreditContext } from "../../../App";
@@ -55,8 +54,6 @@ const AfterDraw = () => {
       creditDispatch({ type: "ADD_CREDIT", credits });
     }
   }, [state.phase]);
-
-  return <HandDisplay afterDeal={false} />;
 };
 
 export default AfterDraw;
