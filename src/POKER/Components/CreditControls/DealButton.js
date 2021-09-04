@@ -18,7 +18,7 @@ const DealButton = () => {
 
   const handleFirstClick = () => {
     creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
-    dispatch({ type: "PHASE_CHANGE", payload: "firstDeal" });
+    dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
   };
   let oC = "";
   let btnTxt = "";

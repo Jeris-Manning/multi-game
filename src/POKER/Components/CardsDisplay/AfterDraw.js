@@ -54,6 +54,7 @@ const AfterDraw = () => {
       creditDispatch({ type: "ADD_CREDIT", credits });
     }
   }, [state.phase]);
+  return null;
 };
 
 export default AfterDraw;

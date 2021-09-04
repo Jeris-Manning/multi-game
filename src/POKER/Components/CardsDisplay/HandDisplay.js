@@ -7,12 +7,11 @@ import { PokerContext } from "../../Poker";
 
 const HandDisplay = () => {
   const { state, dispatch } = useContext(PokerContext);
-
   return (
     <HandDisplayDiv>
       {state.phase !== "afterDraw" ? (
         <PokerHandDiv>
-          {AfterDeal()}
+          <AfterDeal />
           {state.hand.map((card, id) => {
             return (
               <CardDiv
@@ -44,7 +43,7 @@ const HandDisplay = () => {
         </PokerHandDiv>
       ) : (
         <PokerHandDiv>
-          {AfterDraw()}
+          <AfterDraw />
           {state.hand.map((card, id) => {
             return (
               <CardDiv key={id}>

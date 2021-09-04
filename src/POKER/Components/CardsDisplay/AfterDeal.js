@@ -57,9 +57,6 @@ const AfterDeal = () => {
   };
 
   useEffect(() => {
-    if (state.phase === "firstDeal") {
-      dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
-    }
     if (state.phase === "afterDeal") {
       dispatch({ type: "SET_FINAL_HAND_RANK", payload: ["", 0] });
       let mixedDeck = shuffleDeck(freshDeck());
@@ -78,6 +75,7 @@ const AfterDeal = () => {
       }
     }
   }, [state.phase, dispatch]);
+  return null;
 };
 
 export default AfterDeal;
