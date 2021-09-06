@@ -1,45 +1,86 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import Board from "./Board";
 import DrawEngine from "./DrawEngine";
-import { toCash, kenoPays } from "../Utilities/KenoConstants";
-import { KenoContext } from "../Keno";
-import { CreditContext } from "../../App";
+import { toCashString } from "../Utilities/cashConvert";
+import pays from "../assets/pays";
 
-const BoardControl = () => {
-  const { state, dispatch } = useContext(KenoContext);
-  const { creditState, creditDispatch } = useContext(CreditContext);
-
+const BoardControl = ({ state, dispatch }) => {
   let draws = [];
+  let worms = 0;
   let hits = 0;
   let payChart = {};
+  let wormMult = [1, 1, 2, 5, 10];
+
+  function resetPicks() {
+    dispatch({ type: "RESET_PICK_COUNT" });
+    dispatch({ type: "RESET_PICKS" });
+  }
+
+  function getWorms() {
+    let wormPool = DrawEngine();
+    let wormCount = 0;
+    let chosenOnes = [];
+
+    while (wormCount < 4) {
+      let worm = wormPool.pop();
+      if (state.board[worm].clicked) {
+        worm = null;
+      } else {
+        chosenOnes.push(worm);
+        dispatch({ type: "WORM_HOLE", worm });
+        wormCount++;
+      }
+    }
+
+    return chosenOnes;
+  }
+
+  function resetDraws() {
+    Object.keys(state.board).forEach((num) => {
+      dispatch({ type: "RESET_DRAWS", num });
+    });
+    hits = 0;
+    worms = 0;
+  }
 
   function handleDrawButtonClick() {
     if (state.picks < 2) {
       return;
     }
-    if (state.wager * creditState.denom.multiplier > creditState.credit) {
+    if (state.credit < 1) {
       window.alert("Please Insert Cash to Play");
-    } else if (state.wager > creditState.credit) {
+    } else if (state.wager > state.credit) {
       window.alert("Please Lower Wager or Insert Cash to Play");
+      dispatch({ type: "BET_THE_REST" });
     } else {
-      payChart = kenoPays[state.picks];
-      creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
+      payChart = pays[state.picks];
       dispatch({ type: "START_DRAWING" });
       dispatch({ type: "RESET_WIN" });
-      dispatch({ type: "RESET_DRAWS" });
-
+      resetDraws();
+      let oracle = getWorms();
+      console.log(oracle, "THE ORACLE");
       draws = DrawEngine();
 
-      let clearDraw = setInterval(drawNumbers, 100);
+      let clearDraw = setInterval(drawNumbers, 150);
       let drawCount = 0;
 
       function drawNumbers() {
         if (drawCount < 20) {
           let pick = draws[drawCount];
+
+          console.log(pick, "NUMBER PICKED");
+          console.log(state.board[pick], "NUMBER ATTRIBUTES");
+
           dispatch({ type: "DRAW", pick });
           if (state.board[pick].clicked) {
             hits++;
+            // } else if (state.board[pick].worm) {
+          } else if (oracle.some((wiggler) => wiggler === pick)) {
+            console.log(pick, "WORM PICK");
+            worms++;
+            console.log("WORM COUNT", worms);
+            dispatch({ type: "SET_WORMS", worms });
           }
           drawCount++;
         } else {
@@ -51,13 +92,14 @@ const BoardControl = () => {
   }
 
   function settleDraw() {
-    let creditsWon = payChart[hits] * state.wager;
-    if (creditsWon > 0) {
-      const credits = creditsWon * creditState.denom.multiplier;
-      creditDispatch({ type: "ADD_CREDIT", credits });
-      dispatch({ type: "SET_WIN", creditsWon });
+    console.log(hits, "NUMBER OF HITS?");
+    let win = payChart[hits] * state.wager * wormMult[worms];
+    if (win > 0) {
+      dispatch({ type: "SET_WIN", win });
       dispatch({ type: "FINISH_DRAWING" });
     } else {
+      dispatch({ type: "SET_WIN", win });
+      console.log(`We only hit ${hits}. Maybe next time!`);
       dispatch({ type: "FINISH_DRAWING" });
     }
   }
@@ -67,7 +109,7 @@ const BoardControl = () => {
       return;
     }
     if (draws !== []) {
-      dispatch({ type: "RESET_DRAWS" });
+      resetDraws();
     }
 
     if (state.board[num].clicked) {
@@ -85,16 +127,11 @@ const BoardControl = () => {
     <BoardDiv>
       <WinPopper className={state.win > 0 ? "coolGuyClass" : "secret"}>
         <h1>YOU WIN!</h1>
-        <h2>{toCash((state.win * creditState.denom.multiplier) / 100)}</h2>
+        <h2>{toCashString(state.win * 0.25)}</h2>
       </WinPopper>
-      <Board handleClick={handleClick} />
+      <Board state={state} handleClick={handleClick} />
       <ButtonBox>
         <DrawBtn
-          disabled={
-            state.wager * creditState.denom.multiplier > creditState.credit
-              ? true
-              : false
-          }
           onClick={() => {
             if (!state.drawing) {
               handleDrawButtonClick();
@@ -102,21 +139,9 @@ const BoardControl = () => {
           }}>
           DRAW
         </DrawBtn>
-        <ResetBtn
-          onClick={
-            state.drawing
-              ? null
-              : () => {
-                  dispatch({ type: "RESET_PICK_COUNT" });
-                  dispatch({ type: "RESET_PICKS" });
-                  dispatch({ type: "RESET_WIN" });
-                }
-          }>
+        <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
           Clear Picks
         </ResetBtn>
-        {state.wager * creditState.denom.multiplier > creditState.credit ? (
-          <h3>Not enough credits for selected wager</h3>
-        ) : null}
       </ButtonBox>
     </BoardDiv>
   );
@@ -128,6 +153,7 @@ const BoardDiv = styled.div`
   .secret {
     display: none;
   }
+  /* border: solid purple 2px; */
 `;
 
 const WinPopper = styled.div`
@@ -139,8 +165,9 @@ const WinPopper = styled.div`
   width: 400px;
   height: 250px;
   background: yellow;
-  top: 220px;
-  left: 250px;
+  top: 10px;
+  left: 10px;
+  z-index: 222;
   h1 {
     font-size: 4rem;
     margin: 0;

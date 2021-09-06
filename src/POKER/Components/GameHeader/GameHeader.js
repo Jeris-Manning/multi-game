@@ -63,13 +63,13 @@ const StyledHeader = styled.div`
     left: 45px;
 
     h1 {
-      font-size: 6rem;
+      font-size: 3.75rem;
       font-weight: 400;
       color: rgba(10, 20, 10, 0.8);
     }
 
     h2 {
-      font-size: 4.2rem;
+      font-size: 2.625rem;
       font-weight: 400;
       color: #151;
     }
@@ -96,10 +96,10 @@ const StyledHeader = styled.div`
       top: 0%;
       left: 13%;
       h1 {
-        font-size: 3.5rem;
+        font-size: 2.1875rem;
       }
       h2 {
-        font-size: 2.5rem;
+        font-size: 1.5625rem;
       }
     }
   }
@@ -120,11 +120,11 @@ const StyledHeader = styled.div`
       width: 82%;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 1.5625rem;
       }
 
       h2 {
-        font-size: 2rem;
+        font-size: 1.25rem;
       }
     }
   }

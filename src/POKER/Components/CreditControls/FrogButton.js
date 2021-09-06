@@ -20,8 +20,8 @@ const FrogStyledButton = styled.div`
   background: #bd1515;
   border-radius: 5px;
 
-  width: clamp(6rem, 12.5vw, 15rem);
-  height: clamp(4rem, 5vw, 6rem);
+  width: clamp(3.75rem, 12.5vw, 9.375rem);
+  height: clamp(2.5rem, 5vw, 3.75rem);
   cursor: pointer;
   box-shadow: 0px 4px 1px #111;
   bottom: 5px;
@@ -36,6 +36,6 @@ const FrogStyledButton = styled.div`
   h1 {
     color: #ffe4b9;
     text-shadow: 2px 2px 2px #333;
-    font-size: clamp(2.6rem, 4.2vw, 5rem);
+    font-size: clamp(1.625rem, 4.2vw, 3.125rem);
   }
 `;

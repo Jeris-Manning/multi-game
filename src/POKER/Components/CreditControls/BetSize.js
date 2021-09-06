@@ -71,16 +71,16 @@ const CoinCountDiv = styled.div`
   border: solid 3px black;
 
   .betLabel {
-    font-size: 4rem;
+    font-size: 2.5rem;
     cursor: pointer;
     color: #ffe4b9;
     text-shadow: 3px 3px 2px #111;
     margin: 0 10px;
     @media (max-width: 1000px) {
-      font-size: 3rem;
+      font-size: 1.875rem;
     }
     @media (max-width: 600px) {
-      font-size: 2rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -92,12 +92,12 @@ const CoinCountDiv = styled.div`
       cursor: pointer;
       color: #ffe4b9;
       text-shadow: 3px 3px 2px #111;
-      font-size: 3.5rem;
+      font-size: 2.875rem;
       @media (max-width: 1000px) {
-        font-size: 3rem;
+        font-size: 1.875rem;
       }
       @media (max-width: 600px) {
-        font-size: 2rem;
+        font-size: 1.25rem;
       }
     }
     button {

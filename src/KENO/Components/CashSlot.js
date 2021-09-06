@@ -1,28 +1,25 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { CreditContext } from "../../App";
-const CashSlot = () => {
-  const { creditDispatch } = useContext(CreditContext);
 
-  const denoms = [5, 10, 20];
+const CashSlot = ({ dispatch }) => {
+    const addCredit = (credits) => {
+        dispatch({ type: "ADD_CREDIT", credits });
+    };
 
-  return (
-    <div>
-      <h2>Insert</h2>
-      <Bills>
-        {denoms.map((bill) => (
-          <BillBtn
-            key={bill}
-            onClick={() => {
-              let credits = bill * 100;
-              creditDispatch({ type: "ADD_CREDIT", credits });
-            }}>
-            {"$" + bill}
-          </BillBtn>
-        ))}
-      </Bills>
-    </div>
-  );
+    const denoms = [5, 10, 20];
+
+    return (
+        <div>
+            <h2>Insert</h2>
+            <Bills>
+                {denoms.map((bill) => (
+                    <BillBtn key={bill} onClick={() => addCredit(bill * 4)}>
+                        {"$" + bill}
+                    </BillBtn>
+                ))}
+            </Bills>
+        </div>
+    );
 };
 
 export default CashSlot;

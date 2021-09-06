@@ -113,7 +113,7 @@ const HeldDisplay = styled.div`
 
 const Held = styled.h2`
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(1.4rem, 1rem + 1.25vw, 3rem);
+  font-size: clamp(.875rem, .625rem + 1.25vw, 1.875rem);
   font-weight: 700;
   background: #00fa70;
   border-radius: 5px;

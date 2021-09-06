@@ -102,7 +102,7 @@ const PayChart = styled.div`
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     display: flex;
     align-items: center;
     padding: 2px 0 2px 5px;
@@ -123,7 +123,7 @@ const PayChart = styled.div`
   @media (max-width: 1000px) {
 
     h3 {
-     font-size: 1.6rem;
+     font-size: 1rem;
     }
 
   }

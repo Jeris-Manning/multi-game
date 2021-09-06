@@ -31,7 +31,7 @@ const BannerDiv = styled.div`
 
   h1 {
     color: #19ee40;
-    font-size: 10rem;
+    font-size: 6.25rem;
     text-shadow: 3px 3px 3px #333;
   }
   img {
@@ -53,7 +53,7 @@ const BannerDiv = styled.div`
     justify-content: center;
     padding: 2px 0;
     h1 {
-      font-size: 7rem;
+      font-size: 4.375rem;
     }
     img {
       display: none;
@@ -61,7 +61,7 @@ const BannerDiv = styled.div`
   }
   @media (max-width: 520px) {
     h1 {
-      font-size: 5rem;
+      font-size: 3.125rem;
     }
   }
 `;

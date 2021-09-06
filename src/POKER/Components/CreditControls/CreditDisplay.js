@@ -45,7 +45,7 @@ const CreditDisplayer = styled.div`
       user-select: none;
       cursor: pointer;
       padding-top: 5px;
-      font-size: 3rem;
+      font-size: 1.875rem;
       font-family: "LCD", sans-serif;
       font-weight: 700;
     }
@@ -53,7 +53,7 @@ const CreditDisplayer = styled.div`
   @media (max-width: 1000px) {
     div {
       h2 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -61,7 +61,7 @@ const CreditDisplayer = styled.div`
     border-width: 3px;
     div {
       h2 {
-        font-size: 2rem;
+        font-size: 1.25rem;
       }
     }
   }

@@ -1,31 +1,26 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { toCash, kenoPays } from "../Utilities/KenoConstants";
-import { KenoContext } from "../Keno";
-import { CreditContext } from "../../App";
+import { toCashString } from "../Utilities/cashConvert";
+import pays from "../assets/pays";
 
-const PayTable = () => {
-  const { state } = useContext(KenoContext);
-  const { creditState } = useContext(CreditContext);
+const PayTable = ({ state }) => {
   return (
     <Table>
       <h1>Numbers Picked: {state.picks}</h1>
       {state.picks > 1 ? (
         <div>
-          {Object.keys(kenoPays[state.picks]).map((hit) => {
+          {Object.keys(pays[state.picks]).map((hit) => {
             return (
-              kenoPays[state.picks][hit] > 0 && (
+              pays[state.picks][hit] > 0 && (
                 <h2 key={`${state.picks}+${hit}`}>
-                  {`${hit}: ${toCash(
-                    (kenoPays[state.picks][hit] *
-                      state.wager *
-                      creditState.denom.multiplier) /
-                      100
+                  {`${hit}: ${toCashString(
+                    pays[state.picks][hit] * state.wager * 0.25
                   )}`}
                 </h2>
               )
             );
           })}
+          <h2>{`Worms: ${state.worms}`}</h2>
         </div>
       ) : (
         <></>

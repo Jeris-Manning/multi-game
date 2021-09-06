@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
-import { toCash } from "../Utilities/KenoConstants";
-import { CreditContext } from "../../App";
+import React from "react";
+import { toCashString } from "../Utilities/cashConvert";
 
-const PlayerCredits = () => {
-  const { creditState } = useContext(CreditContext);
-  return (
-    <div>
-      <h1>{"Credits: " + toCash(creditState.credit / 100)}</h1>
-    </div>
-  );
+const PlayerCredits = ({ state }) => {
+    return (
+        <div>
+            <h1>{"Credits: " + toCashString(state.credit * 0.25)}</h1>
+        </div>
+    );
 };
 
 export default PlayerCredits;
