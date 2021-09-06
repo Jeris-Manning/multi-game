@@ -11,6 +11,6 @@ const cashFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-export const toCash = (pennies) => {
-  return cashFormatter.format(pennies);
+export const toCashString = (dollars) => {
+  return cashFormatter.format(dollars * .01);
 };

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
-import reducer, { init } from "./Utilities/reducer";
+import kenoReducer, { init } from "./Utilities/kenoReducer";
 import PayTable from "./Components/PayTable";
 import PlayerCredits from "./Components/PlayerCredits";
 import BoardControl from "./Components/BoardControl";
@@ -8,7 +8,7 @@ import Wager from "./Components/Wager";
 import CashSlot from "./Components/CashSlot";
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, init);
+  const [state, dispatch] = useReducer(kenoReducer, init);
 
   return (
     <AppDiv>
@@ -17,7 +17,7 @@ function App() {
         <section>
           <PayTable state={state} />
           <PlayerCredits className="credit" state={state} />
-          <CashSlot className="credit" dispatch={dispatch} />
+          <CashSlot className="credit" />
         </section>
       </Display>
       <Wager state={state} dispatch={dispatch} />
@@ -28,7 +28,6 @@ function App() {
 export default App;
 
 const AppDiv = styled.div`
-
   display: flex;
   flex-direction: column;
   justify-content: center;

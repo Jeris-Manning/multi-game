@@ -1,4 +1,12 @@
-const pays = [
+export const clearKenoBoard = () => {
+  let clearBoard = {};
+  for (let i = 1; i <= 80; i++) {
+    clearBoard[i] = { clicked: false, drawn: false };
+  }
+  return clearBoard;
+};
+
+export const kenoPays = [
   null,
   null,
   { 0: 0, 1: 0, 2: 15 },
@@ -23,5 +31,3 @@ const pays = [
     10: 1000,
   },
 ];
-
-export default pays;

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Board from "./Board";
 import DrawEngine from "./DrawEngine";
-import { toCashString } from "../Utilities/cashConvert";
-import pays from "../assets/pays";
+import { toCashString } from "../../globalUtilities/helperFunctions";
+import { kenoPays } from "../Utilities/kenoHelpers";
+import { CreditContext } from "../../App";
 
 const BoardControl = ({ state, dispatch }) => {
+  const { creditState, creditDispatch } = useContext(CreditContext);
+
   let draws = [];
   let worms = 0;
   let hits = 0;
@@ -48,18 +51,18 @@ const BoardControl = ({ state, dispatch }) => {
     if (state.picks < 2) {
       return;
     }
-    if (state.credit < 1) {
+    if (creditState.credit < 1) {
       window.alert("Please Insert Cash to Play");
-    } else if (state.wager > state.credit) {
+    } else if (creditState.wager > creditState.credit) {
       window.alert("Please Lower Wager or Insert Cash to Play");
       dispatch({ type: "BET_THE_REST" });
     } else {
-      payChart = pays[state.picks];
+      payChart = kenoPays[state.picks];
       dispatch({ type: "START_DRAWING" });
-      dispatch({ type: "RESET_WIN" });
+      creditDispatch({type: "SUB_CREDIT"})
+      creditDispatch({ type: "RESET_WIN" });
       resetDraws();
       let oracle = getWorms();
-      console.log(oracle, "THE ORACLE");
       draws = DrawEngine();
 
       let clearDraw = setInterval(drawNumbers, 150);
@@ -69,17 +72,11 @@ const BoardControl = ({ state, dispatch }) => {
         if (drawCount < 20) {
           let pick = draws[drawCount];
 
-          console.log(pick, "NUMBER PICKED");
-          console.log(state.board[pick], "NUMBER ATTRIBUTES");
-
           dispatch({ type: "DRAW", pick });
           if (state.board[pick].clicked) {
             hits++;
-            // } else if (state.board[pick].worm) {
           } else if (oracle.some((wiggler) => wiggler === pick)) {
-            console.log(pick, "WORM PICK");
             worms++;
-            console.log("WORM COUNT", worms);
             dispatch({ type: "SET_WORMS", worms });
           }
           drawCount++;
@@ -92,14 +89,12 @@ const BoardControl = ({ state, dispatch }) => {
   }
 
   function settleDraw() {
-    console.log(hits, "NUMBER OF HITS?");
-    let win = payChart[hits] * state.wager * wormMult[worms];
+    let win = payChart[hits] * creditState.wager * wormMult[worms];
     if (win > 0) {
-      dispatch({ type: "SET_WIN", win });
+      creditDispatch({ type: "SET_WIN", win });
       dispatch({ type: "FINISH_DRAWING" });
     } else {
-      dispatch({ type: "SET_WIN", win });
-      console.log(`We only hit ${hits}. Maybe next time!`);
+      creditDispatch({ type: "SET_WIN", win });
       dispatch({ type: "FINISH_DRAWING" });
     }
   }
@@ -125,9 +120,9 @@ const BoardControl = ({ state, dispatch }) => {
 
   return (
     <BoardDiv>
-      <WinPopper className={state.win > 0 ? "coolGuyClass" : "secret"}>
+      <WinPopper className={creditState.win > 0 ? "coolGuyClass" : "secret"}>
         <h1>YOU WIN!</h1>
-        <h2>{toCashString(state.win * 0.25)}</h2>
+        <h2>{toCashString(creditState.win * creditState.denom.multiplier)}</h2>
       </WinPopper>
       <Board state={state} handleClick={handleClick} />
       <ButtonBox>

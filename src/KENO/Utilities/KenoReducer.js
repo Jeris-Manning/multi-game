@@ -6,11 +6,8 @@ for (let i = 1; i <= 80; i++) {
 export const init = {
   picks: 0,
   drawing: false,
-  credit: 0,
-  wager: 1,
   hits: 0,
   worms: 0,
-  win: 0,
   board: { ...clearBoard },
 };
 
@@ -32,13 +29,9 @@ const reducer = function (state, action) {
         picks: 0,
       };
 
-    case "BET_THE_REST":
-      return { ...state, wager: state.credit };
-
     case "START_DRAWING":
       return {
         ...state,
-        credit: state.credit - state.wager,
         drawing: true,
       };
     case "ADD_HIT":
@@ -52,46 +45,12 @@ const reducer = function (state, action) {
         ...state,
         hits: 0,
       };
-    case "SET_WIN":
-      return {
-        ...state,
-        win: action.win,
-        credit: state.credit + action.win,
-      };
-    case "RESET_WIN":
-      return {
-        ...state,
-        win: 0,
-      };
 
     case "FINISH_DRAWING":
       return {
         ...state,
         drawing: false,
       };
-    case "ADD_CREDIT":
-      return {
-        ...state,
-        credit: state.credit + action.credits,
-      };
-    case "WAGER_UP":
-      if (state.wager < 10) {
-        return {
-          ...state,
-          wager: state.wager + 1,
-        };
-      } else {
-        return { ...state };
-      }
-    case "WAGER_DOWN":
-      if (state.wager > 1) {
-        return {
-          ...state,
-          wager: state.wager - 1,
-        };
-      } else {
-        return { ...state };
-      }
 
     case "SELECT":
       return {
