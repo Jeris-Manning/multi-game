@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Ant from "../assets/tallAntTile.png";
 import Hill from "../assets/tallHillTile.png";
-import Grass from "../assets/grassSquare.png";
+import Grass from "../assets/easterGrass.png";
 import Hole from "../assets/wormHole.png";
 import Worm from "../assets/tallWorm.png";
 
@@ -11,9 +11,16 @@ const Square = ({ drawn, clicked, num, handleClick, worm }) => {
 
   if (clicked) {
     if (drawn) {
-      art = <img num={num + "ant"} src={Ant} alt="ant" />;
+      art = <img className="antClass" num={num + "ant"} src={Ant} alt="ant" />;
     } else {
-      art = <img num={num + "hill"} src={Hill} alt="ant hill" />;
+      art = (
+        <img
+          className="hillClass"
+          num={num + "hill"}
+          src={Hill}
+          alt="ant hill"
+        />
+      );
     }
   } else if (worm) {
     if (drawn) {
@@ -22,7 +29,7 @@ const Square = ({ drawn, clicked, num, handleClick, worm }) => {
       );
     } else {
       art = (
-        <img className="wormClass" num={num + "hole"} src={Hole} alt="hole" />
+        <img className="holeClass" num={num + "hole"} src={Hole} alt="hole" />
       );
     }
   } else
@@ -44,6 +51,7 @@ export default Square;
 
 const SquareDiv = styled.div`
   box-sizing: border-box;
+  position: relative;
   font-size: 100%;
   width: 89px;
   height: 89px;
@@ -55,21 +63,43 @@ const SquareDiv = styled.div`
   align-items: center;
   font-size: 3rem;
   color: ${(props) => (props.drawn ? "#68ddff" : "#fff568")};
+  z-index: 7;
 
   img {
     align-self: flex-end;
-    padding: 0 25px 20px 0;
-    width: 100px;
-    height: 175px;
+    /* position: absolute; */
+    /* padding: 0 30px 20px 0px; */
+    margin: 0 30px 15px 0;
+    /* width: 100px;
+    height: 150px; */
     transform: skew(20deg);
+    z-index: 222;
+    /* filter: drop-shadow(0px 0px 5px black); */
+    /* box-shadow: 5px 5px 4px black; */
   }
 
   .wormClass {
     width: 60px;
     height: 100px;
-    p {
-      /* margin-top: 48px; */
-    }
+  }
+
+  .hillClass {
+    width: 80px;
+    height: 200px;
+    margin-right: 60px;
+    /* padding: 0 500px 0 -350px; */
+  }
+  .antClass {
+    width: 75px;
+    height: 150px;
+    margin-right: 42px;
+    margin-bottom: 22px;
+
+  }
+  .holeClass {
+    width: 40px;
+    margin-right: 20px;
+    margin-bottom: 30px;
   }
 
   .necromancer {

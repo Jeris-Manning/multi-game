@@ -43,5 +43,9 @@ const Table = styled.div`
   align-items: center;
   height: 500px;
   width: 300px;
+  left: 0;
+  top: 0;
+  z-index: 10;
   background: silver;
+  position: absolute;
 `;

@@ -16,54 +16,42 @@ const Board = ({ state, handleClick }) => {
   }
 
   return (
-    <ClampClamp>
-      <BoardClamp>
-        <GameBoard>
-          {gridRows.map((row, idx) => (
-            <Row key={idx} shift={idx + 1}>
-              {row.map((num) => (
-                <Square
-                  key={num}
-                  num={num}
-                  clicked={state.board[num].clicked}
-                  drawn={state.board[num].drawn}
-                  worm={state.board[num].worm}
-                  handleClick={handleClick}
-                />
-              ))}
-            </Row>
-          ))}
-        </GameBoard>
-        <BottomDirt />
-        <SideDirt />
-        <SideDirtSecond />
-      </BoardClamp>
-    </ClampClamp>
+    <BoardClamp>
+      <GameBoard>
+        {gridRows.map((row, idx) => (
+          <Row key={idx} shift={idx + 1}>
+            {row.map((num) => (
+              <Square
+                key={num}
+                num={num}
+                clicked={state.board[num].clicked}
+                drawn={state.board[num].drawn}
+                worm={state.board[num].worm}
+                handleClick={handleClick}
+              />
+            ))}
+          </Row>
+        ))}
+      </GameBoard>
+      <BottomDirt />
+      <SideDirt />
+      <SideDirtSecond />
+    </BoardClamp>
   );
 };
 
 export default Board;
 
-const ClampClamp = styled.div`
-
-  display: block;
-  position: static;
-  /* padding-left: -300px; */
-  margin-right: 150px;
-  margin-bottom: 40px;
-`;
-
 const BoardClamp = styled.div`
-box-sizing: content-box;
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   position: relative;
   width: 1100px;
   height: 720px;
   left: 20px;
-  /* margin-left: -50px; */
-  /* padding-left: -300px; */
-  border: solid 3px blue;
+  margin-right: 150px;
+  margin-bottom: 40px;
 `;
 
 const GameBoard = styled.div`
@@ -73,32 +61,20 @@ const GameBoard = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  /* max-width: 100vw; */
-  /* transform: skew(-45deg); */
-  /* transform:skew(-15deg) rotateX(40deg) ;
-   */
   transform: rotateX(25deg) skew(-25deg);
-  // width: 890px;
-  /* width: 1000px; */
-  /* margin: -30px 150px 0 182px; */
   margin: 0 0 0 225px;
   height: 820px;
   width: 880px;
-  z-index: 33;
+  z-index: 5;
+
 `;
 
 const Row = styled.div`
-  /* margin-right: ${(props) => props.shift * 36}px; */
   display: flex;
   justify-content: flex-end;
-  // background: cornflowerblue;
-  /* background: #886d57; */
-  // max-width: 100vw;
-  // width: 890px;
 `;
 
 const BottomDirt = styled.div`
-  /* border: solid pink 3px; */
   position: absolute;
   bottom: 1px;
   left: 2px;
@@ -108,14 +84,10 @@ const BottomDirt = styled.div`
   background-repeat: repeat-x;
   background-size: contain;
   z-index: 25;
-  /* display: none; */
 `;
 
 const SideDirt = styled.div`
-  /* border: solid pink 3px; */
   position: absolute;
-  /* bottom: -160px;
-   */
   right: -147px;
   top: 9px;
   width: 205px;
@@ -123,14 +95,12 @@ const SideDirt = styled.div`
   background-image: url(${SideSoil});
   background-repeat: no-repeat;
   background-size: contain;
-  /* border: solid yellow 2px; */
-  /* display: none; */
+  z-index: 15;
+  filter: drop-shadow(7px 5px 7px black);
 `;
+
 const SideDirtSecond = styled.div`
-  /* border: solid pink 3px; */
   position: absolute;
-  /* bottom: -160px;
-   */
   right: 21px;
   top: 271px;
   width: 195px;
@@ -138,6 +108,6 @@ const SideDirtSecond = styled.div`
   background-image: url(${SideSoil});
   background-repeat: no-repeat;
   background-size: contain;
-  /* border: solid yellow 2px; */
-  /* display: none; */
+  z-index: 14;
+  filter: drop-shadow(7px 5px 7px black);
 `;

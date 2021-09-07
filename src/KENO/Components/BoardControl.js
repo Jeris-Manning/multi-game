@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import Board from "./Board";
+import ButtonPanel from "./ButtonPanel";
 import DrawEngine from "./DrawEngine";
 import { toCashString } from "../../globalUtilities/helperFunctions";
 import { kenoPays } from "../Utilities/kenoHelpers";
@@ -14,11 +15,6 @@ const BoardControl = ({ state, dispatch }) => {
   let hits = 0;
   let payChart = {};
   let wormMult = [1, 1, 2, 5, 10];
-
-  function resetPicks() {
-    dispatch({ type: "RESET_PICK_COUNT" });
-    dispatch({ type: "RESET_PICKS" });
-  }
 
   function getWorms() {
     let wormPool = DrawEngine();
@@ -59,7 +55,7 @@ const BoardControl = ({ state, dispatch }) => {
     } else {
       payChart = kenoPays[state.picks];
       dispatch({ type: "START_DRAWING" });
-      creditDispatch({type: "SUB_CREDIT"})
+      creditDispatch({ type: "SUB_CREDIT" });
       creditDispatch({ type: "RESET_WIN" });
       resetDraws();
       let oracle = getWorms();
@@ -125,19 +121,10 @@ const BoardControl = ({ state, dispatch }) => {
         <h2>{toCashString(creditState.win * creditState.denom.multiplier)}</h2>
       </WinPopper>
       <Board state={state} handleClick={handleClick} />
-      <ButtonBox>
-        <DrawBtn
-          onClick={() => {
-            if (!state.drawing) {
-              handleDrawButtonClick();
-            }
-          }}>
-          DRAW
-        </DrawBtn>
-        <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
-          Clear Picks
-        </ResetBtn>
-      </ButtonBox>
+      <ButtonPanel
+        drawClick={handleDrawButtonClick}
+        state={state}
+        dispatch={dispatch}></ButtonPanel>
     </BoardDiv>
   );
 };
@@ -148,7 +135,8 @@ const BoardDiv = styled.div`
   .secret {
     display: none;
   }
-  /* border: solid purple 2px; */
+  margin-top: 50px;
+  border: solid blackm 2px;
 `;
 
 const WinPopper = styled.div`
@@ -171,28 +159,4 @@ const WinPopper = styled.div`
     font-size: 3.8rem;
     margin: 0;
   }
-`;
-
-const DrawBtn = styled.button`
-  width: 150px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: "red";
-`;
-
-const ResetBtn = styled.button`
-  width: 200px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: "red";
-`;
-
-const ButtonBox = styled.div`
-  display: flex;
 `;
