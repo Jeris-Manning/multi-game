@@ -73,7 +73,7 @@ const SquareDiv = styled.div`
     /* width: 100px;
     height: 150px; */
     transform: skew(20deg);
-    z-index: 222;
+    z-index: 40;
     /* filter: drop-shadow(0px 0px 5px black); */
     /* box-shadow: 5px 5px 4px black; */
   }

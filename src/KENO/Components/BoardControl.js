@@ -120,11 +120,12 @@ const BoardControl = ({ state, dispatch }) => {
         <h1>YOU WIN!</h1>
         <h2>{toCashString(creditState.win * creditState.denom.multiplier)}</h2>
       </WinPopper>
-      <Board state={state} handleClick={handleClick} />
-      <ButtonPanel
-        drawClick={handleDrawButtonClick}
+      <Board
         state={state}
-        dispatch={dispatch}></ButtonPanel>
+        handleClick={handleClick}
+        drawClick={handleDrawButtonClick}
+        dispatch={dispatch}
+      />
     </BoardDiv>
   );
 };

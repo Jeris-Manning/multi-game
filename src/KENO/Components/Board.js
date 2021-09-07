@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Square from "./Square";
 import BottomSoil from ".././assets/soilBottom.png";
 import SideSoil from ".././assets/soilSide.png";
+import ButtonPanel from "./ButtonPanel";
 
-const Board = ({ state, handleClick }) => {
+const Board = ({ state, dispatch, handleClick, drawClick }) => {
   let gridRows = [];
   var k = 0;
   for (let i = 0; i < 8; i++) {
@@ -33,7 +34,10 @@ const Board = ({ state, handleClick }) => {
           </Row>
         ))}
       </GameBoard>
-      <BottomDirt />
+      <div className="buttons">
+        <ButtonPanel state={state} dispatch={dispatch} drawClick={drawClick} />
+      </div>
+      {/* <BottomDirt /> */}
       <SideDirt />
       <SideDirtSecond />
     </BoardClamp>
@@ -49,9 +53,23 @@ const BoardClamp = styled.div`
   position: relative;
   width: 1100px;
   height: 720px;
-  left: 20px;
   margin-right: 150px;
-  margin-bottom: 40px;
+
+  .buttons {
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+    width: 884px;
+    height: 72px;
+    display: flex;
+    /* background: aqua; */
+    background-image: url(${BottomSoil});
+    /* background-repeat: repeat-x; */
+    /* background-size: contain; */
+    z-index: 25;
+  }
+
+  /* margin-bottom: 40px; */
 `;
 
 const GameBoard = styled.div`
@@ -65,8 +83,7 @@ const GameBoard = styled.div`
   margin: 0 0 0 225px;
   height: 820px;
   width: 880px;
-  z-index: 5;
-
+  z-index: 20;
 `;
 
 const Row = styled.div`

@@ -11,45 +11,45 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
   }
 
   return (
-    <ButtonBox>
-      <DrawBtn
-        onClick={() => {
-          if (!state.drawing) {
-            drawClick();
-          }
-        }}>
-        DRAW
-      </DrawBtn>
-      <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
-        Clear Picks
-      </ResetBtn>
+    <>
+
       <Wager />
+      <div className="gameplayButtons">
+        <DrawBtn
+          onClick={() => {
+            if (!state.drawing) {
+              drawClick();
+            }
+          }}>
+          DRAW
+        </DrawBtn>
+        <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
+          Clear Picks
+        </ResetBtn>
+      </div>
       <CashSlot />
       <PlayerCredits className="credit" state={state} />
-    </ButtonBox>
+    </>
   );
 };
 
 export default ButtonPanel;
 
-const ButtonBox = styled.div`
-  display: flex;
-`;
 const DrawBtn = styled.button`
   width: 150px;
-  height: 40px;
+  /* height: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   color: "red";
 `;
 const ResetBtn = styled.button`
   width: 200px;
-  height: 40px;
+  /* height: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   color: "red";
 `;
