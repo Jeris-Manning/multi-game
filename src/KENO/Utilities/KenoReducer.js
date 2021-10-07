@@ -9,6 +9,7 @@ export const init = {
   hits: 0,
   worms: 0,
   board: { ...clearBoard },
+  wallet: "init",
 };
 
 const reducer = function (state, action) {
@@ -115,6 +116,11 @@ const reducer = function (state, action) {
 
     case "RESET_PICKS":
       return { ...state, board: { ...clearBoard } };
+
+    case "TOGGLE_WALLET":
+      return state.wallet === "init"
+        ? { ...state, wallet: true }
+        : { ...state, wallet: !state.wallet };
 
     default:
       return state;

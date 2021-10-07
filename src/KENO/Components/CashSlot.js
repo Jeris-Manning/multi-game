@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { CreditContext } from "../../App";
 
@@ -13,20 +13,13 @@ const CashSlot = () => {
 
   return (
     <div>
-      <h2>Insert</h2>
-      <Bills>
-        {denoms.map((bill) => (
-          <BillBtn key={bill} onClick={() => addCredit(bill * 100)}>
-            {"$" + bill}
-          </BillBtn>
-        ))}
-      </Bills>
+      <AddCredit>Add Credits</AddCredit>
     </div>
   );
 };
 
 export default CashSlot;
 
-const Bills = styled.div``;
+const AddCredit = styled.div``;
 
-const BillBtn = styled.button``;
+

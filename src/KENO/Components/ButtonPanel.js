@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Wager from "./Wager";
-import CashSlot from "./CashSlot";
 import PlayerCredits from "./PlayerCredits";
+import { CreditContext } from "../../App";
 
 const ButtonPanel = ({ drawClick, state, dispatch }) => {
+  const { creditDispatch } = useContext(CreditContext);
   function resetPicks() {
     dispatch({ type: "RESET_PICK_COUNT" });
     dispatch({ type: "RESET_PICKS" });
@@ -12,7 +13,6 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
 
   return (
     <>
-
       <Wager />
       <div className="gameplayButtons">
         <DrawBtn
@@ -27,7 +27,10 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
           Clear Picks
         </ResetBtn>
       </div>
-      <CashSlot />
+      <AddCredit onClick={() => dispatch({ type: "TOGGLE_WALLET" })}>
+        Add Credits
+      </AddCredit>
+
       <PlayerCredits className="credit" state={state} />
     </>
   );
@@ -52,4 +55,14 @@ const ResetBtn = styled.button`
   align-items: center;
   /* font-size: 2rem; */
   color: "red";
+`;
+
+const AddCredit = styled.div`
+  width: 150px;
+  height: 30px;
+  background: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
