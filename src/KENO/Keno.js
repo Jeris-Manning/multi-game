@@ -1,13 +1,13 @@
 import React, { useReducer} from "react";
 import styled from "styled-components";
-import kenoReducer, { init } from "./Utilities/kenoReducer";
+import KenoReducer, { init } from "./Utilities/KenoReducer";
 import PayTable from "./Components/PayTable";
 import BoardControl from "./Components/BoardControl";
 import Wallet from "./Components/Wallet";
 import Pebbles from "../KENO/assets/pebbles.png";
 
 function App() {
-  const [state, dispatch] = useReducer(kenoReducer, init);
+  const [state, dispatch] = useReducer(KenoReducer, init);
 
   return (
     <AppDiv>
