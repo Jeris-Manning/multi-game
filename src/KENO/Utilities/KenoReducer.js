@@ -12,7 +12,7 @@ export const init = {
   wallet: "init",
 };
 
-const reducer = function (state, action) {
+const Reducer = function (state, action) {
   switch (action.type) {
     case "INCREASE_PICK_COUNT":
       return {
@@ -127,4 +127,4 @@ const reducer = function (state, action) {
   }
 };
 
-export default reducer;
+export default Reducer;
