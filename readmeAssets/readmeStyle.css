@@ -1,0 +1,22 @@
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #FFB740;
+  /* height: 130px; */
+}
+
+/* .frog {
+  width: auto;
+  height: 125px;
+} */
+
+img {
+  width: auto;
+  height: 125px;
+  /* display: inline; */
+  /* align-self: flex-end; */
+}
+
