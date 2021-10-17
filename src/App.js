@@ -2,11 +2,9 @@ import React, { useReducer } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import CreditReducer, { init } from "./CreditReducer";
-import GameSelect from "./GAME_SELECT/GameSelect";
-import CoinSelect from "./GAME_SELECT/CoinSelect";
+import Landing from "./GAME_SELECT/GameSelect";
 import Poker from "./POKER/Poker";
 import Keno from "./KENO/Keno";
-import HandFrog from "./POKER/Components/GameHeader/HandFrog";
 
 export const CreditContext = React.createContext(null);
 
@@ -18,23 +16,13 @@ function App() {
       <div className="enrober">
         <Switch>
           <Route exact path="/">
-            <Poker />
+            <Landing />
           </Route>
           <Route path="/poker">
-            <Poker game="Jacks or Better" />
+            <Poker />
           </Route>
           <Route path="/keno">
             <Keno />
-          </Route>
-
-          <Route path="/addcredit">
-            <>
-              <GameSelect />
-              <CoinSelect />
-            </>
-          </Route>
-          <Route path="/magicfrog">
-            <HandFrog />
           </Route>
         </Switch>
       </div>

@@ -67,15 +67,9 @@ const SquareDiv = styled.div`
 
   img {
     align-self: flex-end;
-    /* position: absolute; */
-    /* padding: 0 30px 20px 0px; */
     margin: 0 30px 15px 0;
-    /* width: 100px;
-    height: 150px; */
     transform: skew(20deg);
     z-index: 40;
-    /* filter: drop-shadow(0px 0px 5px black); */
-    /* box-shadow: 5px 5px 4px black; */
   }
 
   .wormClass {
@@ -87,14 +81,12 @@ const SquareDiv = styled.div`
     width: 80px;
     height: 200px;
     margin-right: 60px;
-    /* padding: 0 500px 0 -350px; */
   }
   .antClass {
     width: 75px;
     height: 150px;
     margin-right: 42px;
     margin-bottom: 22px;
-
   }
   .holeClass {
     width: 40px;
@@ -103,7 +95,6 @@ const SquareDiv = styled.div`
   }
 
   .necromancer {
-    /* box-sizing: content-box; */
     position: relative;
     bottom: 70px;
     right: 25px;

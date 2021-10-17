@@ -7,7 +7,6 @@ import GameHeader from "./Components/GameHeader/GameHeader.js";
 import GameBanner from "./Components/GameHeader/GameBanner.js";
 import wallFlies from "./Assets/miscImages/fliesTile.png";
 import invertFlies from "./Assets/miscImages/invertFlyTile.png";
-// import "./Poker.css";
 
 export const PokerContext = React.createContext(null);
 
@@ -15,14 +14,14 @@ function Poker() {
   const [state, dispatch] = useReducer(PokerReducer, init);
   return (
     <PokerContext.Provider value={{ state, dispatch }}>
-        <AppWrap>
-          <PokerContainer>
-            <GameBanner />
-            <GameHeader />
-            <HandDisplay />
-            <CreditControls />
-          </PokerContainer>
-        </AppWrap>
+      <AppWrap>
+        <PokerContainer>
+          <GameBanner />
+          <GameHeader />
+          <HandDisplay />
+          <CreditControls />
+        </PokerContainer>
+      </AppWrap>
     </PokerContext.Provider>
   );
 }

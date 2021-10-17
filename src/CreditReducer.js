@@ -20,7 +20,7 @@ const denoms = {
 };
 
 export const init = {
-  denom: { ...denoms.quarter },
+  denom: { ...denoms.dime },
   credit: 2000,
   wager: 1,
   win: 0,

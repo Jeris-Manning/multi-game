@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Square from "./Square";
-import BottomSoil from ".././assets/soilBottom.png";
+import BottomSoil from ".././assets/soilBot.png";
 import SideSoil from ".././assets/soilSide.png";
 import ButtonPanel from "./ButtonPanel";
 
@@ -37,7 +37,6 @@ const Board = ({ state, dispatch, handleClick, drawClick }) => {
       <div className="buttons">
         <ButtonPanel state={state} dispatch={dispatch} drawClick={drawClick} />
       </div>
-      {/* <BottomDirt /> */}
       <SideDirt />
       <SideDirtSecond />
     </BoardClamp>
@@ -62,14 +61,9 @@ const BoardClamp = styled.div`
     width: 884px;
     height: 72px;
     display: flex;
-    /* background: aqua; */
     background-image: url(${BottomSoil});
-    /* background-repeat: repeat-x; */
-    /* background-size: contain; */
     z-index: 25;
   }
-
-  /* margin-bottom: 40px; */
 `;
 
 const GameBoard = styled.div`
@@ -89,18 +83,6 @@ const GameBoard = styled.div`
 const Row = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
-
-const BottomDirt = styled.div`
-  position: absolute;
-  bottom: 1px;
-  left: 2px;
-  width: 884px;
-  height: 72px;
-  background-image: url(${BottomSoil});
-  background-repeat: repeat-x;
-  background-size: contain;
-  z-index: 25;
 `;
 
 const SideDirt = styled.div`

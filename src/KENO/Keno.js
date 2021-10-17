@@ -1,4 +1,4 @@
-import React, { useReducer} from "react";
+import React, { useReducer } from "react";
 import styled from "styled-components";
 import KenoReducer, { init } from "./Utilities/KenoReducer";
 import PayTable from "./Components/PayTable";

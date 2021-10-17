@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Wager from "./Wager";
 import PlayerCredits from "./PlayerCredits";
 import { CreditContext } from "../../App";
+import BlackRock from "../assets/blackRock.png";
 
 const ButtonPanel = ({ drawClick, state, dispatch }) => {
   const { creditDispatch } = useContext(CreditContext);
@@ -12,17 +13,9 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
   }
 
   return (
-    <>
+    <ButtonBox>
       <Wager />
       <div className="gameplayButtons">
-        <DrawBtn
-          onClick={() => {
-            if (!state.drawing) {
-              drawClick();
-            }
-          }}>
-          DRAW
-        </DrawBtn>
         <ResetBtn onClick={() => (state.drawing ? null : resetPicks())}>
           Clear Picks
         </ResetBtn>
@@ -32,29 +25,47 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
       </AddCredit>
 
       <PlayerCredits className="credit" state={state} />
-    </>
+      <DrawBtn
+        onClick={() => {
+          if (!state.drawing) {
+            drawClick();
+          }
+        }}>
+        DRAW
+      </DrawBtn>
+    </ButtonBox>
   );
 };
 
 export default ButtonPanel;
 
+const ButtonBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+`;
+
 const DrawBtn = styled.button`
   width: 150px;
-  /* height: 40px; */
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 2rem; */
-  color: "red";
+  background-color: black;
+  background-image: url(${BlackRock});
+  background-size: cover;
+  font-family: "Boogaloo", cursive;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2.4rem;
+  cursor: pointer;
+  border-radius: 12px;
 `;
 const ResetBtn = styled.button`
   width: 200px;
-  /* height: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 2rem; */
-  color: "red";
 `;
 
 const AddCredit = styled.div`

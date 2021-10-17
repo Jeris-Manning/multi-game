@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext } from "react";
 import styled, { keyframes, css } from "styled-components";
 import Five from "../assets/5.png";
 import Ten from "../assets/10.png";
@@ -29,7 +29,7 @@ const Wallet = ({ state, dispatch }) => {
           alt=""
           onClick={() => addCredit(500)}
         />
-        <h3 onClick={() => dispatch({ type: "TOGGLE_WALLET" })}>GO AWAY!</h3>
+        <h3 onClick={() => dispatch({ type: "TOGGLE_WALLET" })}>Put Away</h3>
       </div>
     </WalletDiv>
   );
@@ -63,8 +63,16 @@ to {
 
 const WalletDiv = styled.div`
   position: absolute;
+  display: ${(props) => (props.show === null ? "none" : "block")};
   animation: ${(props) =>
-    props.show ? css`${walletSlide} 1s 1 normal forwards` : css`${walletReturn} 1s 1 normal forwards`};
+    props.show
+      ? css`
+          ${walletSlide} 1s 1 normal forwards
+        `
+      : css`
+          ${walletReturn} 1s 1 normal forwards
+        `};
+
   width: 551px;
   height: 711px;
   background-image: url(${Billfold});

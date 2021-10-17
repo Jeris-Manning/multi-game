@@ -9,7 +9,7 @@ export const init = {
   hits: 0,
   worms: 0,
   board: { ...clearBoard },
-  wallet: "init",
+  wallet: null,
 };
 
 const Reducer = function (state, action) {
@@ -118,9 +118,7 @@ const Reducer = function (state, action) {
       return { ...state, board: { ...clearBoard } };
 
     case "TOGGLE_WALLET":
-      return state.wallet === "init"
-        ? { ...state, wallet: true }
-        : { ...state, wallet: !state.wallet };
+      return { ...state, wallet: !state.wallet };
 
     default:
       return state;
