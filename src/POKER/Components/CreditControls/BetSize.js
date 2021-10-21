@@ -88,6 +88,13 @@ const CoinCountDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    h1,
+    h2 {
+      font-family: "Boogaloo", cursive;
+      font-weight: 400;
+    }
+
     .wagerCount {
       cursor: pointer;
       color: #ffe4b9;

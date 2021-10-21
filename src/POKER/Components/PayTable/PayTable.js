@@ -73,6 +73,7 @@ const PayTable = () => {
 export default PayTable;
 
 const PayRow = styled.div`
+  font-family: "Open Sans", sans-serif;
   display: contents;
 
   h3 {
@@ -87,7 +88,6 @@ const PayChart = styled.div`
   grid-template-columns: ${(props) =>
     props.cashVal ? "14fr 6fr 6fr 6fr 6fr 6fr" : "15fr 7fr 7fr 7fr 7fr 7fr"};
   max-width: 600px;
-
   grid-template-rows: repeat(9, 20px);
   grid-auto-flow: row;
   gap: 4px 5px;
@@ -96,7 +96,7 @@ const PayChart = styled.div`
   border-radius: 8px;
   color: #423829;
   .highlight {
-    color: rgba(25, 66, 211, 0.9);
+    color: rgba(25, 66, 211, 1);
     text-shadow: 1px 1px #888;
     font-weight: 700;
   }
@@ -121,18 +121,16 @@ const PayChart = styled.div`
     margin-right: -2px;
   }
   @media (max-width: 1000px) {
-
     h3 {
-     font-size: 1rem;
+      font-size: 1rem;
     }
-
   }
   @media (max-width: 850px) {
     grid-template-columns: ${(props) =>
       props.cashVal ? "12fr 7fr" : "10fr 3fr"};
     gap: 1px 1px;
-    .highlight{
-      padding: 0 10px 0 10px ;
+    .highlight {
+      padding: 0 10px 0 10px;
     }
     .notBet {
       display: none;

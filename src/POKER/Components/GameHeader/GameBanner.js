@@ -30,7 +30,9 @@ const BannerDiv = styled.div`
   background-color: #ff9e00;
 
   h1 {
-    color: #19ee40;
+    font-family: "Boogaloo", cursive;
+    font-weight: 400;
+    color: #19dc40;
     font-size: 6.25rem;
     text-shadow: 3px 3px 3px #333;
   }

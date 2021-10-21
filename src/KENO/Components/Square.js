@@ -11,10 +11,19 @@ const Square = ({ drawn, clicked, num, handleClick, worm }) => {
 
   if (clicked) {
     if (drawn) {
-      art = <img className="antClass" num={num + "ant"} src={Ant} alt="ant" />;
+      art = (
+        <img
+          draggable="false"
+          className="antClass"
+          num={num + "ant"}
+          src={Ant}
+          alt="ant"
+        />
+      );
     } else {
       art = (
         <img
+          draggable="false"
           className="hillClass"
           num={num + "hill"}
           src={Hill}
@@ -25,11 +34,23 @@ const Square = ({ drawn, clicked, num, handleClick, worm }) => {
   } else if (worm) {
     if (drawn) {
       art = (
-        <img className="wormClass" num={num + "worm"} src={Worm} alt="Worm" />
+        <img
+          draggable="false"
+          className="wormClass"
+          num={num + "worm"}
+          src={Worm}
+          alt="Worm"
+        />
       );
     } else {
       art = (
-        <img className="holeClass" num={num + "hole"} src={Hole} alt="hole" />
+        <img
+          draggable="false"
+          className="holeClass"
+          num={num + "hole"}
+          src={Hole}
+          alt="hole"
+        />
       );
     }
   } else
@@ -64,6 +85,7 @@ const SquareDiv = styled.div`
   font-size: 3rem;
   color: ${(props) => (props.drawn ? "#68ddff" : "#fff568")};
   z-index: 7;
+  user-select: none;
 
   img {
     align-self: flex-end;
