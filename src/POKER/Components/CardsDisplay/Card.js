@@ -8,6 +8,7 @@ const Card = ({ card }) => {
   return (
     <CardSlot held={card.held}>
       <img
+        draggable="false"
         src={
           state.phase === "begin" || card.showBack
             ? Cards.back

@@ -109,11 +109,14 @@ const HeldDisplay = styled.div`
   width: 50%;
   top: 50%;
   user-select: none;
+  .scram {
+    display: none;
+  }
 `;
 
 const Held = styled.h2`
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(.875rem, .625rem + 1.25vw, 1.875rem);
+  font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.875rem);
   font-weight: 700;
   background: #00fa70;
   border-radius: 5px;

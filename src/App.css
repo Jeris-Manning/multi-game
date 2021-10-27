@@ -131,6 +131,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  all: unset;
+}
+
 .enrober {
   height: 100vh;
 }

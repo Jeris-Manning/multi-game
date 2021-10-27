@@ -19,7 +19,6 @@ const FrogStyledButton = styled.div`
   align-items: center;
   background: #bd1515;
   border-radius: 5px;
-
   width: clamp(3.75rem, 12.5vw, 9.375rem);
   height: clamp(2.5rem, 5vw, 3.75rem);
   cursor: pointer;
@@ -35,6 +34,8 @@ const FrogStyledButton = styled.div`
 
   h1 {
     color: #ffe4b9;
+    font-family: "Boogaloo", cursive;
+    font-weight: 400;
     text-shadow: 2px 2px 2px #333;
     font-size: clamp(1.625rem, 4.2vw, 3.125rem);
   }

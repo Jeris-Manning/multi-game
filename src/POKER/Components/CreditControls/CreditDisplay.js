@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { toCash } from "../../Utility/PokerConstants";
 import { CreditContext } from "../../../App";
 import { PokerContext } from "../../Poker";
-import "../../Poker.css";
 
 const CreditDisplay = () => {
   const { creditState } = useContext(CreditContext);
@@ -46,8 +45,9 @@ const CreditDisplayer = styled.div`
       cursor: pointer;
       padding-top: 5px;
       font-size: 1.875rem;
-      font-family: "LCD", sans-serif;
+      font-family: sans-serif;
       font-weight: 700;
+      color: black;
     }
   }
   @media (max-width: 1000px) {

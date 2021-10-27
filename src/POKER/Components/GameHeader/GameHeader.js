@@ -49,7 +49,7 @@ const StyledHeader = styled.div`
   .signSurface {
     height: 45%;
     width: 85%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
     border: solid 2px #423829;
     border-radius: 8px;
     position: absolute;
@@ -59,17 +59,16 @@ const StyledHeader = styled.div`
     align-items: center;
     top: 3px;
     left: 45px;
+    font-family: "Boogaloo", cursive;
+    font-weight: 400;
+    color: rgba(30, 15, 0, 0.8);
 
     h1 {
       font-size: 3.75rem;
-      font-weight: 400;
-      color: rgba(10, 20, 10, 0.8);
     }
 
     h2 {
       font-size: 2.625rem;
-      font-weight: 400;
-      color: #151;
     }
   }
 

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { toCash } from "../../Utility/PokerConstants";
+// import { toCash } from "../../Utility/PokerConstants";
 import { PokerContext } from "../../Poker";
-import { CreditContext } from "../../../App";
+// import { CreditContext } from "../../../App";
 import plasticTile from "../../Assets/miscImages/plasticTile.png";
 
 const BetSize = () => {
   const { state, dispatch } = useContext(PokerContext);
-  const { creditState } = useContext(CreditContext);
-  const cashWager = toCash((state.wager * creditState.denom.multiplier) / 100);
+  // const { creditState } = useContext(CreditContext);
+  // const cashWager = toCash((state.wager * creditState.denom.multiplier) / 100);
 
   return (
     <CoinCountDiv>
@@ -88,6 +88,13 @@ const CoinCountDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    h1,
+    h2 {
+      font-family: "Boogaloo", cursive;
+      font-weight: 400;
+    }
+
     .wagerCount {
       cursor: pointer;
       color: #ffe4b9;

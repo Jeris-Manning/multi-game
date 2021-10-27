@@ -136,7 +136,8 @@ const BoardDiv = styled.div`
     display: none;
   }
   margin-top: 50px;
-  border: solid blackm 2px;
+  margin-left: 0px;
+  /* border: solid black 2px; */
 `;
 
 const WinPopper = styled.div`
