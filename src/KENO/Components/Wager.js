@@ -13,12 +13,14 @@ const Wager = () => {
         <img
           className="down"
           src={BugDown}
+          alt="mosquito pointing down"
           onClick={() => creditDispatch({ type: "WAGER_DOWN" })}
         />
-        <BetLabel>BET SIZE</BetLabel>
+        <BetLabel>CHANGE BET</BetLabel>
         <img
           className="up"
           src={BugUp}
+          alt="mosquito pointing up"
           onClick={() => creditDispatch({ type: "WAGER_UP" })}
         />
       </div>
@@ -34,9 +36,10 @@ export default Wager;
 const WagerBox = styled.div`
   display: flex;
   flex-direction: column;
+
   /* align-items: center; */
   font-family: "Open Sans", sans-serif;
-  width: 300px;
+  width: 350px;
   /* background: orange; */
 
   .wagerButtons {
@@ -61,7 +64,7 @@ const WagerBox = styled.div`
       width: 62px;
       height: 107px;
       cursor: pointer;
-      z-index: 55;
+      /* z-index: 55; */
       /* top: 20px; */
     }
   }
@@ -85,5 +88,5 @@ const BetLabel = styled.h2`
   color: orange;
   text-shadow: 1px 1px 0 rgba(140, 90, 0, 0.8);
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 `;

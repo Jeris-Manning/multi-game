@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import PrayTable from "./PrayTable";
-
 import PlayerCredits from "./PlayerCredits";
+import Wager from "./Wager";
 
 const LeftBar = ({ state, dispatch }) => {
   return (
@@ -10,6 +10,7 @@ const LeftBar = ({ state, dispatch }) => {
       <PrayTable state={state} />
 
       <PlayerCredits state={state} dispatch={dispatch} />
+      <Wager />
     </LeftBarDiv>
   );
 };
@@ -20,6 +21,7 @@ const LeftBarDiv = styled.div`
   /* position: absolute; */
   /* left: 30px; */
   /* top: 30px; */
+  /* border: solid pink 2px; */
   z-index: 10;
 
   align-self: flex-start;

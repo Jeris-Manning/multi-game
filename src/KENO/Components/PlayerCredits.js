@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import HoneyTile from "../assets/honeyTile.png";
+
 import { toCashString } from "../../globalUtilities/helperFunctions";
 import { CreditContext } from "../../App";
 
 const PlayerCredits = ({ dispatch }) => {
-  const { creditState, creditDispatch } = useContext(CreditContext);
+  const { creditState } = useContext(CreditContext);
 
   console.log(creditState.credit, " CREDIT");
 
@@ -26,6 +27,8 @@ export default PlayerCredits;
 
 const CreditControlWrapper = styled.div`
   background-image: url(${HoneyTile});
+  position: relative;
+  margin-bottom: 75px;
   /* width: 276px; */
   font-family: "Open Sans", sans-serif;
   border: solid #333 3px;

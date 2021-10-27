@@ -136,7 +136,7 @@ const BoardDiv = styled.div`
     display: none;
   }
   margin-top: 50px;
-  margin-left: -180px;
+  margin-left: 0px;
   /* border: solid black 2px; */
 `;
 

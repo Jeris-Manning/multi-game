@@ -8,12 +8,12 @@ import Spider from "../assets/spider.png";
 import HoneyTile from "../assets/honeyTile.png";
 
 const PrayTable = ({ state }) => {
-  const { creditState, creditDispatch } = useContext(CreditContext);
+  const { creditState } = useContext(CreditContext);
 
   return (
     <Table>
       <img className="bee" src={Bee} alt="cartoon bee" />
-      <img className = "spider" src={Spider} alt="cartoon spider" />
+      <img className="spider" src={Spider} alt="cartoon spider" />F
       {state.picks > 1 ? (
         <GridWrapper>
           <div>Hit</div>
@@ -36,7 +36,10 @@ const PrayTable = ({ state }) => {
           })}
         </GridWrapper>
       ) : (
-        <></>
+        <GridWrapper>
+          <div>Hit</div>
+          <div>Win</div>
+        </GridWrapper>
       )}
     </Table>
   );
@@ -49,22 +52,24 @@ const Table = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 130px 0 100px 0px;
+  margin: 130px 0 96px 0px;
   background-image: url(${HoneyTile});
   font-family: "Open Sans", sans-serif;
   border: solid #333 3px;
   border-radius: 15px;
   min-height: 200px;
+  min-width: 215px;
   z-index: 8;
+  .spider {
+    position: absolute;
+    bottom: -152px;
+    right: 92px;
+    z-index: 20;
+  }
   .bee {
     position: absolute;
     top: -121px;
     left: 17px;
-  }
-  .spider {
-    position: absolute;
-    bottom: -154px;
-    right: 10px;
   }
 `;
 
@@ -84,7 +89,7 @@ const GridWrapper = styled.div`
   background: rgba(51, 51, 51, 0.9);
   color: orange;
   text-shadow: 1px 1px 0 rgba(140, 90, 0, 0.8);
-  min-height: 50px;
+  min-height: 100px;
   width: 215px;
   .colOne {
     grid-column: 1;
