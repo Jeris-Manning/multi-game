@@ -36,14 +36,11 @@ export default Wager;
 const WagerBox = styled.div`
   display: flex;
   flex-direction: column;
-
-  /* align-items: center; */
   font-family: "Open Sans", sans-serif;
   width: 350px;
-  /* background: orange; */
 
   .wagerButtons {
-    background: rgba(51, 51, 51, 0.7);
+    background: rgba(51, 51, 51, 0.9);
     border: solid orange 4px;
     outline: solid #333 3px;
     height: 70px;
@@ -64,8 +61,6 @@ const WagerBox = styled.div`
       width: 62px;
       height: 107px;
       cursor: pointer;
-      /* z-index: 55; */
-      /* top: 20px; */
     }
   }
   .wagerDisplay {
@@ -80,7 +75,7 @@ const WagerBox = styled.div`
     border-radius: 0 0 20px 20px;
     font-weight: 700;
     font-size: 2.2rem;
-    color: #333;
+    color: #222;
   }
 `;
 

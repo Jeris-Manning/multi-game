@@ -136,8 +136,7 @@ const BoardDiv = styled.div`
     display: none;
   }
   margin-top: 50px;
-  margin-left: 0px;
-  /* border: solid black 2px; */
+  margin-left: 50px;
 `;
 
 const WinPopper = styled.div`
@@ -146,14 +145,17 @@ const WinPopper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 400px;
-  height: 250px;
-  background: yellow;
-  top: 10px;
-  left: 10px;
+  padding: 10px;
+  background: orange;
+  border-radius: 10px;
+  border: solid 3px #222;
+  top: 2px;
+  right: 550px;
   z-index: 222;
+  font-family: "Boogaloo", cursive;
+  font-weight: 400;
   h1 {
-    font-size: 4rem;
+    font-size: 3.7rem;
     margin: 0;
   }
   h2 {

@@ -13,7 +13,7 @@ const PrayTable = ({ state }) => {
   return (
     <Table>
       <img className="bee" src={Bee} alt="cartoon bee" />
-      <img className="spider" src={Spider} alt="cartoon spider" />F
+      <img className="spider" src={Spider} alt="cartoon spider" />
       {state.picks > 1 ? (
         <GridWrapper>
           <div>Hit</div>
@@ -54,6 +54,7 @@ const Table = styled.div`
   align-items: center;
   margin: 130px 0 96px 0px;
   background-image: url(${HoneyTile});
+  background-color: #eda613;
   font-family: "Open Sans", sans-serif;
   border: solid #333 3px;
   border-radius: 15px;

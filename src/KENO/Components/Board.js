@@ -34,7 +34,7 @@ const Board = ({ state, dispatch, handleClick, drawClick }) => {
           </Row>
         ))}
       </GameBoard>
-      <div className="buttons">
+      <div className="dirt">
         <ButtonPanel state={state} dispatch={dispatch} drawClick={drawClick} />
       </div>
       <SideDirt />
@@ -54,13 +54,14 @@ const BoardClamp = styled.div`
   height: 720px;
   margin-right: 150px;
 
-  .buttons {
+  .dirt {
     position: absolute;
     bottom: 1px;
     left: 2px;
     width: 884px;
     height: 72px;
     display: flex;
+    justify-content: center;
     background-image: url(${BottomSoil});
     z-index: 25;
   }

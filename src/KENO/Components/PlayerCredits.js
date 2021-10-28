@@ -28,8 +28,7 @@ export default PlayerCredits;
 const CreditControlWrapper = styled.div`
   background-image: url(${HoneyTile});
   position: relative;
-  margin-bottom: 75px;
-  /* width: 276px; */
+  margin-bottom: 50px;
   font-family: "Open Sans", sans-serif;
   border: solid #333 3px;
   border-radius: 15px;
@@ -44,11 +43,9 @@ const CreditDisplayDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* position: relative; */
   background: rgba(51, 51, 51, 0.9);
   color: orange;
   text-shadow: 1px 1px 0 rgba(140, 90, 0, 0.8);
-  /* width: 215px; */
   margin: 30px 30px;
   padding: 10px;
   border-radius: 15px;
@@ -66,5 +63,9 @@ const AddCredit = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-bottom: 1px white solid;
+  border-bottom: 2px #777 solid;
+  :active {
+      border: none;
+      margin-top: 12px;
+    }
 `;
