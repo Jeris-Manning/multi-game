@@ -12,9 +12,11 @@ const CreditResult = () => {
       <h2>{state.finalHand[0]}</h2>
       <h2>
         {state.showCash
-          ? toCash(state.finalHand[1] * state.wager * creditState.denom.value)
-          : `${state.finalHand[1] * state.wager} ${
-              state.finalHand[1] === 1 && state.wager === 1
+          ? toCash(
+              state.finalHand[1] * creditState.wager * creditState.denom.value
+            )
+          : `${state.finalHand[1] * creditState.wager} ${
+              state.finalHand[1] === 1 && creditState.wager === 1
                 ? " Credit"
                 : " Credits"
             }

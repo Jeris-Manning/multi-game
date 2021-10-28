@@ -6,7 +6,7 @@ import plasticTile from "../../Assets/miscImages/plasticTile.png";
 
 const BetSize = () => {
   const { state, dispatch } = useContext(PokerContext);
-  const { creditDispatch } = useContext(CreditContext);
+  const { creditState, creditDispatch } = useContext(CreditContext);
 
   return (
     <CoinCountDiv>
@@ -14,7 +14,9 @@ const BetSize = () => {
         <UpArrow
           disabled={state.phase === "afterDeal" ? true : false}
           onClick={() => {
-            creditDispatch({ type: "WAGER_UP" });
+            if (creditState.wager < 5) {
+              creditDispatch({ type: "WAGER_UP" });
+            }
             dispatch({ type: "SET_FINAL_HAND_RANK", payload: ["", 0] });
           }}>
           <span />

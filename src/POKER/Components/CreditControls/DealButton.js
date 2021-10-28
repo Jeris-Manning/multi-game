@@ -9,7 +9,7 @@ const DealButton = () => {
   const { creditState, creditDispatch } = useContext(CreditContext);
 
   const handleDealButtonClick = () => {
-    creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
+    creditDispatch({ type: "SUB_CREDIT", payload: creditState.wager });
     dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
   };
   const handleDrawButtonClick = () => {
@@ -17,7 +17,7 @@ const DealButton = () => {
   };
 
   const handleFirstClick = () => {
-    creditDispatch({ type: "SUB_CREDIT", payload: state.wager });
+    creditDispatch({ type: "SUB_CREDIT", payload: creditState.wager });
     dispatch({ type: "PHASE_CHANGE", payload: "afterDeal" });
   };
   let oC = "";
@@ -25,7 +25,7 @@ const DealButton = () => {
   let warn = "";
 
   if (
-    creditState.denom.multiplier * state.wager > creditState.credit &&
+    creditState.denom.multiplier * creditState.wager > creditState.credit &&
     state.phase !== "afterDeal"
   ) {
     oC = "";

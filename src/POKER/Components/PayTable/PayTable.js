@@ -15,7 +15,7 @@ const PayTable = () => {
     let replacedHand = rawHand.replace(replacer, " ");
     payArray.push([replacedHand, value]);
   }
-  let coinCount = state.wager;
+  let coinCount = creditState.wager;
 
   const divMaker = (handValue) => {
     let coinVals = [];
@@ -60,7 +60,6 @@ const PayTable = () => {
       </>
     );
   }
-  console.log(handTypes[2], "HAND TYPES");
   return (
     <PayChart cashVal={state.showCash ? true : false}>
       {handTypes.map((hand, idx) => (

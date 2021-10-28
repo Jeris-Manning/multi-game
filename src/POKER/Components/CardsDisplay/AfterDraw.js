@@ -31,7 +31,6 @@ const AfterDraw = () => {
   }
 
   useEffect(() => {
-    console.log(state.phase);
     if (state.phase === "afterDraw") {
       dispatch({
         type: "DRAW_HAND",
@@ -49,7 +48,7 @@ const AfterDraw = () => {
 
       let processedHand = HandEvaluation(currentHand);
       let credits =
-        processedHand[1] * state.wager * creditState.denom.multiplier;
+        processedHand[1] * creditState.wager * creditState.denom.multiplier;
       dispatch({ type: "SET_FINAL_HAND_RANK", payload: [...processedHand] });
       creditDispatch({ type: "ADD_CREDIT", credits });
     }

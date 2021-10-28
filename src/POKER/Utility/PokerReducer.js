@@ -1,8 +1,6 @@
 import { initHand } from "./PokerConstants";
 
 export const init = {
-  wager: 1,
-  credit: 1000,
   showCash: false,
   phase: "begin",
   deck: [],
