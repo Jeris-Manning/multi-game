@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { PokerContext } from "../../Poker";
+import { CreditContext } from "../../../App";
 import plasticTile from "../../Assets/miscImages/plasticTile.png";
 
 const BetSize = () => {
   const { state, dispatch } = useContext(PokerContext);
+  const { creditDispatch } = useContext(CreditContext);
 
   return (
     <CoinCountDiv>
@@ -12,7 +14,7 @@ const BetSize = () => {
         <UpArrow
           disabled={state.phase === "afterDeal" ? true : false}
           onClick={() => {
-            dispatch({ type: "BET_UP" });
+            creditDispatch({ type: "WAGER_UP" });
             dispatch({ type: "SET_FINAL_HAND_RANK", payload: ["", 0] });
           }}>
           <span />
@@ -28,7 +30,7 @@ const BetSize = () => {
         <DownArrow
           disabled={state.phase === "afterDeal" ? true : false}
           onClick={() => {
-            dispatch({ type: "BET_DOWN" });
+            creditDispatch({ type: "WAGER_DOWN" });
             dispatch({ type: "SET_FINAL_HAND_RANK", payload: ["", 0] });
           }}
         />
