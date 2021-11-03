@@ -1,27 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import BugUp from "../assets/upskeeter.png";
 import BugDown from "../assets/downskeeter.png";
+import RedBugUp from "../assets/upskeeterRed.png";
+import RedBugDown from "../assets/downskeeterRed.png";
 import { toCashString } from "../../globalUtilities/helperFunctions";
 import { CreditContext } from "../../App";
 
 const Wager = () => {
   const { creditState, creditDispatch } = useContext(CreditContext);
+  const [hoverBug, setHoverBug] = useState("none");
   return (
     <WagerBox>
       <div className="wagerButtons">
         <img
           className="down"
-          src={BugDown}
+          src={hoverBug === "down" ? RedBugDown : BugDown}
           alt="mosquito pointing down"
           onClick={() => creditDispatch({ type: "WAGER_DOWN" })}
+          onMouseOver={() => setHoverBug("down")}
+          onMouseOut={() => setHoverBug("none")}
         />
         <BetLabel>CHANGE BET</BetLabel>
         <img
           className="up"
-          src={BugUp}
+          src={hoverBug === "up" ? RedBugUp : BugUp}
           alt="mosquito pointing up"
           onClick={() => creditDispatch({ type: "WAGER_UP" })}
+          onMouseOver={() => setHoverBug("up")}
+          onMouseOut={() => setHoverBug("none")}
         />
       </div>
       <div className="wagerDisplay">

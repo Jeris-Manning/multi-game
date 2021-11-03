@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import CreditReducer, { init } from "./CreditReducer";
-import Landing from "./GAME_SELECT/GameSelect";
+import GameSelect from "./GAME_SELECT/GameSelect";
 import Poker from "./POKER/Poker";
 import Keno from "./KENO/Keno";
 
@@ -19,7 +19,7 @@ function App() {
       <div className="enrober">
         <Switch>
           <Route exact path="/">
-            <Landing />
+            <GameSelect />
           </Route>
           <Route path="/poker">
             <Poker />

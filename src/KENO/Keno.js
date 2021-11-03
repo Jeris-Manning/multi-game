@@ -29,7 +29,6 @@ const KenoWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #be9e6d;
   background-image: url(${Sand});
   overflow: hidden;
@@ -45,7 +44,7 @@ const KenoDiv = styled.div`
     drop-shadow(-7px 0 15px rgba(0, 0, 0, 0.8));
   border-top: none;
   border-bottom: none;
-  align-items: center;
+  /* align-items: center; */
   justify-content: flex-end;
   background-image: url(${Pebbles});
   overflow: hidden;

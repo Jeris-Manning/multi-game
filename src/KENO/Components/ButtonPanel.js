@@ -10,7 +10,7 @@ const ButtonPanel = ({ drawClick, state, dispatch }) => {
 
   return (
     <ButtonBox>
-      <Link to="/" className="linky">{`Main Menu`}</Link>
+      <Link to="/" className="linky">{`Game Select`}</Link>
 
       <button onClick={() => (state.drawing ? null : resetPicks())}>
         Clear Picks
@@ -42,7 +42,7 @@ const ButtonBox = styled.div`
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
-    width: 150px;
+    width: 160px;
     height: 50px;
     background: #111;
     display: flex;

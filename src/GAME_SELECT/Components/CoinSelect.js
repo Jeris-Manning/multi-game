@@ -7,9 +7,10 @@ import Dollar from "../assets/dollar.png";
 
 const CoinSelect = () => {
   const { creditState, creditDispatch } = useContext(CreditContext);
+
   return (
     <ChooseCoinDiv>
-      <h2>Denomination:</h2>
+      <h2>Coin Select:</h2>
       <Coin
         onClick={() =>
           creditDispatch({ type: "CHOOSE_DENOM", payload: "dime" })
@@ -17,7 +18,7 @@ const CoinSelect = () => {
         <img
           src={Dime}
           alt=""
-          className={creditState.denom.name === "dime" ? "greenGlow" : ""}
+          className={creditState.denom.name === "dime" ? "blueGlow" : ""}
         />
         <span>10¢</span>
       </Coin>
@@ -28,7 +29,7 @@ const CoinSelect = () => {
         <img
           src={Quarter}
           alt=""
-          className={creditState.denom.name === "quarter" ? "greenGlow" : ""}
+          className={creditState.denom.name === "quarter" ? "blueGlow" : ""}
         />
         <span>25¢</span>
       </Coin>
@@ -39,7 +40,7 @@ const CoinSelect = () => {
         <img
           src={Dollar}
           alt=""
-          className={creditState.denom.name === "dollar" ? "greenGlow" : ""}
+          className={creditState.denom.name === "dollar" ? "blueGlow" : ""}
         />
         <span>$1</span>
       </Coin>
@@ -50,12 +51,14 @@ const CoinSelect = () => {
 export default CoinSelect;
 
 const ChooseCoinDiv = styled.div`
+font-family: "Boogaloo", cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 150px;
   width: 700px;
   h2 {
+
     font-size: 2.8rem;
   }
 `;
@@ -68,14 +71,14 @@ const Coin = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
   img {
     height: 120px;
     width: 120px;
   }
-  .greenGlow {
+  .blueGlow {
     filter: drop-shadow(5px 5px 5px #33f) drop-shadow(-5px -5px 5px #33f);
   }
 `;

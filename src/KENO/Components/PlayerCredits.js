@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import HoneyTile from "../assets/honeyTile.png";
-
 import { toCashString } from "../../globalUtilities/helperFunctions";
 import { CreditContext } from "../../App";
 

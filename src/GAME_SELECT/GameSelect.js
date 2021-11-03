@@ -2,62 +2,81 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CoinSelect from "./Components/CoinSelect";
+import WallFlies from "../POKER/Assets/miscImages/invertFlyTile.png";
+import PaleFlies from "../POKER/Assets/miscImages/fliesTile.png";
 import KenoGraphic from "./assets/kenoLink.png";
 import PokerGraphic from "./assets/pokerLink.png";
 
-const Landing = () => {
+const GameSelect = () => {
   const [crispImage, setCrispImage] = useState("all");
 
   return (
-    <LandingDiv>
-      <h1>CREATURE CASINO</h1>
-      <nav>
-        <Link
-          to="/keno"
-          onMouseOver={() => {
-            setCrispImage("bug");
-          }}
-          onMouseOut={() => {
-            setCrispImage("all");
-          }}>
-          <img
-            src={KenoGraphic}
-            className={crispImage === "frog" ? "blurry" : ""}
-            alt="Display of characters for keno game"
-          />
-        </Link>
-        <Link
-          to="/poker"
-          onMouseOver={() => {
-            setCrispImage("frog");
-          }}
-          onMouseOut={() => {
-            setCrispImage("all");
-          }}>
-          <img
-            src={PokerGraphic}
-            className={crispImage === "bug" ? "blurry" : ""}
-            alt="Display of characters for poker game"
-          />
-        </Link>
-      </nav>
-      <CoinSelect />
-    </LandingDiv>
+    <Wrap>
+      <LandingDiv>
+        <h1>CREATURE CASINO</h1>
+        <nav>
+          <Link
+            to="/keno"
+            onMouseOver={() => {
+              setCrispImage("bug");
+            }}
+            onMouseOut={() => {
+              setCrispImage("all");
+            }}>
+            <img
+              src={KenoGraphic}
+              className={crispImage === "bug" ? "" : "blurry"}
+              alt="Display of characters for keno game"
+            />
+          </Link>
+          <Link
+            to="/poker"
+            onMouseOver={() => {
+              setCrispImage("frog");
+            }}
+            onMouseOut={() => {
+              setCrispImage("all");
+            }}>
+            <img
+              src={PokerGraphic}
+              className={crispImage === "frog" ? "" : "blurry"}
+              alt="Display of characters for poker game"
+            />
+          </Link>
+        </nav>
+        <CoinSelect />
+      </LandingDiv>
+    </Wrap>
   );
 };
 
-export default Landing;
+export default GameSelect;
+
+const Wrap = styled.div`
+  background-image: url(${WallFlies});
+  display: flex;
+  justify-content: center;
+  height: 100%;
+`;
 
 const LandingDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background-color: #8f8;
-  height: 100%;
+  background-image: url(${PaleFlies});
+  height: 90%;
+  width: 800px;
+  border: black solid 2px;
+  margin-top: 20px;
+  border-radius: 15px;
   h1 {
+    color: #34aa34;
     font-family: "Trade Winds", cursive;
     font-size: 5rem;
     margin: 20px 0;
+    text-shadow: 2px 2px 2px black;
   }
 
   nav {
@@ -77,7 +96,7 @@ const LandingDiv = styled.div`
       }
     }
     .blurry {
-      filter: grayscale(100%);
+      filter: grayscale(30%);
     }
   }
 `;

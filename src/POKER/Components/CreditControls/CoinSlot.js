@@ -4,8 +4,8 @@ import coinSlot from "../../Assets/miscImages/coinSlot.png";
 import { CreditContext } from "../../../App";
 
 const CoinSlot = () => {
-  const { creditDispatch } = useContext(CreditContext);
-  let credits = 25;
+  const { creditState, creditDispatch } = useContext(CreditContext);
+  let credits = creditState.denom.multiplier;
   return (
     <InsertCoin
       src={coinSlot}
