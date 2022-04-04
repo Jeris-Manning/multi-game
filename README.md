@@ -23,7 +23,8 @@ https://creaturecasino.party
 
 This project started on a whim and an HOA flyer. 
 Poker was on TV and I thought it would be fun to figure out the code to determine hand ranks from any 5 card poker hand.
-It was.
+One thing led to another and I ended up fully fleshing it out. 
+I later finished a video keno game to go with it as an exercise to have each game maintain its own state as well as having a global state overseeing the player's credits, bet sizes, etc.
 
 
 
