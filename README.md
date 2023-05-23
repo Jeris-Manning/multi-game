@@ -9,7 +9,7 @@ A fully functional Vegas style player's choice game with frog themed video poker
 
 ## Fully Deployed and Ready to Play!
 
-https://creaturecasino.party
+[Creature Casino Multi-Game](https://wizardly-liskov-36a31a.netlify.app/poker)
 
 
 
